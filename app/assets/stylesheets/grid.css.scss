@@ -39,12 +39,12 @@ img, object, embed {max-width: 100%;}
 
 /** LAYOUT **/
 #page {max-width: 1140px; margin: 0 auto;}
-.col-left {.col4; margin-right:4%;}
-.col-main {.col20;}
-.col-center {.col14; }
-.col-right {.col6;}
-.col-center-left {.col10;}
-.col-center-right {.col10;}
+.col-left {@extend .col4; margin-right:4%;}
+.col-main {@extend .col20;}
+.col-center {@extend .col14; }
+.col-right {@extend .col6;}
+.col-center-left {@extend .col10;}
+.col-center-right {@extend .col10;}
 
 /* Layout for mobile version */
 @media handheld, only screen and (max-width: 767px) {

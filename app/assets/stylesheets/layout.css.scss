@@ -1,0 +1,49 @@
+
+$c-blue: #29256a;
+$c-gray: #a0a1b5;
+$c-green: #0f0;
+$c-blue-lt: lighten($c-blue,80%);
+$c-green-lt: lighten($c-green,30%);
+$c-link: lighten($c-blue, 20%);
+
+$font-title: 'Tinos', arial, serif;
+$font-subtitle: 'Tahoma', arial, sans-serif;
+$font-body: 'PT Sans Narrow', arial, serif;
+$b-dot: 1px dotted $c-blue;
+
+/** ELEMENTS **/
+html {
+  color: $c-blue;
+  font-family: $font-body;
+}
+
+h1, h2, h3 {font-family: $font-title; line-height:1em; font-style: italic;margin: 0;}
+h1 {font-size: 30px;}
+h2 {font-size: 20px;}
+h4 {font-family: $font-subtitle;letter-spacing: 0.05em;}
+a {color: $c-link; text-decoration:none;border-bottom:none;}
+a:hover {color: $c-blue;}
+li {border:0;list-style: none;}
+
+/** LAYOUT */
+#page {margin-top: 50px; margin-bottom: 30px;}
+
+/** HEADER **/
+#header {
+    ul.navigator {width: 100%; overflow: hidden; margin-bottom:2em;}
+    ul.navigator li {float: left; color: $c-green;}
+    ul.navigator span {display:block;float:left; padding:0 0.5em;}
+    h1, h2, h3 {border-bottom: $b-dot;}
+    h1 {font-size:80px;}
+    h2 {font-size:28px;padding-bottom:5px;font-style:normal;}
+    margin-bottom: 60px;
+    div.button-group {margin-top:10px;}
+}
+
+
+/** BROWSER **/
+ul.browser h2 {margin-top: 0em; border-bottom: $b-dot; font-variant: small-caps; font-size: 18px; padding-bottom: 0.2em;}
+ul.browser {margin-bottom: 1em;}
+ul.browser > a {color: $c-green;}
+ul.browser li {border-bottom: $b-dot; padding: 0.7em 0;}
+ul.browser li h3 {font-size: 20px; border:0;}

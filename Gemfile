@@ -10,7 +10,7 @@ gem 'uglifier'
 gem 'jquery-rails'
 
 gem 'decent_exposure'
-gem 'show_for'
+gem 'simple_form'
 gem 'css3buttons'
 
 gem 'cancan'

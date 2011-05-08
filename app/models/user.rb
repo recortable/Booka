@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
+  include Models::RolesMethods
 
-  def admin?
-    roles == 'admin'
-  end
 end

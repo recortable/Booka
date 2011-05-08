@@ -1,0 +1,20 @@
+
+<%= content_for :top do %>
+    <%= title booka_line.title %>
+    <ul class="navigator">
+      <% BookaLine.all.each do |booka_line| %>
+          <li><%= link_to_unless_current booka_line.title, booka_line %></li>
+          <span>|</span>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= content_for :browser do %>
+    <%= link_to image_tag(booka_line.icon_path, :alt => booka_line.title), root_path %>
+<% end %>
+
+<%= render_body booka_line %>
+
+<%= content_for :info do %>
+<% end %>
+

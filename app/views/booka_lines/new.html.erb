@@ -1,0 +1,14 @@
+<%= content_for :top do %>
+<%= title 'Crear una nueva serie' %>
+<% end %>
+
+<%= simple_form_for(booka_line) do |form| %>
+    <%= form.input :title %>
+    <%= form.input :slug %>
+    <%= form.input :icon_path %>
+    <%= form.input :content_type, :collection => CONTENT_TYPES, :include_blank => false %>
+    <%= form.input :body %>
+  <div class="controls">
+    <%= form.submit %>
+  </div>
+<% end %>

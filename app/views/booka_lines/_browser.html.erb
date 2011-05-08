@@ -1,8 +1,8 @@
 <ul class="browser">
   <h2>Series</h2>
-  <% collections.each do |collection| %>
-      <%= content_tag_for :li, collection do %>
-          <h3><%= link_to collection.title, collection %></h3>
+  <% booka_lines.each do |booka_line| %>
+      <%= content_tag_for :li, booka_line do %>
+          <h3><%= link_to booka_line.title, booka_line %></h3>
       <% end %>
   <% end %>
 </ul>

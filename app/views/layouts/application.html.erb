@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Booka</title>
+  <meta charset="utf-8"/>
+  <title><%= yield :title %>:: Plataformabooka.net</title>
+  <link href='http://fonts.googleapis.com/css?family=Tinos:regular,italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -21,9 +24,6 @@
             <br/>
             <%= link_to 'Salir', logout_path, :id => 'logout_link' %>
             <br/>
-            <% if current_user.admin? %>
-                <%= link_to '> Participantes', users_path %>
-            <% end %>
         <% else %>
             <%= link_to 'Iniciar sesion', login_path, :id => 'login_link' %>
             <br/>

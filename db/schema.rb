@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(:version => 20110508160944) do
 
-  create_table "collections", :force => true do |t|
-    t.string   "title",        :limit => 100
+  create_table "booka_lines", :force => true do |t|
+    t.string   "title",        :limit => 300
+    t.string   "slug",         :limit => 100
     t.string   "icon_path",    :limit => 256
     t.string   "content_type", :limit => 32
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "booka_lines", ["slug"], :name => "index_booka_lines_on_slug"
 
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
