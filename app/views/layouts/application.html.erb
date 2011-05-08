@@ -68,6 +68,7 @@
 
 <% if current_user && current_user.super? %>
     <div id="admin">
+      <%= link_to 'Notificationes', notifications_path %>
       <%= link_to 'Participantes', users_path %>
       <%= link_to 'Versiones', versions_path %>
     </div>

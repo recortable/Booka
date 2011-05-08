@@ -8,8 +8,11 @@ Booka::Application.routes.draw do
 
   resources :booka_lines, :path => 'series'
   resources :comments, :path => 'comentar'
+  resources :notifications, :path => 'actividad', :only => :index
 
-  resources :users, :path => 'participantes'
+
+  resources :users, :path => 'participantes' do
+  end
 
   scope '/admin' do
     resources :versions, :path => 'versiones'

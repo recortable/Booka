@@ -8,3 +8,7 @@
     <% end %>
 <% end %>
 
+<% user.notifications.each  do |n| %>
+    <%= render n.version %>
+<% end %>
+

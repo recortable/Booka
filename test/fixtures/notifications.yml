@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  version: 
+  project: 
+  should_be_emailed: false
+
+two:
+  user: 
+  version: 
+  project: 
+  should_be_emailed: false

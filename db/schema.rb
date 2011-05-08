@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508200938) do
+ActiveRecord::Schema.define(:version => 20110508225659) do
 
   create_table "booka_lines", :force => true do |t|
     t.string   "title",        :limit => 300
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(:version => 20110508200938) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notifications", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "version_id"
+    t.integer  "project_id"
+    t.boolean  "should_be_emailed"
+    t.datetime "event_at"
+  end
+
+  add_index "notifications", ["project_id"], :name => "index_notifications_on_project_id"
+  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"

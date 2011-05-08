@@ -52,7 +52,8 @@ if (User.count == 0)
   new_serie(admin, booka, 'Books à la carte', 'alacarte')
 
 
-  ccc = new_project(admin, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc')
+  ccc = new_project(paula, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc')
+  add_users(paula, ccc, [dani, paula, samuel])
   new_content(paula, ccc, 'De catedrales a contenedores', 'Jose María Galán', 'ccc/catedrales')
   new_content(paula, ccc, 'Arquitecturas colectivas', 'Santiago Cirugeda Parejo', 'ccc/colectivas')
   new_content(paula, ccc, 'Carta a los colectivos', 'Unai Reglero', 'ccc/carta')
@@ -61,6 +62,7 @@ if (User.count == 0)
   new_content(paula, ccc, 'Del trabajo autoorganizado a la reconstrucción del común', 'Judith Albors Casanova', 'ccc/trabajo')
   new_content(paula, ccc, 'Sinopsis temporal', '', 'ccc/sinopsis')
 
-  new_project(admin, rewrite, 'Genderless Architecture', 'genderless')
+  gender = new_project(paula, rewrite, 'Genderless Architecture', 'genderless')
+  add_users(paula, gender, [dani, paula, samuel])
 
 end

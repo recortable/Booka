@@ -3,29 +3,31 @@
     <% project = Project.find(version.project_id) %>
 
     <% if version.item_type == 'Project' %>
+        <%= link_to project.title, project, :class => 'project' %>
         <%= avatar_img user %>
         <%= user.name %>
-        ha <%= t("versions.version.#{version.event}") %> el proyecto '<%= version.title %>'
+        ha <%= t("versions.version.#{version.event}") %> el booka
     <% elsif version.item_type == 'Permission' %>
         <% modifier = User.find(version.title) %>
+        <%= link_to project.title, project, :class => 'project' %>
         <%= avatar_img modifier %>
         <%= modifier.name %>
         a anyadido a '<%= user.name %>'
-        al proyecto '<%= project.title %>'
     <% elsif version.item_type == 'Post' %>
+        <%= link_to project.title, project, :class => 'project' %>
         <%= avatar_img user %>
         <%= user.name %>
         ha añadido la entrada '<%= version.title %>'
-        al proyecto '<%= project.title %>'
     <% elsif version.item_type == 'BookaLine' %>
+        <%= link_to project.title, project, :class => 'project' %>
         <%= avatar_img user %>
         <%= user.name %>
         ha añadido la serie '<%= version.title %>'
     <% elsif version.item_type == 'Content' %>
+        <%= link_to project.title, project, :class => 'project' %>
         <%= avatar_img user %>
         <%= user.name %>
         ha añadido el contenido '<%= version.title %>'
-        al proyecto '<%= project.title %>'
     <% else %>
         <ul>
           <li><%= version.item_type %></li>
