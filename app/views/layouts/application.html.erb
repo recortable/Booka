@@ -17,7 +17,7 @@
       <div id="session">
         <%= link_to 'Plataformabooka.net', root_path %>
         <br/>
-        <%= link_to 'Ayuda', '/guia' %>
+        <%= link_to 'Ayuda', Project.first %>
         <br/>
         <% if current_user %>
             Hola, <%= link_to current_user.name, current_user %>

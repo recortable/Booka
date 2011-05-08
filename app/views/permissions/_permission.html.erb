@@ -1,0 +1,4 @@
+<%= div_for permission do %>
+    <%= avatar_img permission.user %>
+    <%= link_to permission.user.name, permission.user %> como <%= t("permissions.permission.level.#{permission.level}") %>
+<% end %>

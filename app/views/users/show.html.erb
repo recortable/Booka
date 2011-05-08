@@ -1,0 +1,10 @@
+<% title user.name %>
+
+<%= content_for :top do %>
+    <h1><%= avatar_img user, 64 %>&nbsp;<%= user.name %></h1>
+    <%= button_group do %>
+        <%= edit_button_link_to 'Editar perfil', [:edit, user] if can? :edit, user %>
+        <%= loop_button_link_to 'Suplantar personalidad', [:edit, user] if current_user && current_user.super? %>
+    <% end %>
+<% end %>
+

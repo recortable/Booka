@@ -8,15 +8,17 @@ Booka::Application.routes.draw do
 
   resources :booka_lines, :path => 'series'
   resources :comments, :path => 'comentar'
-  resources :posts, :path => 'paginas'
+
+  resources :users, :path => 'participantes'
 
   scope '/admin' do
     resources :versions, :path => 'versiones'
-    resources :users, :path => 'participantes'
   end
 
   resources :projects, :path => '' do
     resources :contents, :path => 'materiales'
+    resources :posts, :path => 'paginas'
+    resources :permissions, :path => 'participantes'
   end
 
 end

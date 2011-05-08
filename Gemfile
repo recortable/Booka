@@ -33,4 +33,5 @@ group :test do
   gem 'database_cleaner'
   gem 'capistrano'
   gem 'turn', :require => false
+  gem 'newrelic_rpm'
 end

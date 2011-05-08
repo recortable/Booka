@@ -6,6 +6,9 @@
           <span>|</span>
       <% end %>
     </ul>
+    <%= button_group do %>
+        <%= edit_button_link_to t('.edit'), [:edit, booka_line] if can? :edit, booka_line %>
+    <% end %>
 <% end %>
 
 <%= content_for :browser do %>

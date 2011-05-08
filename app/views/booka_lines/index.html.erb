@@ -1,11 +1,10 @@
-<% title 'Bienvenido a la plataforma booka' %>
 
 <%= content_for :top do %>
-    <h1><%= booka_page.title %></h1>
+    <%= title booka_page.title %>
     <h4>plataforma editorial abierta</h4>
     <%= button_group do %>
         <%= add_button_link_to 'Crear una serie', new_booka_line_path if can? :manage, BookaLine %>
-        <%= edit_button_link_to(t('.edit_welcome'), [:edit, booka_page]) if can? :edit, booka_page %>
+        <%= edit_button_link_to(t('.edit_welcome'), [:edit, booka_page.project, booka_page]) if can? :edit, booka_page %>
     <% end %>
 <% end %>
 

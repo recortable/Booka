@@ -12,6 +12,6 @@ class CommentsController < ApplicationController
     comment.project = resource.project
     authorize! :create, comment
     flash[:notice] = t('comments.notice.create') if comment.save
-    respond_with comment, :location => comment.resource
+    respond_with comment, :location => [comment.resource.project, comment.resource]
   end
 end

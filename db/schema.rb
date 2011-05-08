@@ -57,7 +57,8 @@ ActiveRecord::Schema.define(:version => 20110508200938) do
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
     t.integer  "project_id"
-    t.string   "level",      :limit => 16
+    t.integer  "last_modifier_id"
+    t.string   "level",            :limit => 16
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -105,15 +106,16 @@ ActiveRecord::Schema.define(:version => 20110508200938) do
   end
 
   create_table "versions", :force => true do |t|
-    t.string   "item_type",                 :null => false
-    t.integer  "item_id",                   :null => false
-    t.string   "event",                     :null => false
+    t.string   "item_type",                                    :null => false
+    t.integer  "item_id",                                      :null => false
+    t.string   "event",                                        :null => false
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
     t.integer  "project_id"
     t.integer  "user_id"
     t.string   "title",      :limit => 300
+    t.boolean  "notified",                  :default => false
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"

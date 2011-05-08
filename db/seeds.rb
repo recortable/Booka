@@ -17,6 +17,12 @@ def new_project(user, serie, title, name)
                   :content_type => 'text/markdown', :body => content("projects/#{name}.md"), :stages => 'intro')
 end
 
+def add_users(who, project, users)
+  users.each do |user|
+    project.permissions.create!(:user_id => user.id, :level => 'admin', :last_modifier_id => who.id)
+  end
+end
+
 def new_page(user, project, title, name)
   published = name.present?
   Post.create!(:title => title, :slug => name, :user_id => user.id, :published => published,
@@ -29,14 +35,15 @@ def new_content(user, project, title, author, name)
 end
 
 if (User.count == 0)
-  admin = User.create(:name => 'Admin', :email => 'admin@plataformabooka.net', :roles => 'admin')
-  User.create(:name => 'Anónimo', :email => 'anonymous@plataformabooka.net', :roles => 'anonymous')
-  User.create(:name => 'Visitante', :email => 'visitor@plataformabooka.net', :roles => '')
-  User.create(:name => 'Danigb', :email => 'danigb@gmail.com', :roles => 'super admin')
-  paula = User.create(:name => 'Paula', :email => 'alvarpau@gmail.com', :roles => 'admin')
-  User.create(:name => 'Samuel', :email => 'samuelgarciaperez@gmail.com', :roles => 'admin')
+  admin = User.create!(:name => 'Administrador', :email => 'admin@plataformabooka.net', :roles => 'admin')
+  User.create!(:name => 'Anónimo', :email => 'anonymous@plataformabooka.net', :roles => 'anonymous')
+  User.create!(:name => 'Visitante', :email => 'visitor@plataformabooka.net', :roles => '')
+  dani = User.create!(:name => 'Danigb', :email => 'danigb@gmail.com', :roles => 'super admin')
+  paula = User.create!(:name => 'Paula', :email => 'alvarpau@gmail.com', :roles => 'admin')
+  samuel = User.create!(:name => 'Samuel', :email => 'samuelgarciaperez@gmail.com', :roles => 'admin')
 
-  booka = new_project(admin, nil, 'Plataformabooka.net', 'booka')
+  booka = new_project(admin, nil, 'Guía Booka', 'booka')
+  add_users(admin, booka, [admin, dani, paula, samuel])
   new_page(admin, booka, 'Plataforma Booka', 'booka') # welcome page
 
 

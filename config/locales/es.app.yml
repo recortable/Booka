@@ -3,9 +3,11 @@ es:
     index:
       a: 'dd'
       edit_welcome: "Editar página de bienvenida"
+    show:
+      edit: "Modificar esta serie"
   projects:
     browser:
-      empty: "No hay ningún título publicado todavia"
+      empty: "No hay ningún título publicado todavia en esta serie"
       title: "Títulos"
     navigation:
       intro: "INTRO"
@@ -17,3 +19,12 @@ es:
       create: "Gracias por tu comentario!"
     comment:
       reply: "Responder"
+
+  versions:
+    version:
+      create: "creado"
+
+  permissions:
+    permission:
+      level:
+        admin: 'administrador del booka'

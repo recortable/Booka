@@ -1,9 +1,38 @@
 <%= div_for version do %>
-    <ul>
-      <li><%= version.item_type %></li>
-      <li><%= version.event %></li>
-      <li>Project: <%= link_to version.project_id, project_path(version.project_id) %></li>
-      <li>User: <%= link_to version.user_id, user_path(version.user_id) %></li>
-      <li><%= version.title %></li>
-    </ul>
+    <% user = User.find(version.user_id) %>
+    <% project = Project.find(version.project_id) %>
+
+    <% if version.item_type == 'Project' %>
+        <%= avatar_img user %>
+        <%= user.name %>
+        ha <%= t("versions.version.#{version.event}") %> el proyecto '<%= version.title %>'
+    <% elsif version.item_type == 'Permission' %>
+        <% modifier = User.find(version.title) %>
+        <%= avatar_img modifier %>
+        <%= modifier.name %>
+        a anyadido a '<%= user.name %>'
+        al proyecto '<%= project.title %>'
+    <% elsif version.item_type == 'Post' %>
+        <%= avatar_img user %>
+        <%= user.name %>
+        ha añadido la entrada '<%= version.title %>'
+        al proyecto '<%= project.title %>'
+    <% elsif version.item_type == 'BookaLine' %>
+        <%= avatar_img user %>
+        <%= user.name %>
+        ha añadido la serie '<%= version.title %>'
+    <% elsif version.item_type == 'Content' %>
+        <%= avatar_img user %>
+        <%= user.name %>
+        ha añadido el contenido '<%= version.title %>'
+        al proyecto '<%= project.title %>'
+    <% else %>
+        <ul>
+          <li><%= version.item_type %></li>
+          <li><%= version.event %></li>
+          <li>Project: <%= link_to version.project_id, project_path(version.project_id) %></li>
+          <li>User: <%= link_to version.user_id, user_path(version.user_id) %></li>
+          <li><%= version.title %></li>
+        </ul>
+    <% end %>
 <% end %>

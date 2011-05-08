@@ -1,7 +1,10 @@
 class Project < ActiveRecord::Base
   belongs_to :booka_line
   belongs_to :user
+  has_many :posts
   has_many :contents
+  has_many :permissions
+  has_many :users, :through => :permissions
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },
