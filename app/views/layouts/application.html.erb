@@ -2,13 +2,70 @@
 <html>
 <head>
   <title>Booka</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="page">
+  <%= content_tag :div, flash[:notice], :id => "flash_notice" %>
+  <div class="row24">
+    <div class="col-left">
+      <div id="session">
+        <%= link_to 'Plataformabooka.net', root_path %>
+        <br/>
+        <%= link_to 'Ayuda', '/booka' %>
+        <br/>
+        <% if current_user %>
+            Hola, <%= link_to current_user.name, current_user %>
+            <br/>
+            <%= link_to 'Salir', logout_path, :id => 'logout_link' %>
+            <br/>
+            <% if current_user.admin? %>
+                <%= link_to '> Participantes', users_path %>
+            <% end %>
+        <% else %>
+            <%= link_to 'Iniciar sesion', login_path, :id => 'login_link' %>
+            <br/>
+        <% end %>
+      </div>
+    </div>
+    <div id="header" class="col-main">
+      <%= render(:partial => 'series/header', :locals => {:serie => project.serie}) if project? %>
+      <% if project? %>
+          <h1><%= project.title %></h1>
+          <%= render_project_nav(project) %>
+      <% end %>
+      <%= yield :top %>
+    </div>
+  </div>
 
-<%= yield %>
+  <% if default_layout? %>
+      <div class="row24">
+        <div id="browser" class="col-left">
+          <%= yield :browser %>&nbsp;
+        </div>
+        <div class="col-center">
+          <%= yield %>
+        </div>
+        <div id="info" class="col-right">
+          <%= yield :info %>&nbsp;
+        </div>
+      </div>
+  <% else %>
+      <%= yield %>
+  <% end %>
+
+
+  <div class="row24">
+    <div class="col-left">&nbsp;</div>
+    <div id="contact" class="col-center">Ediciones Vib[]k 2011 | C / Dinastía Músicos Palatín 9 - 4ºC | 41008 Sevilla
+      | España | 34 954 31 63 48 | info@edicionesvibok.net
+    </div>
+    <div class="col-right">&nbsp;</div>
+  </div>
+</div>
+
 
 </body>
 </html>

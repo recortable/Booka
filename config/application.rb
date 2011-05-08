@@ -28,7 +28,7 @@ module Booka
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :es
 
     # Please note that JavaScript expansions are *ignored altogether* if the asset
     # pipeline is enabled (see config.assets.enabled below). Put your defaults in
@@ -49,5 +49,10 @@ module Booka
 
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    config.to_prepare do
+      Dir[Rails.root + 'lib/controllers/*.rb'].each { |f| load File.expand_path(f) }
+      Dir[Rails.root + 'lib/models/*.rb'].each { |f| load File.expand_path(f) }
+    end
   end
 end

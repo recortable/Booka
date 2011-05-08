@@ -1,0 +1,22 @@
+<% title 'Bienvenido a la plataforma booka' %>
+
+<%= content_for :top do %>
+    <h1>booka</h1>
+    <h4>plataforma editorial abierta</h4>
+    <%= button_group do %>
+        <%= add_button_link_to 'Crear una serie', new_collection_path if can? :manage, Collection %>
+        <%#= edit_button_link_to('Editar pagina', edit_page_path(page)) if can? :edit, page %>
+    <% end %>
+<% end %>
+
+
+<%= content_for :browser do %>
+    <%= link_to image_tag('iconos/booka.png'), root_path %>
+    <%= render :partial => 'browser' %>
+<% end %>
+
+
+<%= content_for :info do %>
+<% end %>
+
+
