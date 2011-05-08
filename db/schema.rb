@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508160944) do
+ActiveRecord::Schema.define(:version => 20110508192002) do
 
   create_table "booka_lines", :force => true do |t|
     t.string   "title",        :limit => 300
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20110508160944) do
   end
 
   add_index "booka_lines", ["slug"], :name => "index_booka_lines_on_slug"
+
+  create_table "contents", :force => true do |t|
+    t.string   "title",        :limit => 300
+    t.string   "author",       :limit => 100
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "body"
+    t.string   "content_type", :limit => 32
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "permissions", :force => true do |t|
     t.integer  "user_id"
@@ -38,28 +49,33 @@ ActiveRecord::Schema.define(:version => 20110508160944) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.string   "content_type"
+    t.string   "content_type", :limit => 32
     t.integer  "user_id"
     t.integer  "project_id"
-    t.boolean  "published"
+    t.boolean  "published",                  :default => true
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "posts", ["project_id"], :name => "index_posts_on_project_id"
+  add_index "posts", ["slug"], :name => "index_posts_on_slug"
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "title",         :limit => 300
-    t.string   "description",   :limit => 512
+    t.string   "slug",          :limit => 100
+    t.text     "body"
+    t.string   "content_type",  :limit => 32
     t.string   "stages",        :limit => 32
-    t.integer  "collection_id"
+    t.integer  "booka_line_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "projects", ["collection_id"], :name => "index_projects_on_collection_id"
+  add_index "projects", ["booka_line_id"], :name => "index_projects_on_booka_line_id"
+  add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name",       :limit => 100
@@ -70,14 +86,15 @@ ActiveRecord::Schema.define(:version => 20110508160944) do
   end
 
   create_table "versions", :force => true do |t|
-    t.string   "item_type",  :null => false
-    t.integer  "item_id",    :null => false
-    t.string   "event",      :null => false
+    t.string   "item_type",                 :null => false
+    t.integer  "item_id",                   :null => false
+    t.string   "event",                     :null => false
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
     t.integer  "project_id"
     t.integer  "user_id"
+    t.string   "title",      :limit => 300
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"

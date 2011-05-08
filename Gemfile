@@ -21,6 +21,7 @@ gem 'carrierwave'
 
 gem 'ancestry'
 gem 'paper_trail'
+gem 'rdiscount'
 
 gem 'exception_notification'
 

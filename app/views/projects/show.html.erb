@@ -1,0 +1,8 @@
+<% title project.title %>
+
+<%= content_for :browser do %>
+    <%= render :partial => 'projects/browser', :locals => {:booka_line => project.booka_line} %>
+<% end %>
+
+
+<%= render_body project %>

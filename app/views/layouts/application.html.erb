@@ -17,7 +17,7 @@
       <div id="session">
         <%= link_to 'Plataformabooka.net', root_path %>
         <br/>
-        <%= link_to 'Ayuda', '/booka' %>
+        <%= link_to 'Ayuda', '/guia' %>
         <br/>
         <% if current_user %>
             Hola, <%= link_to current_user.name, current_user %>
@@ -31,10 +31,10 @@
       </div>
     </div>
     <div id="header" class="col-main">
-      <%= render(:partial => 'series/header', :locals => {:serie => project.serie}) if project? %>
       <% if project? %>
+          <%= render(:partial => 'booka_lines/header', :locals => {:booka_line => project.booka_line}) %>
           <h1><%= project.title %></h1>
-          <%= render_project_nav(project) %>
+          <%= render :partial => 'projects/navigation', :locals => {:project => project} %>
       <% end %>
       <%= yield :top %>
     </div>
@@ -44,6 +44,7 @@
       <div class="row24">
         <div id="browser" class="col-left">
           <%= yield :browser %>&nbsp;
+          <%= image_tag 'logos/LOGO-VIBOK.png', :alt => 'vibok', :id => 'logo-vibok' %>
         </div>
         <div class="col-center">
           <%= yield %>
@@ -56,7 +57,6 @@
       <%= yield %>
   <% end %>
 
-
   <div class="row24">
     <div class="col-left">&nbsp;</div>
     <div id="contact" class="col-center">Ediciones Vib[]k 2011 | C / Dinastía Músicos Palatín 9 - 4ºC | 41008 Sevilla
@@ -65,6 +65,13 @@
     <div class="col-right">&nbsp;</div>
   </div>
 </div>
+
+<% if current_user && current_user.super? %>
+    <div id="admin">
+      <%= link_to 'Participantes', users_path %>
+      <%= link_to 'Versiones', versions_path %>
+    </div>
+<% end %>
 
 
 </body>

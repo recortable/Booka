@@ -8,8 +8,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def default_layout?
-    #self.class != ContentsController
-    true
+    self.class != ContentsController
   end
 
   def project?

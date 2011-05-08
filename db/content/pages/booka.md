@@ -1,0 +1,8 @@
+## ¡Bienvenidos a Booka!
+Booka es una plataforma abierta para crear conocimiento y pensamiento combinando la edición tradicional y la tecnología de redes. Cada una de sus series es un laboratorio de publicación que desarrolla una modalidad específica de cruzar el libro impreso y los new media.
+
+Booka ofrece un conjunto de herramientas para que lectores, autores, editores y promotores de los libros puedan intervenir activa y eficazmente en la edición y generación de contenido, incluyendo procesos de intercambio post-imprenta y post-distribución. El resultado son ediciones vivas y colaborativas que crecen y evolucionan con el tiempo, con contenidos de rigor y calidad ensamblados en un entorno permeable y fácil de explorar.
+
+En Booka el trabajo de edición es el eje motor que orienta y centra procesos de construcción colectiva del conocimiento. Nuestra misión es convertir los libros en plataformas de investigación, conexión y cooperación, generando riqueza colectiva en los procesos de gestión, producción y difusión cultural asociados a la edición.
+
+Booka se lanza en versión beta como soporte para Ediciones Vibok, editorial de arquitectura que desarrollará su trabajo sobre esta plataforma, volcando en ella sus contenidos e invitando a otros a participar. Los prototipos generados están basados en código libre y son exportables, de forma que la tecnología pueda dar servicio a otros nichos de generación de conocimiento interesados en dotar de este formato abierto a su producción. Si quieres saber más, contáctanos en info.vibok@gmail.com

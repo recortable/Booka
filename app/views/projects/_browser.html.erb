@@ -1,0 +1,12 @@
+<ul class="browser">
+  <% if booka_line.present? %>
+      <%= link_to image_tag(booka_line.icon_path, :alt => booka_line.title), root_path %>
+      <h2><%= t('.title') %></h2>
+      <% booka_line.projects.each do |project| %>
+          <%= content_tag_for :li, project do %>
+              <h3><%= link_to project.title, project %></h3>
+          <% end %>
+      <% end %>
+      <%= content_tag(:p, t('.empty')) if booka_line.projects.size == 0 %>
+  <% end %>
+</ul>

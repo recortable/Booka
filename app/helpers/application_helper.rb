@@ -12,6 +12,8 @@ module ApplicationHelper
     if model.body.blank?
       title = model.respond_to?(:title) ? model.title :  'esta página'
       content_tag :div, "<De momento '#{title}' no tiene contenido>", :class => 'body'
+    elsif model.content_type == 'text/markdown'
+      content_tag :div, RDiscount.new(model.body, :smart).to_html.html_safe, :class => 'body'
     elsif model.content_type == 'text/html'
       content_tag :div, model.body.html_safe, :class => 'body'
     else

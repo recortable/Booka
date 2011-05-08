@@ -9,6 +9,7 @@ class CreateVersions < ActiveRecord::Migration
       t.datetime :created_at
       t.integer :project_id
       t.integer :user_id
+      t.string :title, :limit => 300
     end
     add_index :versions, [:item_type, :item_id]
     add_index :versions, :project_id

@@ -1,1 +1,10 @@
 es:
+  projects:
+    browser:
+      empty: "No hay ningún título publicado todavia"
+      title: "Títulos"
+    navigation:
+      intro: "INTRO"
+      forum: "EDICION"
+      users: "PARTICIPANTES"
+  contents: "MATERIALES"

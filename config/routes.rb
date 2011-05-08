@@ -7,6 +7,14 @@ Booka::Application.routes.draw do
   match "/enter/:id" => "sessions#enter", :as => :enter
 
   resources :booka_lines, :path => 'series'
-  resources :users, :path => 'participantes'
+
+  scope '/admin' do
+    resources :versions, :path => 'versiones'
+    resources :users, :path => 'participantes'
+  end
+
+  resources :projects, :path => '' do
+    resources :contents, :path => 'materiales'
+  end
 
 end

@@ -1,0 +1,9 @@
+<%= div_for version do %>
+    <ul>
+      <li><%= version.item_type %></li>
+      <li><%= version.event %></li>
+      <li>Project: <%= link_to version.project_id, project_path(version.project_id) %></li>
+      <li>User: <%= link_to version.user_id, user_path(version.user_id) %></li>
+      <li><%= version.title %></li>
+    </ul>
+<% end %>

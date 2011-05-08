@@ -1,0 +1,7 @@
+<h2><%= booka_line.title %></h2>
+<ul class="navigator">
+  <% BookaLine.all.each do |booka_line| %>
+      <li><%= link_to_unless_current booka_line.title, booka_line %></li>
+      <span>|</span>
+  <% end %>
+</ul>

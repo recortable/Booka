@@ -1,7 +1,7 @@
 <% title 'Bienvenido a la plataforma booka' %>
 
 <%= content_for :top do %>
-    <h1>booka</h1>
+    <h1><%= booka_page.title %></h1>
     <h4>plataforma editorial abierta</h4>
     <%= button_group do %>
         <%= add_button_link_to 'Crear una serie', new_booka_line_path if can? :manage, BookaLine %>
@@ -15,6 +15,7 @@
     <%= render :partial => 'booka_lines/browser' %>
 <% end %>
 
+<%= render_body booka_page %>
 
 <%= content_for :info do %>
 <% end %>
