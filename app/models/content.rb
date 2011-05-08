@@ -1,6 +1,7 @@
 class Content < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
+  acts_as_list :scope => :project_id
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },

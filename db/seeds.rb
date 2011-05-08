@@ -5,8 +5,9 @@ def content(file)
   File.read(path)
 end
 
-def new_serie(title, name)
+def new_serie(user, project, title, name)
   BookaLine.create!(:title => title, :slug => name, :icon_path => "/assets/iconos/#{name}.png",
+                    :user_id => user.id, :project_id => project,
                     :body => content("series/#{name}.md"), :content_type => 'text/markdown')
 end
 
@@ -19,12 +20,12 @@ end
 def new_page(user, project, title, name)
   published = name.present?
   Post.create!(:title => title, :slug => name, :user_id => user.id, :published => published,
-  :content_type => 'text/markdown', :body => content("pages/#{name}.md"), :project_id => project.id)
+               :content_type => 'text/markdown', :body => content("pages/#{name}.md"), :project_id => project.id)
 end
 
 def new_content(user, project, title, author, name)
   Content.create(:user_id => user.id, :project_id => project.id, :title => title, :author => author,
-  :content_type => 'text/markdown', :body => content("content/#{name}.md"))
+                 :content_type => 'text/markdown', :body => content("content/#{name}.md"))
 end
 
 if (User.count == 0)
@@ -35,12 +36,14 @@ if (User.count == 0)
   paula = User.create(:name => 'Paula', :email => 'alvarpau@gmail.com', :roles => 'admin')
   User.create(:name => 'Samuel', :email => 'samuelgarciaperez@gmail.com', :roles => 'admin')
 
-  rewrite = new_serie('Re-write this book', 'rewrite')
-  new_serie('Networked Books', 'networked')
-  new_serie('Books à la carte', 'alacarte')
+  booka = new_project(admin, nil, 'Plataformabooka.net', 'booka')
+  new_page(admin, booka, 'Plataforma Booka', 'booka') # welcome page
 
-  guia = new_project(admin, nil, 'Plataformabooka.net', 'guia')
-  new_page(admin, guia, 'Plataforma Booka', 'booka')
+
+  rewrite = new_serie(admin, booka, 'Re-write this book', 'rewrite')
+  new_serie(admin, booka, 'Networked Books', 'networked')
+  new_serie(admin, booka, 'Books à la carte', 'alacarte')
+
 
   ccc = new_project(admin, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc')
   new_content(paula, ccc, 'De catedrales a contenedores', 'Jose María Galán', 'ccc/catedrales')

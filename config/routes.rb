@@ -7,6 +7,8 @@ Booka::Application.routes.draw do
   match "/enter/:id" => "sessions#enter", :as => :enter
 
   resources :booka_lines, :path => 'series'
+  resources :comments, :path => 'comentar'
+  resources :posts, :path => 'paginas'
 
   scope '/admin' do
     resources :versions, :path => 'versiones'

@@ -3,6 +3,7 @@ class CreateContents < ActiveRecord::Migration
     create_table :contents do |t|
       t.string :title, :limit => 300
       t.string :author, :limit => 100
+      t.integer :position
       t.belongs_to :user
       t.belongs_to :project
       t.text :body

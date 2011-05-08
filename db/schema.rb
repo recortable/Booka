@@ -10,13 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508192002) do
+ActiveRecord::Schema.define(:version => 20110508200938) do
 
   create_table "booka_lines", :force => true do |t|
     t.string   "title",        :limit => 300
     t.string   "slug",         :limit => 100
     t.string   "icon_path",    :limit => 256
     t.string   "content_type", :limit => 32
+    t.integer  "user_id"
+    t.integer  "project_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -24,9 +26,26 @@ ActiveRecord::Schema.define(:version => 20110508192002) do
 
   add_index "booka_lines", ["slug"], :name => "index_booka_lines_on_slug"
 
+  create_table "comments", :force => true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.string   "ancestry"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+  add_index "comments", ["resource_id"], :name => "index_comments_on_resource_id"
+  add_index "comments", ["resource_type"], :name => "index_comments_on_resource_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "contents", :force => true do |t|
     t.string   "title",        :limit => 300
     t.string   "author",       :limit => 100
+    t.integer  "position"
     t.integer  "user_id"
     t.integer  "project_id"
     t.text     "body"

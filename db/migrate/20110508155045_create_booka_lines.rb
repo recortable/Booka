@@ -5,6 +5,8 @@ class CreateBookaLines < ActiveRecord::Migration
       t.string :slug, :limit => 100
       t.string :icon_path, :limit => 256
       t.string :content_type, :limit => 32
+      t.belongs_to :user
+      t.belongs_to :project
       t.text :body
       t.timestamps
     end

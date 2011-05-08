@@ -1,0 +1,21 @@
+
+$c-blue: #29256a;
+$b-dot: 1px dotted $c-blue;
+
+
+div.discussion {
+    margin-top: 2em; padding-top: 1em;
+    border-top: $b-dot;
+    form {
+        width: 100%; overflow: hidden;
+        label {display:none;}
+        textarea {float: left; height: 3em; width: 78%; margin-right: 2%;}
+        input[type=submit] {width: 20%;}
+    }
+
+    .nested_comments {
+        margin: 0.5em 0 0.5em 1em;
+        .reply {;}
+    }
+
+}

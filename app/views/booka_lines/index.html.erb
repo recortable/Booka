@@ -5,7 +5,7 @@
     <h4>plataforma editorial abierta</h4>
     <%= button_group do %>
         <%= add_button_link_to 'Crear una serie', new_booka_line_path if can? :manage, BookaLine %>
-        <%#= edit_button_link_to('Editar pagina', edit_page_path(page)) if can? :edit, page %>
+        <%= edit_button_link_to(t('.edit_welcome'), [:edit, booka_page]) if can? :edit, booka_page %>
     <% end %>
 <% end %>
 
@@ -16,7 +16,7 @@
 <% end %>
 
 <%= render_body booka_page %>
-
+<%= render :partial => 'comments/comments', :locals => {:comment => new_page_comment} %>
 <%= content_for :info do %>
 <% end %>
 

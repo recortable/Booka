@@ -1,4 +1,8 @@
 es:
+  booka_lines:
+    index:
+      a: 'dd'
+      edit_welcome: "Editar página de bienvenida"
   projects:
     browser:
       empty: "No hay ningún título publicado todavia"
@@ -8,3 +12,8 @@ es:
       forum: "EDICION"
       users: "PARTICIPANTES"
   contents: "MATERIALES"
+  comments:
+    notice:
+      create: "Gracias por tu comentario!"
+    comment:
+      reply: "Responder"
