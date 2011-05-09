@@ -13,13 +13,10 @@ Booka::Application.routes.draw do
 
   resources :users, :path => 'participantes' do
   end
+  resources :versions, :path => 'ver', :only => [:index, :show]
 
-  scope '/admin' do
-    resources :versions, :path => 'versiones'
-  end
 
-  path = Rails.env.production? ? '' : 'p'
-  resources :projects, :path => path do
+  resources :projects, :path => '' do
     resources :contents, :path => 'materiales'
     resources :posts, :path => 'entrada'
     resources :permissions, :path => 'comunidad'

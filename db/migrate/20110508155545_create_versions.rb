@@ -10,6 +10,7 @@ class CreateVersions < ActiveRecord::Migration
       t.integer :project_id
       t.integer :user_id
       t.string :title, :limit => 300
+      t.string :sub_type, :limit => 64
       t.boolean :notified, :default => false
     end
     add_index :versions, [:item_type, :item_id]

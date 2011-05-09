@@ -1,12 +1,14 @@
 <%= content_for :top do %>
     <%= title t('.title') %>
     <%= button_group do %>
-        <%= add_button_link_to t('topics.index.new_topic'), [:new, project, :topic] if can? :manage, project%>
+        <%= add_button_link_to t('topics.index.new_topic'), [:new, project, :topic] if can? :manage, project %>
     <% end %>
 <% end %>
 
 <%= content_for :browser do %>
     <h2>Acuerdos alcanzados</h2>
+    <%#= content_tag(:p, t('.empty_agreements')) if agreements.size == 0 %>
+
 <% end %>
 
 <div class="topics">
@@ -17,4 +19,10 @@
 
 <%= content_for :info do %>
     <h2>Tareas pendientes</h2>
+    <ul>
+      <% tasks.each do |task| %>
+          <li><%= link_to task.title, project_topic_path(project, task.topic, :anchor => "task_#{task.id}") %></li>
+      <% end %>
+    </ul>
+    <%= content_tag(:p, t('.empty_tasks')) if tasks.size == 0 %>
 <% end %>

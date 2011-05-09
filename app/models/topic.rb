@@ -1,6 +1,7 @@
 class Topic < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
+  has_many :responses
   has_many :comments, :as => :resource
 
   has_paper_trail(:meta => {

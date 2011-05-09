@@ -4,6 +4,10 @@ class TopicsController < ApplicationController
   expose(:topics) { project.topics }
   expose(:topic)
   expose(:new_comment) { Comment.new(:resource => topic)}
+  expose(:responses) { topic.responses }
+  expose(:tasks) do
+    params[:id].present? ? responses.select {|r| r.type == 'Task' } : project.responses.tasks
+  end
 
   def index
     authorize! :read, Topic

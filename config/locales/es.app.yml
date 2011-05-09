@@ -46,6 +46,10 @@ es:
         BookaLine:
           create: 'creado la serie'
           update: 'modificado la serie'
+        Task:
+          create: 'creado la tarea'
+        Response:
+          create: 'RESPONSE'
 
   permissions:
     permission:
@@ -60,6 +64,7 @@ es:
       empty: "No hay ningún tema abierto, de momento."
       new_topic: "Añadir un tema de discusón"
       topics: "Temas de discusión activos"
+      empty_tasks: "No hay ninguna tarea pendiente en este booka."
     show:
       new_proposal: "Añadir una altarnativa"
       new_agreement: "Añadir un acuerdo"

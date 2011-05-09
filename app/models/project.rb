@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
   has_many :posts
   has_many :contents
   has_many :topics
+  has_many :responses
   has_many :permissions
   has_many :users, :through => :permissions
   has_many :assets

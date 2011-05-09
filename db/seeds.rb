@@ -30,12 +30,22 @@ end
 
 def new_content(user, project, title, author, name)
   Content.create!(:user_id => user.id, :project_id => project.id, :title => title, :author => author,
-                 :content_type => 'text/markdown', :body => content("content/#{name}.md"))
+                  :content_type => 'text/markdown', :body => content("content/#{name}.md"))
 end
 
 def new_asset(user, content, title, url)
   Asset.create!(:user_id => user.id, :project_id => content.project_id, :title => title,
                 :url_file => url, :resource => content)
+end
+
+def new_topic(user, project, title, name)
+  Topic.create(:user_id => user.id, :project_id => project.id, :title => title,
+               :content_type => 'text/markdown', :body => content("topics/#{name}.md"))
+end
+
+def new_task(user, topic, title, body)
+  Task.create!(:user => user, :topic => topic, :project => topic.project,
+               :title => title, :content_type => 'text/markdown', :body => body)
 end
 
 if (User.count == 0)
@@ -50,6 +60,9 @@ if (User.count == 0)
   booka = new_project(admin, nil, 'Guía Booka', 'booka', 'topics pages')
   add_users(admin, booka, [admin, dani, paula, samuel])
   new_post(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
+
+  topic = new_topic(dani, booka, 'Creación de la guía', 'booka/guia')
+  new_task(dani, topic, 'Crear la página "Qué es Booka"', 'Necesitamos una página para explicar el proyecto.')
 
 
   rewrite = new_serie(admin, booka, 'Re-write this book', 'rewrite')

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509095622) do
+ActiveRecord::Schema.define(:version => 20110509111315) do
 
   create_table "assets", :force => true do |t|
     t.string   "title",         :limit => 100
@@ -129,6 +129,22 @@ ActiveRecord::Schema.define(:version => 20110509095622) do
   add_index "projects", ["booka_line_id"], :name => "index_projects_on_booka_line_id"
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
+  create_table "responses", :force => true do |t|
+    t.string   "type",         :limit => 16
+    t.string   "title",        :limit => 100
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "topic_id"
+    t.string   "content_type", :limit => 32
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "responses", ["project_id"], :name => "index_responses_on_project_id"
+  add_index "responses", ["topic_id"], :name => "index_responses_on_topic_id"
+  add_index "responses", ["user_id"], :name => "index_responses_on_user_id"
+
   create_table "topics", :force => true do |t|
     t.string   "title",        :limit => 300
     t.integer  "user_id"
@@ -160,6 +176,7 @@ ActiveRecord::Schema.define(:version => 20110509095622) do
     t.integer  "project_id"
     t.integer  "user_id"
     t.string   "title",      :limit => 300
+    t.string   "sub_type",   :limit => 64
     t.boolean  "notified",                  :default => false
   end
 

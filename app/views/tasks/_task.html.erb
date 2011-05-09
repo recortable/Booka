@@ -1,0 +1,8 @@
+<%= div_for task do %>
+    <%= user_action task.user, task.created_at %>
+    <h2><%= task.title %></h2>
+    <%= render_body task %>
+    <div class="nested-comments">
+      <%= render :partial => 'comments/comments', :locals => {:comment => Comment.new(:resource => task)} %>
+    </div>
+<% end %>

@@ -1,6 +1,7 @@
 /** VERSIONS **/
 div.version  {
-    margin: 3px 0;
+    margin: 0.5em 0;
+    padding: 0.5em 0;
 
     a.project {display:block; margin-bottom:2px;}
     img {margin-left: 10px;}
@@ -8,4 +9,5 @@ div.version  {
     ul {width:100%;overflow:hidden;}
     ul li {float: left; margin-right:1em;}
     div.model {margin-left: 2em;}
+    strong {font-weight:bold;}
 }
