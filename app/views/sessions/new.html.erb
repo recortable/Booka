@@ -1,0 +1,24 @@
+<% title t('.title') %>
+<%= content_for :top do %>
+    <h2><%= t('.title') %></h2>
+    <h1>Plataforma Booka</h1>
+<% end %>
+
+<div class="login-services">
+  <h1>¿Has entrado previamente en Plataforma Booka?</h1>
+
+  <p>Si es así, utiliza alguno de estos servicios para identificarte:</p>
+</div>
+
+<div class="new-invitation">
+  <h1>¿Eres nuevx por aquí?</h1>
+
+  <p>Si nunca has entrado, o no recuerdas cómo entraste, escribe tu email aquí y te enviaremos las instrucciones:</p>
+  <%= form_tag(invitations_path) do |form| %>
+      <div class="input required">
+        <label>Correo electrónico:</label>
+        <%= text_field_tag :email %>
+      </div>
+      <%= button_submit_tag 'Enviar instrucciones' %>
+  <% end %>
+</div>

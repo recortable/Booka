@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   has_many :projects, :through => :permissions
   has_many :notifications, :order => 'event_at DESC'
 
+  def code
+    Digest::MD5.hexdigest(email.to_s)
+  end
 end

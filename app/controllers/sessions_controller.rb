@@ -1,4 +1,10 @@
+# encoding: utf-8
+
 class SessionsController < ApplicationController
+
+  def new
+
+  end
 
   def enter
     self.current_user = User.find params[:id]

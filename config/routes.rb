@@ -9,7 +9,7 @@ Booka::Application.routes.draw do
   resources :booka_lines, :path => 'series'
   resources :comments, :path => 'comentar'
   resources :notifications, :path => 'actividad', :only => :index
-
+  resources :invitations, :path => 'invitacion', :only => :create
 
   resources :users, :path => 'participantes' do
   end

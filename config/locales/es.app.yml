@@ -89,3 +89,9 @@ es:
   pages:
     show:
       browser: "Índice"
+  sessions:
+    new:
+      title: "Iniciar sesión"
+  invitations:
+    create:
+      title: "Invitaciones"

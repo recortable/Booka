@@ -1,0 +1,12 @@
+<% content_for :top do %>
+    <h2><%= t('.title') %></h2>
+    <h1>Plataforma Booka</h1>
+<% end %>
+
+<% if user %>
+    <h1>Hola <%= user.name %>,</h1>
+    <p>Las instrucciones para entrar han sido enviadas a tu correo electrónico.</p>
+<% else %>
+    <h1>Hay un problema con tu dirección de correo: <%= email %></h1>
+    <p>Tu dirección de correo parece que no es válida. Inténtalo de nuevo</p>
+<% end %>
