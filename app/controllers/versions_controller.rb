@@ -14,6 +14,10 @@ class VersionsController < ApplicationController
               project_path(project)
             when 'BookaLine'
               booka_line_path(BookaLine.find(version.item_id))
+            when 'Comment'
+
+            when 'Content'
+              project_content_path(project, Content.find(version.item_id))
             when 'Topic'
               project_topic_path(project, Topic.find(version.item_id))
             when 'Post'

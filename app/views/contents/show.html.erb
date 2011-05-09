@@ -2,7 +2,7 @@
 
 <%= content_for :top do %>
     <h1><%= content.title %></h1>
-    <h2 class="author"><%= content.author %></h2>
+    <%= content_tag :h2, content.author, :class => 'author' if content.author.present? %>
     <%= button_group do %>
         <%= edit_button_link_to t('.edit_content'), [:edit, project, content] if can? :edit, content %>
         <%= add_button_link_to t('.add_content_asset'), new_project_asset_path(project, :c => content.id) if can? :manage, content %>
@@ -11,7 +11,6 @@
 
 <div class="row24">
   <div id="browser" class="col-left">
-    <%= link_to image_tag('iconos/libro.png'), project %>
     <%= render :partial => 'contents/browser', :locals => {:project => project} %>
   </div>
   <div class="col-center-left content">
