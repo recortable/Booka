@@ -9,7 +9,7 @@ class BookaLinesController < ApplicationController
   expose(:logo) { "/assets/iconos/booka.png" }
 
   def index
-    authorize! :read, BookaLine
+#    authorize! :read, BookaLine
   end
 
   def show

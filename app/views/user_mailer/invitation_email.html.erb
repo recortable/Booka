@@ -1,15 +1,15 @@
 <%= ph(:h2, 'Plataforma Booka') %>
-<%= ph(:h1, 'Instrucciones para acceder.') %>
+<%= ph(:h1, 'Has sido invitadx a colaborar en Plataforma Booka.') %>
 <%= ppara do %>
     Has solicitado (esperemos que tu mismx) una invitacion para entrar en
-    <%= plink 'Plataformabooka', 'http://plataformabooka.net' %>
+    <%= plink 'http://plataformabooka.net', @host %>
 <% end %>
 <%= ppara do %>
-    Para completar el proceso de entrada, pincha en este enlace:<br/>
-    <%= plink 'Completar registro', @url %>
+    Para completar el proceso de entrada, pincha en el enlace
+    <%= plink 'completar registro', @url %>
 <% end %>
 <%= ppara do %>
-    Esperamos que te sea una herramienta de edición útil.
+    Esperamos que te sea una herramienta útil.
 <% end %>
 <%= ppara do %>
     Atentamente,<br/>El equipo de Plataforma Booka.

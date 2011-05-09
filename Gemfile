@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.beta1'
 gem 'sqlite3'
+gem 'mysql2'
 
 # Asset template engines
 gem 'sass'
@@ -25,13 +26,13 @@ gem 'acts_as_list'
 gem 'rdiscount'
 
 gem 'exception_notification'
+#gem 'newrelic_rpm'
 
-group :test do
+group :test, :development do
   # Pretty printed test output
-  gem 'mysql2'
+  gem 'ruby-debug19'
   gem 'test-unit'
   gem 'database_cleaner'
   gem 'capistrano'
   gem 'turn', :require => false
-  gem 'newrelic_rpm'
 end

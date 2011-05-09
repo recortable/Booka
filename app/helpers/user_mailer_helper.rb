@@ -1,13 +1,14 @@
 module UserMailerHelper
-
+  FONT = "font-family:'HelveticaNeue',Helvetica,Arial,sans-serif"
   BLUE = '#29256a'
   GRAY = '#a0a1b5'
   GREEN = '#0f0'
 
   STYLES = {
-      'p' => "color: #{BLUE}; font-size: 90%; margin: 1em 0;",
-      'a' => "color: #{GREEN}; text-decoration: none;",
-      'h2' => "color: #{BLUE}; font-size: 150%;"
+      'p' => "#{FONT};color: #{BLUE}; font-size: 90%; margin: 1em 0;",
+      'a' => "#{FONT};color: #{GREEN}; text-decoration: none;",
+      'h2' => "#{FONT};color: #{BLUE}; font-size: 120%;",
+      'h1' => "#{FONT};color: #{BLUE}; font-size: 150%;"
   }
 
   def ph(tag, content)
