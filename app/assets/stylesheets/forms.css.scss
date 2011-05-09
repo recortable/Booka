@@ -1,0 +1,14 @@
+/* FORMS **/
+form {
+    div.input {
+        width: 100%; overflow:hidden;
+        margin-bottom: 10px;
+
+        label {display:block;}
+        span.hint {display:block;color:gray;}
+
+        input[type=text], textarea {width: 80%; border: 1px solid gray; padding: 2px;}
+    }
+    a.cancel {margin-left: 0.5em;}
+
+}

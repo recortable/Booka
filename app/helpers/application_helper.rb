@@ -21,4 +21,11 @@ module ApplicationHelper
     end
   end
 
+  def submit(location, cancel_location)
+    model = location.is_a?(Array) ? location.last : location
+    label = model.new_record? ? 'Crear' : 'Actualizar'
+    url = model.new_record? ? cancel_location : location
+    button_submit_tag(label) + link_to('Cancelar', url, :class => 'cancel')
+  end
+
 end

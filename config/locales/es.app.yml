@@ -1,10 +1,16 @@
 es:
   booka_lines:
     index:
-      a: 'dd'
       edit_welcome: "Editar página de bienvenida"
     show:
       edit: "Modificar esta serie"
+    notice:
+      create: "Se ha creado una nueva serie."
+      update: "Serie actualizada."
+
+
+    edit:
+      title: "Editar serie"
   projects:
     browser:
       empty: "No hay ningún título publicado todavia en esta serie"
@@ -14,6 +20,10 @@ es:
       forum: "EDICION"
       users: "COMUNIDAD"
       contents: "MATERIALES"
+    show:
+      edit_project: "Modificar booka"
+    edit:
+      title: "Editar booka"
   comments:
     notice:
       create: "Gracias por tu comentario!"
@@ -24,11 +34,18 @@ es:
     version:
       create: "creado"
       model:
-        Topic: 'creado el asunto de discusión'
-        Comment: 'comentado'
-        Content: 'añadido el material'
-        Post: 'publicado'
-        BookaLine: 'creado la serie '
+        Topic:
+          create: 'creado el asunto de discusión'
+        Comment:
+          create: 'comentado'
+        Content:
+          create: 'añadido el material'
+        Post:
+          create: 'publicado la entrada'
+          update: 'modificado la entrada'
+        BookaLine:
+          create: 'creado la serie'
+          update: 'modificado la serie'
 
   permissions:
     permission:
@@ -50,3 +67,6 @@ es:
       edit_topic: "Editar tema de discusión"
     flash:
       update: "Tema de discusión modificado."
+  posts:
+    edit:
+      title: "Editar entrada"

@@ -18,9 +18,10 @@ Booka::Application.routes.draw do
     resources :versions, :path => 'versiones'
   end
 
-  resources :projects, :path => '' do
+  path = Rails.env.production? ? '' : 'p'
+  resources :projects, :path => path do
     resources :contents, :path => 'materiales'
-    resources :posts, :path => 'paginas'
+    resources :posts, :path => 'entrada'
     resources :permissions, :path => 'comunidad'
     resources :topics, :path => 'edicion'
   end

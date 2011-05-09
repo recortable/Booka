@@ -14,6 +14,6 @@
     <% else %>
         <%= link_to project.title, project, :class => 'project' unless @hide_project_version %>
         <div class="info user"><%= avatar_img user %><%= user.name %> hace <%= time_ago_in_words version.created_at %></div>
-        <div class="info model">ha <%= t("versions.version.model.#{version.item_type}") %> '<%= version.title %>'</div>
+        <div class="info model">ha <%= t("versions.version.model.#{version.item_type}.#{version.event}") %> '<%= version.title %>'</div>
     <% end %>
 <% end %>

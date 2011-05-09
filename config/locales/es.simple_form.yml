@@ -12,9 +12,20 @@ es:
       default_message: "Hay errores en los datos introducidos:"
 
     labels:
+      content_type: 'Tipo de contenido'
+      title: 'Título'
+      body: 'Texto'
+      booka_line:
+        title: 'Título de la serie'
+        slug: 'Nombre corto (aparecerá en la URL)'
+        icon_path: 'URL del icono de la serie'
       topic:
         title: 'Título del asunto a tratar'
         body: 'Informe de la situación'
+
+    hints:
+      booka_line:
+        slug: 'Sólo puede contener letras, números y guiones. '
 
     helpers:
       submit:

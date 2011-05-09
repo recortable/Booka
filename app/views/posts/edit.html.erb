@@ -1,0 +1,9 @@
+<%= content_for :top do %>
+    <%= title t('.title') %>
+<% end %>
+
+<%= simple_form_for [project, post] do |form| %>
+    <%= form.input :title %>
+    <%= form.input :body %>
+    <%= submit [project, post], [project] %>
+<% end %>

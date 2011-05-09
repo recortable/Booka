@@ -1,0 +1,8 @@
+<%= simple_form_for(booka_line) do |form| %>
+    <%= form.input :title %>
+    <%= form.input :slug %>
+    <%= form.input :icon_path %>
+    <%= form.input :content_type, :collection => CONTENT_TYPES, :include_blank => false %>
+    <%= form.input :body %>
+    <%= submit(booka_line, root_path) %>
+<% end %>

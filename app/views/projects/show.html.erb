@@ -1,5 +1,11 @@
 <% title project.title %>
 
+<%= content_for :top do %>
+    <%= button_group do %>
+        <%= edit_button_link_to t('.edit_project'), [:edit, project] if can? :edit, project %>
+    <% end %>
+<% end %>
+
 <%= content_for :browser do %>
     <%= render :partial => 'projects/browser', :locals => {:booka_line => project.booka_line} %>
 <% end %>

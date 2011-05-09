@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  include Models::HasStages
+
   belongs_to :booka_line
   belongs_to :user
   has_many :posts

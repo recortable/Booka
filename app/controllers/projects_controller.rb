@@ -6,4 +6,15 @@ class ProjectsController < ApplicationController
   def show
     authorize! :read, project
   end
+
+  def edit
+    authorize! :edit, project
+  end
+
+  def update
+    authorize! :update, project
+    flash[:notice] = t('projects.notice.create') if project.update_attributes(params[:project])
+    respond_with project
+  end
+
 end

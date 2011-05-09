@@ -11,10 +11,10 @@ def new_serie(user, project, title, name)
                     :body => content("series/#{name}.md"), :content_type => 'text/markdown')
 end
 
-def new_project(user, serie, title, name)
+def new_project(user, serie, title, name, stages)
   serie_id = serie ? serie.id : nil
   Project.create!(:title => title, :slug => name, :user_id => user.id, :booka_line_id => serie_id,
-                  :content_type => 'text/markdown', :body => content("projects/#{name}.md"), :stages => 'intro')
+                  :content_type => 'text/markdown', :body => content("projects/#{name}.md"), :stages => stages)
 end
 
 def add_users(who, project, users)
@@ -41,7 +41,8 @@ if (User.count == 0)
   paula = User.create!(:name => 'Paula', :email => 'alvarpau@gmail.com', :roles => 'admin')
   samuel = User.create!(:name => 'Samuel', :email => 'samuelgarciaperez@gmail.com', :roles => 'admin')
 
-  booka = new_project(admin, nil, 'Guía Booka', 'booka')
+  # BOOKA
+  booka = new_project(admin, nil, 'Guía Booka', 'booka', 'topics pages')
   add_users(admin, booka, [admin, dani, paula, samuel])
   new_page(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
 
@@ -50,8 +51,8 @@ if (User.count == 0)
   new_serie(admin, booka, 'Networked Books', 'networked')
   new_serie(admin, booka, 'Books à la carte', 'alacarte')
 
-
-  ccc = new_project(paula, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc')
+  ## CCC
+  ccc = new_project(paula, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc', 'contents topics pages')
   add_users(paula, ccc, [dani, paula, samuel])
   new_content(paula, ccc, 'De catedrales a contenedores', 'Jose María Galán', 'ccc/catedrales')
   new_content(paula, ccc, 'Arquitecturas colectivas', 'Santiago Cirugeda Parejo', 'ccc/colectivas')
@@ -61,7 +62,7 @@ if (User.count == 0)
   new_content(paula, ccc, 'Del trabajo autoorganizado a la reconstrucción del común', 'Judith Albors Casanova', 'ccc/trabajo')
   new_content(paula, ccc, 'Sinopsis temporal', '', 'ccc/sinopsis')
 
-  gender = new_project(paula, rewrite, 'Genderless Architecture', 'genderless')
+  gender = new_project(paula, rewrite, 'Genderless Architecture', 'genderless', 'contents topics')
   add_users(paula, gender, [dani, paula, samuel])
 
 end

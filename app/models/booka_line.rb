@@ -1,6 +1,7 @@
 class BookaLine < ActiveRecord::Base
   has_many :projects
   belongs_to :project
+  belongs_to :user
   has_many :comments, :as => :resource
 
   has_paper_trail(:meta => {
