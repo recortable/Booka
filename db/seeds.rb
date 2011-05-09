@@ -45,7 +45,7 @@ end
 
 def new_response(model, user, topic, title, body)
   model.create!(:user => user, :topic => topic, :project => topic.project,
-               :title => title, :content_type => 'text/markdown', :body => body)
+                :title => title, :content_type => 'text/markdown', :body => body)
 end
 
 def new_proposal(user, topic, title, body)
@@ -60,6 +60,11 @@ def new_task(user, topic, title, body)
   new_response(Task, user, topic, title, body)
 end
 
+def new_page(user, project, title, name)
+  Page.create!(:user => user, :project => project, :title => title,
+               :content_type => 'text/markdown', :body => content("pages/#{name}.md"))
+end
+
 if (User.count == 0)
   admin = User.create!(:name => 'Administrador', :email => 'admin@plataformabooka.net', :roles => 'admin')
   User.create!(:name => 'Anónimo', :email => 'anonymous@plataformabooka.net', :roles => 'anonymous')
@@ -72,6 +77,14 @@ if (User.count == 0)
   booka = new_project(admin, nil, 'Guía Booka', 'booka', 'topics pages')
   add_users(admin, booka, [admin, dani, paula, samuel])
   new_post(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
+
+  new_page(dani, booka, '1. Qué es booka', 'booka/que')
+  new_page(dani, booka, '2. Mesas de booka', 'booka/propuestas')
+  new_page(dani, booka, '2.1 Mesa de materiales', 'booka/materiales')
+  new_page(dani, booka, '2.2 Mesa de edición', 'booka/edicion')
+  new_page(dani, booka, '2.3 Mesa de lectura', 'booka/lectura')
+  new_page(dani, booka, '2.4 Comunidad', 'booka/comunidad')
+  new_page(dani, booka, '3. Preguntas más frecuentas', 'booka/faq')
 
   topic = new_topic(dani, booka, 'Creación de la guía', 'booka/guia')
   new_proposal(dani, topic, 'Dedicar una semana a los contenidos', 'Buscar un sitio de trabajo y ponernos juntas a trabajar')

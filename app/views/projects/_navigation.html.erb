@@ -6,8 +6,12 @@
       <span>|</span>
   <% end %>
   <% if project.has_stage? :topics %>
-  <li><%= link_to_unless_current t('projects.navigation.forum'), [project, :topics] %></li>
-  <span>|</span>
+      <li><%= link_to_unless_current t('projects.navigation.topics'), [project, :topics] %></li>
+      <span>|</span>
+  <% end %>
+  <% if project.has_stage? :pages %>
+      <li><%= link_to_unless_current t('projects.navigation.pages'), [project, :pages] %></li>
+      <span>|</span>
   <% end %>
   <li><%= link_to_unless_current t('projects.navigation.users'), [project, :permissions] %></li>
   <span>|</span>

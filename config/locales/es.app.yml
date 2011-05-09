@@ -17,9 +17,10 @@ es:
       title: "Títulos"
     navigation:
       intro: "INTRO"
-      forum: "EDICION"
+      topics: "EDICION"
       users: "COMUNIDAD"
       contents: "MATERIALES"
+      pages: "LECTURA"
     show:
       edit_project: "Modificar booka"
     edit:
@@ -85,3 +86,6 @@ es:
   assets:
     new:
       title: "Subir una imágen"
+  pages:
+    show:
+      browser: "Índice"

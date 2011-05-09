@@ -21,6 +21,7 @@ Booka::Application.routes.draw do
     resources :posts, :path => 'entrada'
     resources :permissions, :path => 'comunidad'
     resources :topics, :path => 'edicion'
+    resources :pages, :path => 'paginas'
     resources :assets, :path => 'archivos'
   end
 
