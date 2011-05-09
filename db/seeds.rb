@@ -23,14 +23,19 @@ def add_users(who, project, users)
   end
 end
 
-def new_page(user, project, title, name, published = true)
+def new_post(user, project, title, name, published = true)
   Post.create!(:title => title, :slug => name, :user_id => user.id, :published => published,
-               :content_type => 'text/markdown', :body => content("pages/#{name}.md"), :project_id => project.id)
+               :content_type => 'text/markdown', :body => content("posts/#{name}.md"), :project_id => project.id)
 end
 
 def new_content(user, project, title, author, name)
-  Content.create(:user_id => user.id, :project_id => project.id, :title => title, :author => author,
+  Content.create!(:user_id => user.id, :project_id => project.id, :title => title, :author => author,
                  :content_type => 'text/markdown', :body => content("content/#{name}.md"))
+end
+
+def new_asset(user, content, title, url)
+  Asset.create!(:user_id => user.id, :project_id => content.project_id, :title => title,
+                :url_file => url, :resource => content)
 end
 
 if (User.count == 0)
@@ -44,7 +49,7 @@ if (User.count == 0)
   # BOOKA
   booka = new_project(admin, nil, 'Guía Booka', 'booka', 'topics pages')
   add_users(admin, booka, [admin, dani, paula, samuel])
-  new_page(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
+  new_post(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
 
 
   rewrite = new_serie(admin, booka, 'Re-write this book', 'rewrite')
@@ -54,7 +59,10 @@ if (User.count == 0)
   ## CCC
   ccc = new_project(paula, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc', 'contents topics pages')
   add_users(paula, ccc, [dani, paula, samuel])
-  new_content(paula, ccc, 'De catedrales a contenedores', 'Jose María Galán', 'ccc/catedrales')
+  catedrales = new_content(paula, ccc, 'De catedrales a contenedores', 'Jose María Galán', 'ccc/catedrales')
+  new_asset(paula, catedrales, 'Vigilantes de la playa', 'http://bookasite.s3.amazonaws.com/booka/file/11/foto1.jpg')
+  new_asset(paula, catedrales, 'Una buena dicha', 'http://bookasite.s3.amazonaws.com/booka/file/12/foto2.jpg')
+  new_asset(paula, catedrales, 'Wish you were here', 'http://bookasite.s3.amazonaws.com/booka/file/13/foto3.jpg')
   new_content(paula, ccc, 'Arquitecturas colectivas', 'Santiago Cirugeda Parejo', 'ccc/colectivas')
   new_content(paula, ccc, 'Carta a los colectivos', 'Unai Reglero', 'ccc/carta')
   new_content(paula, ccc, 'Cun día en el Spider', 'Un relato de LaFundició', 'ccc/spider')

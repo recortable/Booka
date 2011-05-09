@@ -8,6 +8,7 @@ class Project < ActiveRecord::Base
   has_many :topics
   has_many :permissions
   has_many :users, :through => :permissions
+  has_many :assets
   has_many :comments, :as => :resource, :order => 'id DESC'
 
   has_paper_trail(:meta => {

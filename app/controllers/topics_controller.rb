@@ -25,13 +25,13 @@ class TopicsController < ApplicationController
   def create
     topic.user = current_user
     authorize! :create, topic
-    flash[:notice] = t('topics.flash.create') if topic.save
+    flash[:notice] = t('topics.notice.create') if topic.save
     respond_with topic, :location => [project, topic]
   end
 
   def update
     authorize! :update, topic
-    flash[:notice] = t('topics.flash.update') if topic.save
+    flash[:notice] = t('topics.notice.update') if topic.save
     respond_with topic, :location => [project, topic]
   end
 end

@@ -65,8 +65,17 @@ es:
       new_agreement: "Añadir un acuerdo"
       new_task: "Añadir una tarea"
       edit_topic: "Editar tema de discusión"
-    flash:
+    notice:
+      create: "Se ha creado un nuevo tema de discusión"
       update: "Tema de discusión modificado."
+
   posts:
     edit:
       title: "Editar entrada"
+  contents:
+    show:
+      edit_content: "Editar contenido"
+      add_content_asset: "Subir imágen"
+  assets:
+    new:
+      title: "Subir una imágen"

@@ -1,0 +1,14 @@
+<%= content_for :top do %>
+    <%= title asset.resource.title %>
+<% end %>
+
+<h2><%= t('.title') %></h2>
+
+<%= simple_form_for [project, asset] do |form| %>
+    <%= form.input :resorce_type, :as => :hidden %>
+    <%= form.input :resorce_id, :as => :hidden %>
+    <%= form.input :title %>
+    <%= form.input :description %>
+    <%= form.input :file %>
+    <%= submit [project, asset], project %>
+<% end %>

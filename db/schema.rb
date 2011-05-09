@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508235010) do
+ActiveRecord::Schema.define(:version => 20110509095622) do
+
+  create_table "assets", :force => true do |t|
+    t.string   "title",         :limit => 100
+    t.string   "description",   :limit => 300
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.string   "file"
+    t.string   "url_file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assets", ["project_id"], :name => "index_assets_on_project_id"
+  add_index "assets", ["resource_id"], :name => "index_assets_on_resource_id"
+  add_index "assets", ["resource_type"], :name => "index_assets_on_resource_type"
+  add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
 
   create_table "booka_lines", :force => true do |t|
     t.string   "title",        :limit => 300

@@ -3,6 +3,10 @@
 <%= content_for :top do %>
     <h1><%= content.title %></h1>
     <h2 class="author"><%= content.author %></h2>
+    <%= button_group do %>
+        <%= edit_button_link_to t('.edit_content'), [:edit, project, content] if can? :edit, content %>
+        <%= add_button_link_to t('.add_content_asset'), new_project_asset_path(project, :c => content.id) if can? :manage, content %>
+    <% end %>
 <% end %>
 
 <div class="row24">
@@ -11,9 +15,9 @@
     <%= render :partial => 'contents/browser', :locals => {:project => project} %>
   </div>
   <div class="col-center-left content">
-    <%# content.assets.each do |asset| %>
-        <%#= image_tag asset.file.url %>
-    <%# end %>
+    <% content.assets.each do |asset| %>
+        <%= image_asset asset %>
+    <% end %>
     <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
   </div>
   <div class="col-center-right content">
