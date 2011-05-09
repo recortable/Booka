@@ -6,6 +6,15 @@
     <% end %>
 <% end %>
 
+<%= content_for :browser do %>
+    <h2>Temas de discusón</h2>
+    <ul>
+      <% topics.each do |topic| %>
+      <li><%= link_to topic.title, [project, topic] %></li>
+      <% end %>
+    </ul>
+<% end %>
+
 <%= div_for topic do %>
     <h1>1.- Informe de la situacion</h1>
     <%= render_body topic %>
@@ -15,21 +24,23 @@
 
     <h1>2.- Diferentes alternativas o propuestas</h1>
     <%= button_group do %>
-        <%= add_button_link_to t('.new_proposal') %>
+        <%= add_button_link_to t('.new_proposal') if can? :manage, topic %>
     <% end %>
     <div class="proposal list">
+      <%= render proposals %>
     </div>
 
     <h1>3.- Acuerdos alcanzados</h1>
     <%= button_group do %>
-        <%= add_button_link_to t('.new_agreement') %>
+        <%= add_button_link_to t('.new_agreement') if can? :manage, topic %>
     <% end %>
     <div class="agreement list">
+      <%= render agreements %>
     </div>
 
     <h1>4.- Tareas relacionadas con este asunto</h1>
     <%= button_group do %>
-        <%= add_button_link_to t('.new_task') %>
+        <%= add_button_link_to t('.new_task') if can? :manage, topic %>
     <% end %>
     <div class="task list">
       <%= render tasks %>

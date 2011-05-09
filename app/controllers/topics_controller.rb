@@ -5,9 +5,9 @@ class TopicsController < ApplicationController
   expose(:topic)
   expose(:new_comment) { Comment.new(:resource => topic)}
   expose(:responses) { topic.responses }
-  expose(:tasks) do
-    params[:id].present? ? responses.select {|r| r.type == 'Task' } : project.responses.tasks
-  end
+  expose(:proposals) { params[:id].present? ? responses.select {|r| r.type == 'Proposal' } : project.responses.proposals }
+  expose(:agreements) { params[:id].present? ? responses.select {|r| r.type == 'Agreement' } : project.responses.agreements }
+  expose(:tasks) { params[:id].present? ? responses.select {|r| r.type == 'Task' } : project.responses.tasks }
 
   def index
     authorize! :read, Topic

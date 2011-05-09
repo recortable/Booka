@@ -1,0 +1,2 @@
+class Agreement < Response
+end

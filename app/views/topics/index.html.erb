@@ -7,8 +7,12 @@
 
 <%= content_for :browser do %>
     <h2>Acuerdos alcanzados</h2>
-    <%#= content_tag(:p, t('.empty_agreements')) if agreements.size == 0 %>
-
+    <%= content_tag(:p, t('.empty_agreements')) if agreements.size == 0 %>
+    <ul>
+      <% agreements.each do |agreement| %>
+          <li><%= link_to agreement.title, project_topic_path(project, agreement.topic, :anchor => "agreement_#{agreement.id}") %></li>
+      <% end %>
+    </ul>
 <% end %>
 
 <div class="topics">

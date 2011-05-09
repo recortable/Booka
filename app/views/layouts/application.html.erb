@@ -11,24 +11,27 @@
 </head>
 <body>
 <div id="page">
-  <%= content_tag :div, flash[:notice], :id => "flash_notice" %>
   <div class="row24">
-    <div class="col-left">
-      <div id="session">
+    <div class="col-left">&nbsp;</div>
+    <div class="col-main">
+      <%= content_tag :div, flash[:notice], :id => "flash_notice" if flash[:notice] %>
+      <div id="booka">
         <%= link_to 'Plataformabooka.net', root_path %>
-        <br/>
         <%= link_to 'Ayuda', Project.first %>
-        <br/>
+      </div>
+      <div id="session">
         <% if current_user %>
             Hola, <%= link_to current_user.name, current_user %>
-            <br/>
             <%= link_to 'Salir', logout_path, :id => 'logout_link' %>
-            <br/>
         <% else %>
             <%= link_to 'Iniciar sesion', login_path, :id => 'login_link' %>
-            <br/>
         <% end %>
       </div>
+    </div>
+  </div>
+  <div class="row24">
+    <div class="col-left">
+      <%= image_tag logo %>
     </div>
     <div id="header" class="col-main">
       <% if project? %>
@@ -59,7 +62,8 @@
 
   <div class="row24">
     <div class="col-left">&nbsp;</div>
-    <div id="contact" class="col-center-big">Ediciones Vib[]k 2011 | C / Dinastía Músicos Palatín 9 - 4ºC | 41008 Sevilla
+    <div id="contact" class="col-center-big">Ediciones Vib[]k 2011 | C / Dinastía Músicos Palatín 9 - 4ºC | 41008
+      Sevilla
       | España | 34 954 31 63 48 | info@edicionesvibok.net
     </div>
   </div>

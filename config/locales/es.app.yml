@@ -65,6 +65,7 @@ es:
       new_topic: "Añadir un tema de discusón"
       topics: "Temas de discusión activos"
       empty_tasks: "No hay ninguna tarea pendiente en este booka."
+      empty_agreements: "No se ha alcanzado ningún acuerdo, todavía."
     show:
       new_proposal: "Añadir una altarnativa"
       new_agreement: "Añadir un acuerdo"

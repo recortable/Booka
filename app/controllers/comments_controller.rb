@@ -12,7 +12,16 @@ class CommentsController < ApplicationController
     comment.project = comment.resource_type == 'Project' ? resource : resource.project
     authorize! :create, comment
     flash[:notice] = t('comments.notice.create') if comment.save
-    location = comment.project == comment.resource ? comment.project : [comment.project, comment.resource]
-    respond_with comment, :location => location
+    respond_with comment, :location => locate(comment)
+  end
+
+  protected
+  def locate(comment)
+    case comment.resource_type
+      when 'BookaLine'
+        booka_line_path(comment.resource)
+      else
+        [comment.project, comment.resource]
+    end
   end
 end

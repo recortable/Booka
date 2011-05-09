@@ -1,0 +1,8 @@
+<%= div_for proposal do %>
+    <%= user_action proposal.user, proposal.created_at %>
+    <h2><%= proposal.title %></h2>
+    <%= render_body proposal %>
+    <div class="nested-comments">
+      <%= render :partial => 'comments/comments', :locals => {:comment => Comment.new(:resource => proposal)} %>
+    </div>
+<% end %>

@@ -43,9 +43,21 @@ def new_topic(user, project, title, name)
                :content_type => 'text/markdown', :body => content("topics/#{name}.md"))
 end
 
-def new_task(user, topic, title, body)
-  Task.create!(:user => user, :topic => topic, :project => topic.project,
+def new_response(model, user, topic, title, body)
+  model.create!(:user => user, :topic => topic, :project => topic.project,
                :title => title, :content_type => 'text/markdown', :body => body)
+end
+
+def new_proposal(user, topic, title, body)
+  new_response(Proposal, user, topic, title, body)
+end
+
+def new_agreement(user, topic, title, body)
+  new_response(Agreement, user, topic, title, body)
+end
+
+def new_task(user, topic, title, body)
+  new_response(Task, user, topic, title, body)
 end
 
 if (User.count == 0)
@@ -62,6 +74,8 @@ if (User.count == 0)
   new_post(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
 
   topic = new_topic(dani, booka, 'Creación de la guía', 'booka/guia')
+  new_proposal(dani, topic, 'Dedicar una semana a los contenidos', 'Buscar un sitio de trabajo y ponernos juntas a trabajar')
+  new_agreement(dani, topic, 'Dedicar una semana a los contenidos', 'Buscar un sitio de trabajo y ponernos juntas a trabajar')
   new_task(dani, topic, 'Crear la página "Qué es Booka"', 'Necesitamos una página para explicar el proyecto.')
 
 

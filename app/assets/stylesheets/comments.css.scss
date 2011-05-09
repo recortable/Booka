@@ -13,6 +13,11 @@ div.discussion {
         input[type=submit] {width: 20%;}
     }
 
+    div.comments {
+        margin-top: 0.5em;
+        div.comment {margin: 0.5em 0;}
+    }
+
     .nested-comments {
         margin: 0.5em 0 0.5em 1em;
     }

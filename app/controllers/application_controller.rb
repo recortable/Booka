@@ -4,9 +4,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :signed_in?
   helper_method :project?, :default_layout?
-
+  helper_method :logo
 
   protected
+  def logo
+    '/assets/iconos/libro.png'
+  end
+
   def default_layout?
     self.class != ContentsController
   end

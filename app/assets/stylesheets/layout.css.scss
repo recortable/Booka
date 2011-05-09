@@ -29,6 +29,19 @@ li {border:0;list-style: none;}
 #page {margin-top: 50px; margin-bottom: 30px;}
 
 /** HEADER **/
+#booka {
+    float: left;
+    a {margin-right: 0.5em;}
+}
+#flash_notice {
+    padding: 0.5em 1em;
+    text-align:center;
+    background-color:yellow;
+    opacity: 0.6;
+    margin: 0 0 1em 0;
+    cursor:pointer;
+}
+
 #header {
     ul.navigator {width: 100%; overflow: hidden; margin-bottom:2em;}
     ul.navigator li {float: left; color: $c-green;}
@@ -41,7 +54,7 @@ li {border:0;list-style: none;}
 }
 
 
-/** BROWSER **/
+/** LISTS IN COLUMNS **/
 div#browser, div#info {
     h2 {margin-top: 0em; border-bottom: $b-dot; font-variant: small-caps; font-size: 18px; padding-bottom: 0.2em;}
     ul {margin-bottom: 1em;}

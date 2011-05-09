@@ -6,13 +6,14 @@ class BookaLinesController < ApplicationController
   expose(:projects) { Project.all }
   expose(:new_page_comment) { Comment.new(:resource => booka_page) }
   expose(:new_line_comment) { Comment.new(:resource => booka_line) }
+  expose(:logo) { "/assets/iconos/booka.png" }
 
   def index
-    authorize! :view, BookaLine
+    authorize! :read, BookaLine
   end
 
   def show
-    authorize! :view, booka_line
+    authorize! :read, booka_line
   end
 
   def new
