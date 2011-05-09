@@ -11,6 +11,11 @@ es:
     error_notification:
       default_message: "Hay errores en los datos introducidos:"
 
+    labels:
+      topic:
+        title: 'Título del asunto a tratar'
+        body: 'Informe de la situación'
+
     helpers:
       submit:
         update: 'Actualizar'

@@ -1,0 +1,23 @@
+
+div.topics div.topic {margin: 1em;}
+
+div.topic {
+
+    form {
+        label {display: block;}
+    }
+    input[type=text], textarea {width: 500px;}
+    textarea {height: 10em;}
+
+    div.inline_comments {
+        div.discussion {margin:0 0 2em 0;padding-top:0;border:0;}
+    }
+
+    div.button-group {
+        font-size: 80%;
+        margin-bottom: 2em;
+    }
+
+    div.list {margin-bottom: 2em;}
+
+}

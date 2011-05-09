@@ -1,0 +1,4 @@
+<%= div_for topic do %>
+    <h2><%= link_to topic.title, [project, topic] %></h2>
+    <%= render_body topic %>
+<% end %>

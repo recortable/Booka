@@ -3,38 +3,17 @@
     <% project = Project.find(version.project_id) %>
 
     <% if version.item_type == 'Project' %>
-        <%= link_to project.title, project, :class => 'project' %>
-        <%= avatar_img user %>
-        <%= user.name %>
-        ha <%= t("versions.version.#{version.event}") %> el booka
+        <%= link_to project.title, project, :class => 'project' unless @hide_project_version %>
+        <div class="info user"><%= avatar_img user %><%= user.name %> hace <%= time_ago_in_words version.created_at %></div>
+        <div class="info model">ha <%= t("versions.version.#{version.event}") %> el booka</div>
     <% elsif version.item_type == 'Permission' %>
         <% modifier = User.find(version.title) %>
-        <%= link_to project.title, project, :class => 'project' %>
-        <%= avatar_img modifier %>
-        <%= modifier.name %>
-        a anyadido a '<%= user.name %>'
-    <% elsif version.item_type == 'Post' %>
-        <%= link_to project.title, project, :class => 'project' %>
-        <%= avatar_img user %>
-        <%= user.name %>
-        ha añadido la entrada '<%= version.title %>'
-    <% elsif version.item_type == 'BookaLine' %>
-        <%= link_to project.title, project, :class => 'project' %>
-        <%= avatar_img user %>
-        <%= user.name %>
-        ha añadido la serie '<%= version.title %>'
-    <% elsif version.item_type == 'Content' %>
-        <%= link_to project.title, project, :class => 'project' %>
-        <%= avatar_img user %>
-        <%= user.name %>
-        ha añadido el contenido '<%= version.title %>'
+        <%= link_to project.title, project, :class => 'project' unless @hide_project_version %>
+        <div class="info user"><%= avatar_img user %><%= user.name %> hace <%= time_ago_in_words version.created_at %></div>
+        <div class="info model">a añadido a '<%= user.name %>'</div>
     <% else %>
-        <ul>
-          <li><%= version.item_type %></li>
-          <li><%= version.event %></li>
-          <li>Project: <%= link_to version.project_id, project_path(version.project_id) %></li>
-          <li>User: <%= link_to version.user_id, user_path(version.user_id) %></li>
-          <li><%= version.title %></li>
-        </ul>
+        <%= link_to project.title, project, :class => 'project' unless @hide_project_version %>
+        <div class="info user"><%= avatar_img user %><%= user.name %> hace <%= time_ago_in_words version.created_at %></div>
+        <div class="info model">ha <%= t("versions.version.model.#{version.item_type}") %> '<%= version.title %>'</div>
     <% end %>
 <% end %>

@@ -1,0 +1,37 @@
+
+<%= content_for :top do %>
+    <%= title topic.title %>
+    <%= button_group do %>
+        <%= edit_button_link_to t('topics.show.edit_topic'), [:edit, project, topic] if can? :edit, topic %>
+    <% end %>
+<% end %>
+
+<%= div_for topic do %>
+    <h1>1.- Informe de la situacion</h1>
+    <%= render_body topic %>
+    <div class="inline_comments">
+      <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
+    </div>
+
+    <h1>2.- Diferentes alternativas o propuestas</h1>
+    <%= button_group do %>
+        <%= add_button_link_to t('.new_proposal') %>
+    <% end %>
+    <div class="proposal list">
+    </div>
+
+    <h1>3.- Acuerdos alcanzados</h1>
+    <%= button_group do %>
+        <%= add_button_link_to t('.new_agreement') %>
+    <% end %>
+    <div class="agreement list">
+    </div>
+
+    <h1>4.- Tareas relacionadas con este asunto</h1>
+    <%= button_group do %>
+        <%= add_button_link_to t('.new_task') %>
+    <% end %>
+    <div class="task list">
+    </div>
+
+<% end %>

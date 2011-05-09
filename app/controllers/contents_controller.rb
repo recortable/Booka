@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
   expose(:project) { Project.find_by_slug(params[:project_id])}
   expose(:contents) { project.contents }
   expose(:content)
+  expose(:new_comment) { Comment.new(:resource => content) }
 
   def index
     redirect_to [project,contents.first]

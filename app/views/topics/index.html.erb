@@ -1,0 +1,20 @@
+<%= content_for :top do %>
+    <%= title t('.title') %>
+    <%= button_group do %>
+        <%= add_button_link_to t('topics.index.new_topic'), [:new, project, :topic] if can? :manage, project%>
+    <% end %>
+<% end %>
+
+<%= content_for :browser do %>
+    <h2>Acuerdos alcanzados</h2>
+<% end %>
+
+<div class="topics">
+  <h1><%= t('.topics') %></h1>
+  <%= render topics %>
+  <%= content_tag(:p, t('.empty')) if topics.size == 0 %>
+</div>
+
+<%= content_for :info do %>
+    <h2>Tareas pendientes</h2>
+<% end %>

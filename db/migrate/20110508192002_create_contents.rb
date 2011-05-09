@@ -10,5 +10,8 @@ class CreateContents < ActiveRecord::Migration
       t.string :content_type, :limit => 32
       t.timestamps
     end
+
+    add_index :contents, :project_id
+    add_index :contents, :user_id
   end
 end

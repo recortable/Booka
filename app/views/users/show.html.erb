@@ -1,14 +1,26 @@
 <% title user.name %>
 
+<%= content_for :browser do %>
+    <h2>Bookas en los que participa</h2>
+    <ul class="projects">
+      <% user.projects.each do |project| %>
+      <li><%= link_to project.title, project %></li>
+      <% end %>
+    </ul>
+<% end %>
+
 <%= content_for :top do %>
     <h1><%= avatar_img user, 64 %>&nbsp;<%= user.name %></h1>
     <%= button_group do %>
         <%= edit_button_link_to 'Editar perfil', [:edit, user] if can? :edit, user %>
-        <%= loop_button_link_to 'Suplantar personalidad', [:edit, user] if current_user && current_user.super? %>
+        <%= loop_button_link_to 'Suplantar personalidad', enter_path(user.id) if current_user && current_user.super? %>
     <% end %>
 <% end %>
 
+<div class="notifications">
+<h1>Actividad de tus bookas</h1>
 <% user.notifications.each  do |n| %>
     <%= render n.version %>
 <% end %>
+</div>
 

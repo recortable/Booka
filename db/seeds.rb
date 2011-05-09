@@ -23,8 +23,7 @@ def add_users(who, project, users)
   end
 end
 
-def new_page(user, project, title, name)
-  published = name.present?
+def new_page(user, project, title, name, published = true)
   Post.create!(:title => title, :slug => name, :user_id => user.id, :published => published,
                :content_type => 'text/markdown', :body => content("pages/#{name}.md"), :project_id => project.id)
 end
@@ -44,7 +43,7 @@ if (User.count == 0)
 
   booka = new_project(admin, nil, 'Guía Booka', 'booka')
   add_users(admin, booka, [admin, dani, paula, samuel])
-  new_page(admin, booka, 'Plataforma Booka', 'booka') # welcome page
+  new_page(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
 
 
   rewrite = new_serie(admin, booka, 'Re-write this book', 'rewrite')

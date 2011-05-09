@@ -1,4 +1,4 @@
-## ¡Bienvenidos a Booka!
+# ¡Bienvenidos a Booka!
 Booka es una plataforma abierta para crear conocimiento y pensamiento combinando la edición tradicional y la tecnología de redes. Cada una de sus series es un laboratorio de publicación que desarrolla una modalidad específica de cruzar el libro impreso y los new media.
 
 Booka ofrece un conjunto de herramientas para que lectores, autores, editores y promotores de los libros puedan intervenir activa y eficazmente en la edición y generación de contenido, incluyendo procesos de intercambio post-imprenta y post-distribución. El resultado son ediciones vivas y colaborativas que crecen y evolucionan con el tiempo, con contenidos de rigor y calidad ensamblados en un entorno permeable y fácil de explorar.

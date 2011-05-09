@@ -8,10 +8,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    comment.user = current_user
-    comment.project = resource.project
+    comment.user = current_user ? current_user : User.find(2)
+    comment.project = comment.resource_type == 'Project' ? resource : resource.project
     authorize! :create, comment
     flash[:notice] = t('comments.notice.create') if comment.save
-    respond_with comment, :location => [comment.resource.project, comment.resource]
+    location = comment.project == comment.resource ? comment.project : [comment.project, comment.resource]
+    respond_with comment, :location => location
   end
 end

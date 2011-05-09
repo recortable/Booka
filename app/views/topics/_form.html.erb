@@ -1,0 +1,9 @@
+<div class="topic">
+  <%= simple_form_for [project, topic] do |form| %>
+      <%= form.input :title %>
+      <%= form.input :content_type, :as => :hidden %>
+      <%= form.input :body %>
+      <%= button_submit_tag %>
+      <%= link_to 'Cancelar', (topic.new_record? ? [project, :topics] : [project, topic]) %>
+  <% end %>
+</div>

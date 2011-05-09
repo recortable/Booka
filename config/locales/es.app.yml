@@ -12,8 +12,8 @@ es:
     navigation:
       intro: "INTRO"
       forum: "EDICION"
-      users: "PARTICIPANTES"
-  contents: "MATERIALES"
+      users: "COMUNIDAD"
+      contents: "MATERIALES"
   comments:
     notice:
       create: "Gracias por tu comentario!"
@@ -23,8 +23,30 @@ es:
   versions:
     version:
       create: "creado"
+      model:
+        Topic: 'creado el asunto de discusión'
+        Comment: 'comentado'
+        Content: 'añadido el material'
+        Post: 'publicado'
+        BookaLine: 'creado la serie '
 
   permissions:
     permission:
       level:
         admin: 'administrador del booka'
+
+    index:
+      empty_posts: "No hay ninguna noticia publicada en este booka"
+  topics:
+    index:
+      title: "Mesa de edición"
+      empty: "No hay ningún tema abierto, de momento."
+      new_topic: "Añadir un tema de discusón"
+      topics: "Temas de discusión activos"
+    show:
+      new_proposal: "Añadir una altarnativa"
+      new_agreement: "Añadir un acuerdo"
+      new_task: "Añadir una tarea"
+      edit_topic: "Editar tema de discusión"
+    flash:
+      update: "Tema de discusión modificado."

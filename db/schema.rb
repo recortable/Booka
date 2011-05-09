@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110508225659) do
+ActiveRecord::Schema.define(:version => 20110508235010) do
 
   create_table "booka_lines", :force => true do |t|
     t.string   "title",        :limit => 300
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(:version => 20110508225659) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "contents", ["project_id"], :name => "index_contents_on_project_id"
+  add_index "contents", ["user_id"], :name => "index_contents_on_user_id"
 
   create_table "notifications", :force => true do |t|
     t.integer  "user_id"
@@ -107,6 +110,19 @@ ActiveRecord::Schema.define(:version => 20110508225659) do
 
   add_index "projects", ["booka_line_id"], :name => "index_projects_on_booka_line_id"
   add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+
+  create_table "topics", :force => true do |t|
+    t.string   "title",        :limit => 300
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "body"
+    t.string   "content_type", :limit => 32
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topics", ["project_id"], :name => "index_topics_on_project_id"
+  add_index "topics", ["user_id"], :name => "index_topics_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name",       :limit => 100

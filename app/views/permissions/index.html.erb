@@ -1,3 +1,25 @@
-<%= title 'Participantes' %>
-<%= render permissions %>
+<%= content_for :top do %>
+    <%= title 'Comunidad' %>
+<% end %>
+
+<%= content_for :browser do %>
+    <h2>Noticias</h2>
+    <ul>
+      <% posts.each do |post| %>
+          <li><%= link_to post.title, [project, post] %></li>
+      <% end %>
+    </ul>
+    <%= content_tag :p, t('.empty_posts') if posts.size == 0 %>
+<% end %>
+
+<h1>Actividad reciente</h1>
+<div class="versions">
+  <%= render versions %>
+</div>
+<%= content_for :info do %>
+    <h2>Participantes</h2>
+    <ul>
+      <%= render permissions %>
+    </ul>
+<% end %>
 

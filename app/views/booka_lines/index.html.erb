@@ -1,4 +1,3 @@
-
 <%= content_for :top do %>
     <%= title booka_page.title %>
     <h4>plataforma editorial abierta</h4>
@@ -17,6 +16,12 @@
 <%= render_body booka_page %>
 <%= render :partial => 'comments/comments', :locals => {:comment => new_page_comment} %>
 <%= content_for :info do %>
+    <h2>Bookas activos</h2>
+    <ul class="projects">
+      <% projects.each do |project| %>
+          <li><%= link_to project.title, project %></li>
+      <% end %>
+    </ul>
 <% end %>
 
 

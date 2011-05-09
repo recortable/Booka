@@ -21,7 +21,8 @@ Booka::Application.routes.draw do
   resources :projects, :path => '' do
     resources :contents, :path => 'materiales'
     resources :posts, :path => 'paginas'
-    resources :permissions, :path => 'participantes'
+    resources :permissions, :path => 'comunidad'
+    resources :topics, :path => 'edicion'
   end
 
 end

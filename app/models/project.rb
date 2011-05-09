@@ -3,8 +3,10 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :posts
   has_many :contents
+  has_many :topics
   has_many :permissions
   has_many :users, :through => :permissions
+  has_many :comments, :as => :resource, :order => 'id DESC'
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },

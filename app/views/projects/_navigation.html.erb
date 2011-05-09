@@ -1,6 +1,6 @@
 <ul class="navigator">
   <li><%= link_to_unless_current t('projects.navigation.intro'), [project] %></li>  <span>|</span>
-  <li><%= link_to_unless_current t('contents'), [project, :contents] %></li>  <span>|</span>
-  <li><%= link_to_unless_current t('projects.navigation.forum'), [project] %></li>  <span>|</span>
+  <li><%= link_to_unless_current t('.contents'), [project, :contents] %></li>  <span>|</span>
+  <li><%= link_to_unless_current t('projects.navigation.forum'), [project, :topics] %></li>  <span>|</span>
   <li><%= link_to_unless_current t('projects.navigation.users'), [project, :permissions] %></li>  <span>|</span>
 </ul>

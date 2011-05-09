@@ -33,7 +33,7 @@
     <div id="header" class="col-main">
       <% if project? %>
           <%= render(:partial => 'booka_lines/header', :locals => {:booka_line => project.booka_line}) %>
-          <h1><%= project.title %></h1>
+          <%= content_tag (controller.class == ProjectsController ? :h1 : :h2), project.title %>
           <%= render :partial => 'projects/navigation', :locals => {:project => project} %>
       <% end %>
       <%= yield :top %>
@@ -59,10 +59,9 @@
 
   <div class="row24">
     <div class="col-left">&nbsp;</div>
-    <div id="contact" class="col-center">Ediciones Vib[]k 2011 | C / Dinastía Músicos Palatín 9 - 4ºC | 41008 Sevilla
+    <div id="contact" class="col-center-big">Ediciones Vib[]k 2011 | C / Dinastía Músicos Palatín 9 - 4ºC | 41008 Sevilla
       | España | 34 954 31 63 48 | info@edicionesvibok.net
     </div>
-    <div class="col-right">&nbsp;</div>
   </div>
 </div>
 
