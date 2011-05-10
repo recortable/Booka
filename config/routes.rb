@@ -17,6 +17,8 @@ Booka::Application.routes.draw do
   end
   resources :versions, :path => 'ver', :only => [:index, :show]
 
+  resource :system
+
 
   resources :projects, :path => '' do
     resources :contents, :path => 'materiales'

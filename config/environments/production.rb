@@ -56,13 +56,13 @@ Booka::Application.configure do
                         :exception_recipients => %w{danigb@gmail.com}
 
   # 1and1
-#  config.action_mailer.delivery_method = :smtp
-#  config.action_mailer.smtp_settings = {
-#      :address => "smtp.1and1.es",
-#      :port => 587,
-#      :domain => 'plataformabooka.net',
-#      :user_name => 'correo@booka.recortable.net',
-#      :password => 'editorialabierta',
-#      :authentication => 'plain'
-#  }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address => "smtp.1and1.es",
+      :port => 587,
+      :domain => 'plataformabooka.net',
+      :user_name => 'correo@booka.recortable.net',
+      :password => 'editorialabierta',
+      :authentication => 'plain'
+  }
 end
