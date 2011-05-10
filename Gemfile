@@ -25,7 +25,7 @@ gem 'paper_trail'
 gem 'acts_as_list'
 gem 'rdiscount'
 
-gem 'exception_notification'
+gem 'exception_notification', :require => 'exception_notifier'
 #gem 'newrelic_rpm'
 
 group :test, :development do
