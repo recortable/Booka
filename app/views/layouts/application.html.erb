@@ -10,7 +10,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller.class.name[0..-11].downcase %>">
 <div id="page">
   <div class="row24">
     <div class="col-left">&nbsp;</div>

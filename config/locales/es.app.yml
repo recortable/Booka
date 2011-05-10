@@ -92,6 +92,10 @@ es:
   sessions:
     new:
       title: "Iniciar sesión"
+    flash:
+      create: "Bienvenidx a Plataforma Booka"
   invitations:
     create:
       title: "Invitaciones"
+    notice:
+      bad_code: "La invitación no es válida"

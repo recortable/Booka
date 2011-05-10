@@ -1,0 +1,17 @@
+<%= content_for :top do %>
+    <h2>Invitaciones</h2>
+    <h1>Plataforma Booka</h1>
+<% end %>
+
+<% if invited_user %>
+    <%= title t('.title') %>
+    <p>Para completar el registro, debes elegir uno de nuestos sistemas de autenticación:</p>
+    <%= render :partial => 'sessions/authorizations' %>
+    <p>Booka no hace uso (ni puede acceder) a ninguna información privada de tus servicios. Tan sólo los usa
+      para confirmar tu identidad.</p>
+    <p>Si no tienes cuenta en ninguno de esos servicios, siempre puedes usar la tradicional contraseña:</p>
+<% else %>
+    <%= title 'La invitación no es válida' %>
+    <p>Por algún motivo, el código de invitación es erróneo. Por favor, comprueba los datos de tu email
+    o solicita otra invitación.</p>
+<% end %>

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :permissions
   has_many :projects, :through => :permissions
   has_many :notifications, :order => 'event_at DESC'
+  has_many :authentications
 
   def generate_code
     Digest::MD5.hexdigest(email.to_s)

@@ -4,8 +4,8 @@
     <h1>Plataforma Booka</h1>
 <% end %>
 
-<% if user %>
-    <h1>Hola <%= user.name %>,</h1>
+<% if emailed_user %>
+    <h1>Hola <%= emailed_user.name %>,</h1>
     <p>Las instrucciones para entrar han sido enviadas a tu correo electrónico.</p>
 <% else %>
     <h1>Hay un problema con tu dirección de correo: <%= email %></h1>

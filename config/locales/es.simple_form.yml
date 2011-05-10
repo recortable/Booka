@@ -31,3 +31,6 @@ es:
       submit:
         update: 'Actualizar'
         create: 'Añadir'
+  invitations:
+    show:
+      title: "Completa el registro"

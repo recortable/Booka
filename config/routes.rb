@@ -5,6 +5,8 @@ Booka::Application.routes.draw do
   match "/cerrar" => "sessions#destroy", :as => :logout
   match "/identificarse" => "sessions#new", :as => :login
   match "/enter/:id" => "sessions#enter", :as => :enter
+  match "/invitacion/:id/:code" => "invitations#show"
+
 
   resources :booka_lines, :path => 'series'
   resources :comments, :path => 'comentar'

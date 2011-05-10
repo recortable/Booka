@@ -10,3 +10,9 @@ div.login-services {
 div.new-invitation {
     form {margin: 2em;}
 }
+
+div.authorizations {
+    width:100%;overflow:hidden;margin: 10px 0;
+    padding-left: 10px;border-left: 1px dotted #29256A;
+    a {display: block; float: left;padding-right: 10px;text-align: center;margin-right: 10px;border-right: 1px dotted #29256A;}
+}

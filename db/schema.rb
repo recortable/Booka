@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110509132305) do
+ActiveRecord::Schema.define(:version => 20110510121107) do
 
   create_table "assets", :force => true do |t|
     t.string   "title",         :limit => 100
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(:version => 20110509132305) do
   add_index "assets", ["resource_id"], :name => "index_assets_on_resource_id"
   add_index "assets", ["resource_type"], :name => "index_assets_on_resource_type"
   add_index "assets", ["user_id"], :name => "index_assets_on_user_id"
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authentications", ["user_id"], :name => "index_authentications_on_user_id"
 
   create_table "booka_lines", :force => true do |t|
     t.string   "title",        :limit => 300

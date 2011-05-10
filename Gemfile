@@ -30,6 +30,7 @@ gem 'exception_notification'
 
 group :test, :development do
   # Pretty printed test output
+  gem 'mongrel', '1.2.0.pre2'
   gem 'ruby-debug19'
   gem 'test-unit'
   gem 'database_cleaner'
