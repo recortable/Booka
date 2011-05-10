@@ -3,7 +3,11 @@
     <%= title 'System' %>
 <% end %>
 
+<div id="booka-info">
 
-<ul>
-  <li><label>Environment: </label><%= Rails.env %></li>
-</ul>
+</div>
+
+<div id="rails-info">
+  <%= Rails::Info.to_html.html_safe %>
+</div>
+
