@@ -1,6 +1,7 @@
 <%= ph(:h2, 'Plataforma Booka') %>
 <%= ph(:h1, 'Estos son los cambios de los bookas en los que colaboras.') %>
 
-<%= @user.notifications.each do |notification| %>
+<% @user.notifications.each do |notification| %>
     <%= render notification.version %>
+    <br/>
 <% end %>

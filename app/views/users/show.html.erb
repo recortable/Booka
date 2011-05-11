@@ -5,9 +5,11 @@
     <%= button_group do %>
         <%= edit_button_link_to 'Editar perfil', [:edit, user] if can? :edit, user %>
         <%= key_button_link_to 'Ver autorizaciones', [user, :authentications] if can? :manage, user %>
-        <%= loop_button_link_to 'Suplantar personalidad', enter_path(user.id) if current_user && current_user.super? %>
-        <%= mail_button_link_to 'Enviar notificaciones', email_notifications_user_path(user),
-            :confirm => "¿Enviar email a #{user.name}?" if current_user && current_user.super? %>
+        <% if current_user && current_user.super? %>
+            <%= loop_button_link_to 'Suplantar personalidad', enter_path(user.id) %>
+            <%= mail_button_link_to 'Enviar notificaciones', email_notifications_user_path(user),
+                                    :confirm => "¿Enviar email a #{user.name}?" %>
+        <% end %>
     <% end %>
 <% end %>
 
@@ -15,16 +17,19 @@
     <h2>Bookas en los que participa</h2>
     <ul class="projects">
       <% user.projects.each do |project| %>
-      <li><%= link_to project.title, project %></li>
+          <li><%= link_to project.title, project %></li>
       <% end %>
     </ul>
 <% end %>
 
 <div class="notifications">
-<h1>Actividad de tus bookas</h1>
-<% user.notifications.each  do |n| %>
-      <%= content_tag(:span, "(nuevo)", :class => 'new-notification') if n.should_be_emailed %>
-    <%= render n.version %>
-<% end %>
+  <h1>Actividad de tus bookas</h1>
+
+  <p><span id="new-notification-count"><%= user.notifications.to_be_emailed.count %></span> notificaciones nuevas.</p>
+  <% user.notifications.each do |n| %>
+      <div class="notification <%= 'new-notification' if n.should_be_emailed %>">
+        <%= render n.version %>
+      </div>
+  <% end %>
 </div>
 

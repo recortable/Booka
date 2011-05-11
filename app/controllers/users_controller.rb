@@ -23,5 +23,7 @@ class UsersController < ApplicationController
 
   def email_notifications
     UserMailer.notification_email(user).deliver
+    flash[:notice] = t('users.notice.email_notifications')
+    redirect_to user
   end
 end

@@ -106,6 +106,7 @@ es:
       title: "Editar perfil"
     notice:
       update: "Tus perfil ha sido actualizado."
+      email_notifications: "Hemos enviado el email"
   authentications:
     index:
       title: "Métodos de identificación"

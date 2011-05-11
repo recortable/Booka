@@ -3,3 +3,6 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+div.notification {padding-left: 1em;}
+div.notification.new-notification {background-color:#ffff7f;}
