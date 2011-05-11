@@ -19,7 +19,8 @@ class UserMailer < ActionMailer::Base
     @user = user
     @host = HOST
     @notifications = user.notifications.to_be_emailed
-    mail(:to => user.email, :subject => 'Cambios en tus bookas')
+    date = Time.now.strftime("%d/%m/%Y")
+    mail(:to => user.email, :subject => "#{date} Cambios en tus bookas :: Plataformabooka.net")
     @notifications.each {|n| n.mark_as_mailed }
   end
 
