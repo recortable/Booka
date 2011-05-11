@@ -7,9 +7,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if session[:invited_user_id].present?
-      self.current_user = User.find session[:invited_user_id]
-      session[:invited_user_id] = nil
+    user_id = session[:invited_user_id]
+    user_id ||= session[:user_id]
+    if user_id.present?
+      self.current_user = User.find user_id
       auth = request.env['omniauth.auth']
       current_user.authentications.find_or_create_by_provider_and_uid(auth['provider'], auth['uid'])
       flash[:notice] = t('sessions.flash.create')

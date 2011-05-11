@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
   include Controllers::AuthMethods
@@ -10,6 +11,10 @@ class ApplicationController < ActionController::Base
     #bubble up the original exception
     #ActiveRecord::RecordNotFound
     raise x.original_exception
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :notice => 'No tienes permisos suficientes para acceder a esa página'
   end
 
   protected
