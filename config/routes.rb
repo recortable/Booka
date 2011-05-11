@@ -15,7 +15,7 @@ Booka::Application.routes.draw do
   resources :users, :path => 'participantes' do
     get 'email_notifications', :on => :member
     resources :authentications, :path => 'autorizaciones'
-    resources :notifications, :path => 'actividad', :only => :index
+    resources :notifications, :path => 'actividad', :only => [:index, :show, :update]
   end
   resources :versions, :path => 'ver', :only => [:index, :show]
 

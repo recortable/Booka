@@ -2,7 +2,7 @@
 
 class UserMailer < ActionMailer::Base
   default :from => "Booka <info@plataformabooka.net>"
-  HOST = Rails.env.production? ? "http://plataformabooka.net" : "http://localhost:3000"
+  HOST = Rails.env.production? ? "plataformabooka.net" : "localhost:3000"
   default_url_options[:host] = HOST
 
   helper :users
@@ -11,7 +11,7 @@ class UserMailer < ActionMailer::Base
   def invitation_email(user)
      @user = user
      @host = HOST
-     @url = "#{@host}/invitacion/#{@user.id}/#{@user.generate_code}"
+     @url = "http://#{@host}/invitacion/#{@user.id}/#{@user.generate_code}"
      mail(:to => user.email, :subject => 'Has sido invitadx a colaborar en Plataforma Booka')
   end
 

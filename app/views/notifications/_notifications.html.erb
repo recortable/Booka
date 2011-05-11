@@ -1,5 +1,9 @@
 <% notifications.each do |n| %>
     <div class="notification <%= 'new-notification' if n.should_be_emailed %>">
       <%= render n.version %>
+      <div class="notification-marks">
+        <%= link_to 'Marcar como leído', [user, n], :class => 'mark-as-readed' %>
+        <%= link_to 'Marcar como no leído', [user, n], :class => 'mark-as-unreaded' %>
+      </div>
     </div>
 <% end %>

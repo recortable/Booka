@@ -28,7 +28,7 @@
   <p><span id="new-notification-count"><%= user.notifications.to_be_emailed.count %></span> notificaciones nuevas.</p>
 
   <div class="list">
-    <%= render :partial => 'notifications/notifications', :locals => {:notifications => notifications} %>
+    <%= render :partial => 'notifications/notifications', :locals => {:notifications => notifications, :user => user} %>
   </div>
   <%= content_tag :div, :class => 'more', :data => {:page => 1} do %>
       <%= link_to 'Leer más', user_notifications_path(user, :format => :js) %>

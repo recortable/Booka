@@ -49,8 +49,12 @@ es:
           update: 'modificado la serie'
         Task:
           create: 'creado la tarea'
-        Response:
-          create: 'RESPONSE'
+        Page:
+          create: 'creado la página'
+        Agreement:
+          create: 'publicado el acuerdo'
+        Proposal:
+          create: 'creado la propuesta'
 
   permissions:
     permission:
