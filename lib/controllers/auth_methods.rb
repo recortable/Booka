@@ -44,11 +44,13 @@ module Controllers
     def clear_user
       @current_user = nil
       session[:user_id] = nil
+      session[:invited_user_id] = nil
     end
 
     def current_user=(user)
       @current_user = user
       session[:user_id] = user.id
+      session[:invited_user_id] = nil
     end
   end
 end

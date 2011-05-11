@@ -10,4 +10,18 @@ class UsersController < ApplicationController
   def show
     authorize! :read, user
   end
+
+  def edit
+    authorize! :edit, user
+  end
+
+  def update
+    authorize! :update, user
+    flash[:notice] = t('users.notice.update') if user.update_attributes(params[:user])
+    respond_with user
+  end
+
+  def email_notifications
+    UserMailer.notification_email(user).deliver
+  end
 end

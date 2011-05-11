@@ -22,6 +22,9 @@ es:
       topic:
         title: 'Título del asunto a tratar'
         body: 'Informe de la situación'
+      user:
+        name: 'Nombre'
+        notify_by_email: 'Enviadme por correo electrónico informes de los cambios en mis bookas'
 
     hints:
       booka_line:

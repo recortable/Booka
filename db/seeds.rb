@@ -72,6 +72,7 @@ if (User.count == 0)
   dani = User.create!(:name => 'Danigb', :email => 'danigb@gmail.com', :roles => 'super admin')
   paula = User.create!(:name => 'Paula', :email => 'alvarpau@gmail.com', :roles => 'admin')
   samuel = User.create!(:name => 'Samuel', :email => 'samuelgarciaperez@gmail.com', :roles => 'admin')
+  User.create!(:name => 'Dani recortable', :email => 'dani@recortable.net', :roles => '')
 
   # BOOKA
   booka = new_project(admin, nil, 'Guía Booka', 'booka', 'topics pages')

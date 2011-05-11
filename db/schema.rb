@@ -182,9 +182,10 @@ ActiveRecord::Schema.define(:version => 20110510121107) do
   add_index "topics", ["user_id"], :name => "index_topics_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "name",       :limit => 100
-    t.string   "email",      :limit => 200
-    t.string   "roles",      :limit => 16
+    t.string   "name",            :limit => 100
+    t.string   "email",           :limit => 200
+    t.string   "roles",           :limit => 16
+    t.boolean  "notify_by_email",                :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end

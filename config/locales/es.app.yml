@@ -94,8 +94,18 @@ es:
       title: "Iniciar sesión"
     flash:
       create: "Bienvenidx a Plataforma Booka"
+    create:
+      title: "Entrar"
   invitations:
     create:
       title: "Invitaciones"
     notice:
       bad_code: "La invitación no es válida"
+  users:
+    edit:
+      title: "Editar perfil"
+    notice:
+      update: "Tus perfil ha sido actualizado."
+  authentications:
+    index:
+      title: "Métodos de identificación"

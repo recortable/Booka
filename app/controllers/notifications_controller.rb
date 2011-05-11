@@ -14,7 +14,8 @@ class NotificationsController < ApplicationController
       Version.transaction do
         project = Project.find(v.project_id)
         project.users.each do |u|
-          u.notifications.create!(:version => v, :project => project, :event_at => v.created_at)
+          u.notifications.create!(:version => v, :project => project, :event_at => v.created_at,
+            :should_be_emailed => u.notify_by_email)
           count += 1
         end
         v.update_attribute(:notified, true)

@@ -7,6 +7,12 @@ class UserMailer < ActionMailer::Base
      @host = HOST
      @url = "#{@host}/invitacion/#{@user.id}/#{@user.generate_code}"
      mail(:to => user.email, :subject => 'Has sido invitadx a colaborar en Plataforma Booka')
-   end
+  end
+
+  def notification_email(user)
+    @user = user
+    @host = HOST
+    mail(:to => user.email, :subject => 'Cambios en tus bookas')
+  end
 
 end

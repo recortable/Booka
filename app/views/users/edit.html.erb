@@ -1,0 +1,15 @@
+<% title t('.title') %>
+
+<%= content_for :top do %>
+    <h1><%= avatar_img user, 64 %>&nbsp;<%= user.name %></h1>
+    <h2><%= t('.title') %></h2>
+<% end %>
+
+<%= simple_form_for user do |form| %>
+    <%= form.input :name %>
+    <%= form.input :notify_by_email %>
+    <%= submit user, user %>
+<% end %>
+
+
+

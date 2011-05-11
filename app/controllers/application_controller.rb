@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   helper_method :project?, :default_layout?
   helper_method :logo
 
+  rescue_from ActionView::TemplateError do |x|
+    #bubble up the original exception
+    #ActiveRecord::RecordNotFound
+    raise x.original_exception
+  end
+
   protected
   def logo
     '/assets/iconos/libro.png'

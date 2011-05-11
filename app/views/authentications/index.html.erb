@@ -1,0 +1,27 @@
+<%= content_for :top do %>
+    <h2>Plataforma Booka</h2>
+    <h1><%= avatar_img user, 64 %>&nbsp;<%= user.name %></h1>
+    <%= button_group do %>
+        <%= arrowleft_button_link_to 'Volver al perfil', user if can? :read, user %>
+    <% end %>
+<% end %>
+
+<%= title t('.title') %>
+<p>En la actualidad, puedes acceder a booka utilizando los siguientes métodos:</p>
+<table>
+  <% authentications.each do |auth| %>
+  <tr>
+    <td><%= image_tag("https://github.com/intridea/authbuttons/raw/master/png/#{auth.provider}_64.png") %></td>
+    <td><%= auth.uid %></td>
+    <td><%= remove_button_link_to 'Borrar', [user, auth], :method => :delete,
+            :confirm => '¿Estás segurx de que quieres borrar ese método de autenticación?' if can? :manage, user %></td>
+  </tr>
+  <% end %>
+</table>
+<br/>
+<br/>
+<h2>Añadir otros métodos</h2>
+<p>Si quieres entrar a esta cuenta utilizando otros servicios, selecciona el que deseas utilizar</p>
+<p>Eso te permitirá entrar utilizando <strong>cualquiera</strong> de estos servicios (no se borrarán los
+ya empleados)</p>
+<%= render 'sessions/authorizations' %>
