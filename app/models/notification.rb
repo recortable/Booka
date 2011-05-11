@@ -14,9 +14,11 @@ class Notification < ActiveRecord::Base
     Version.where(:notified => false).each do |v|
       Version.transaction do
         project = Project.find(v.project_id)
-        project.users.each do |u|
-          u.notifications.create!(:version => v, :project => project, :event_at => v.created_at,
-            :should_be_emailed => u.notify_by_email)
+        project.users.each do |user|
+          puts "COMP #{user.name} - #{v.user_id} vs #{user.id}"
+          email = user.notify_by_email && (v.user_id != user.id)
+          user.notifications.create!(:version => v, :project => project, :event_at => v.created_at,
+            :should_be_emailed => email)
           count += 1
         end
         v.update_attribute(:notified, true)

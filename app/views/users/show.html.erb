@@ -1,6 +1,7 @@
 <% title user.name %>
 
 <%= content_for :top do %>
+    <h2>Participantes</h2>
     <h1><%= avatar_img user, 64 %>&nbsp;<%= user.name %></h1>
     <%= button_group do %>
         <%= edit_button_link_to 'Editar perfil', [:edit, user] if can? :edit, user %>

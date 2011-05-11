@@ -2,6 +2,11 @@
     <%= title 'Comunidad' %>
 <% end %>
 
+<h1>Actividad reciente</h1>
+<div class="versions">
+  <%= render versions %>
+</div>
+
 <%= content_for :browser do %>
     <h2>Noticias</h2>
     <ul>
@@ -12,10 +17,6 @@
     <%= content_tag :p, t('.empty_posts') if posts.size == 0 %>
 <% end %>
 
-<h1>Actividad reciente</h1>
-<div class="versions">
-  <%= render versions %>
-</div>
 <%= content_for :info do %>
     <h2>Participantes</h2>
     <ul>

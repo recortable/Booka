@@ -1,5 +1,5 @@
 <%= content_for :top do %>
-    <h2>Plataforma Booka</h2>
+    <h2>Participantes</h2>
     <h1><%= avatar_img user, 64 %>&nbsp;<%= user.name %></h1>
     <%= button_group do %>
         <%= arrowleft_button_link_to 'Volver al perfil', user if can? :read, user %>

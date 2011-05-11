@@ -15,7 +15,7 @@ class VersionsController < ApplicationController
             when 'BookaLine'
               booka_line_path(BookaLine.find(version.item_id))
             when 'Comment'
-
+              Comment.find(version.item_id).locate_resource
             when 'Content'
               project_content_path(project, Content.find(version.item_id))
             when 'Topic'
