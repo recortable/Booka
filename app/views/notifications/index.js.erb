@@ -1,0 +1,5 @@
+
+$("div#notifications .list").append('<%= j(render :partial => 'notifications/notifications', :locals => {:notifications => notifications}) %>');
+<% if notifications.size < Kaminari.config.default_per_page %>
+    $("div#notifications .more").hide();
+<% end %>

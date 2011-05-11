@@ -22,14 +22,16 @@
     </ul>
 <% end %>
 
-<div class="notifications">
+<div id="notifications">
   <h1>Actividad de tus bookas</h1>
 
   <p><span id="new-notification-count"><%= user.notifications.to_be_emailed.count %></span> notificaciones nuevas.</p>
-  <% user.notifications.each do |n| %>
-      <div class="notification <%= 'new-notification' if n.should_be_emailed %>">
-        <%= render n.version %>
-      </div>
+
+  <div class="list">
+    <%= render :partial => 'notifications/notifications', :locals => {:notifications => notifications} %>
+  </div>
+  <%= content_tag :div, :class => 'more', :data => {:page => 1} do %>
+      <%= link_to 'Leer más', user_notifications_path(user, :format => :js) %>
   <% end %>
 </div>
 

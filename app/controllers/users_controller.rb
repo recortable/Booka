@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   respond_to :html
   expose(:users) { User.all }
   expose(:user)
+  expose(:notifications) { user.notifications.page(1) }
 
   def index
     authorize! :read, User

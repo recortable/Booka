@@ -10,12 +10,12 @@ Booka::Application.routes.draw do
 
   resources :booka_lines, :path => 'series'
   resources :comments, :path => 'comentar'
-  resources :notifications, :path => 'actividad', :only => :index
   resources :invitations, :path => 'invitacion', :only => :create
 
   resources :users, :path => 'participantes' do
     get 'email_notifications', :on => :member
-    resources :authentications
+    resources :authentications, :path => 'autorizaciones'
+    resources :notifications, :path => 'actividad', :only => :index
   end
   resources :versions, :path => 'ver', :only => [:index, :show]
 

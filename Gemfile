@@ -24,6 +24,7 @@ gem 'ancestry'
 gem 'paper_trail'
 gem 'acts_as_list'
 gem 'rdiscount'
+gem 'kaminari'
 
 gem 'exception_notification', :require => 'exception_notifier'
 #gem 'newrelic_rpm'

@@ -1,0 +1,5 @@
+<% notifications.each do |n| %>
+    <div class="notification <%= 'new-notification' if n.should_be_emailed %>">
+      <%= render n.version %>
+    </div>
+<% end %>

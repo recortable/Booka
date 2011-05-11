@@ -9,5 +9,9 @@ module Models
       /super/ =~ roles
     end
 
+    def anonymous?
+      /anonymous/ =~ roles
+    end
+
   end
 end
