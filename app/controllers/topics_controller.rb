@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   respond_to :html
-  expose(:project) { Project.find_by_slug(params[:project_id])}
+  expose(:project) { Project.get(params[:project_id])}
   expose(:topics) { project.topics }
   expose(:topic)
   expose(:new_comment) { Comment.new(:resource => topic)}

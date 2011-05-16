@@ -23,6 +23,10 @@ class Project < ActiveRecord::Base
   validates :slug, :presence => true
   validates :user_id, :presence => true
 
+  def self.get(slug)
+    find_by_slug!(slug)
+  end
+
   def to_param
     self.slug
   end

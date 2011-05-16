@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   respond_to :html
-  expose(:project) { Project.find_by_slug(params[:project_id])}
+  expose(:project) { Project.get(params[:project_id])}
   expose(:contents) { project.contents }
   expose(:content)
   expose(:new_comment) { Comment.new(:resource => content) }

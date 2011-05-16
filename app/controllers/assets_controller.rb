@@ -1,6 +1,6 @@
 class AssetsController < ApplicationController
   respond_to :html
-  expose(:project) { Project.find_by_slug(params[:project_id])}
+  expose(:project) { Project.get(params[:project_id])}
   expose(:assets) { project.assets }
   expose(:asset)
 
