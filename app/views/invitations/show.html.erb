@@ -5,11 +5,16 @@
 
 <% if invited_user %>
     <%= title t('.title') %>
-    <p>Para completar el registro, debes elegir uno de nuestos sistemas de autenticación:</p>
+    <br/>
+    <h2>Hola, <%= invited_user.name %></h2>
+    <p>Ha sido invitadx a participar en PlataformaBooka. Tu email es <%= invited_user.email %> pero
+    necesitamos que completes el registro con algún sistema de autenticación. Para que no tengas que
+    recordar ni mantener diferentes contraseñas, utilizamos servicios sociales que nos seguran que
+    tú eres quien dices ser.</p>
+    <p><strong>Booka no hace uso (ni puede acceder) a ninguna información privada de tus servicios. Tan sólo los usa
+      para confirmar tu identidad.</strong></p>
     <%= render :partial => 'sessions/authorizations' %>
-    <p>Booka no hace uso (ni puede acceder) a ninguna información privada de tus servicios. Tan sólo los usa
-      para confirmar tu identidad.</p>
-    <p>Si no tienes cuenta en ninguno de esos servicios, siempre puedes usar la tradicional contraseña:</p>
+    <p>Si no tienes cuenta en ninguno de esos servicios, pronto podrás entrar con la tradicional contraseña.</p>
 <% else %>
     <%= title 'La invitación no es válida' %>
     <p>Por algún motivo, el código de invitación es erróneo. Por favor, comprueba los datos de tu email

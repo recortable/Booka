@@ -15,6 +15,7 @@ class InvitationsController < ApplicationController
   expose(:invited_user) do
     user = User.find params[:id]
     user.generate_code == params[:code] ? user : nil
+    user
   end
 
 

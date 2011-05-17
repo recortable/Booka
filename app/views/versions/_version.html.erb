@@ -1,9 +1,9 @@
 <%= div_for version do %>
-    <% user = User.find(version.user_id) %>
+    <% user = version.user_id ? User.find(version.user_id) : User.anonymous %>
     <% project = Project.find(version.project_id) %>
 
     <%= link_to project.title, project_url(project), :class => 'project' unless @hide_project_version %>
-    <% if version.item_type == 'Project' %>
+    <% if version.item_type == 'dProject' %>
         <div class="info user"><%= avatar_img user %><%= user.name %> hace <%= time_ago_in_words version.created_at %></div>
         <div class="info model"><strong>ha <%= t("versions.version.#{version.event}") %></strong>
           <%= link_to 'el booka', version_url(version) %></div>

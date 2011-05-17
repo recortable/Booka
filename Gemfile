@@ -38,4 +38,5 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'capistrano'
   gem 'turn', :require => false
+  gem 'rails_best_practices'
 end

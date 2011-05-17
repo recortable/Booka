@@ -98,7 +98,7 @@ if (User.count == 0)
   new_serie(admin, booka, 'Books à la carte', 'alacarte')
 
   ## CCC
-  ccc = new_project(paula, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc', 'contents topics pages')
+  ccc = new_project(paula, rewrite, 'Arquitecturas Colectivas / Collective Architectures', 'ccc', 'contents topics pages calls')
   add_users(paula, ccc, [dani, paula, samuel])
   catedrales = new_content(paula, ccc, 'De catedrales a contenedores', 'Jose María Galán', 'ccc/catedrales')
   new_asset(paula, catedrales, 'Vigilantes de la playa', 'http://bookasite.s3.amazonaws.com/booka/file/11/foto1.jpg')

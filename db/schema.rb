@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110510121107) do
+ActiveRecord::Schema.define(:version => 20110517151510) do
 
   create_table "assets", :force => true do |t|
     t.string   "title",         :limit => 100
@@ -136,6 +136,25 @@ ActiveRecord::Schema.define(:version => 20110510121107) do
   add_index "posts", ["project_id"], :name => "index_posts_on_project_id"
   add_index "posts", ["slug"], :name => "index_posts_on_slug"
   add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+
+  create_table "project_proposals", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.string   "rol",         :limit => 32
+    t.string   "title",       :limit => 300
+    t.string   "authors",     :limit => 300
+    t.string   "description", :limit => 500
+    t.string   "file1"
+    t.string   "file2"
+    t.string   "file3"
+    t.string   "file4"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_proposals", ["project_id"], :name => "index_project_proposals_on_project_id"
+  add_index "project_proposals", ["user_id"], :name => "index_project_proposals_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "title",         :limit => 300

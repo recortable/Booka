@@ -25,7 +25,7 @@ $ ->
         });
         false
 
-    $("a.mark-as-unreaded").click ->
+    $("a.mark-as-unreaded").live 'click', ->
         n = $(this).parents('.notification')
         if !n.hasClass(config.markClass)
             n.addClass(config.markClass)
@@ -33,7 +33,7 @@ $ ->
             update_notification($(this).attr('href'), '1')
         false;
 
-    $("a.mark-as-readed").click ->
+    $("a.mark-as-readed").live 'click', ->
         n = $(this).parents('.notification')
         if n.hasClass(config.markClass)
             n.removeClass(config.markClass)

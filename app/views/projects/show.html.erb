@@ -3,6 +3,7 @@
 <%= content_for :top do %>
     <%= button_group do %>
         <%= edit_button_link_to t('.edit_project'), [:edit, project] if can? :edit, project %>
+        <%= fork_button_link_to t('.show_proposals'), [project, :project_proposals] if can? :manage, project %>
     <% end %>
 <% end %>
 
@@ -13,3 +14,11 @@
 
 <%= render_body project %>
 <%= render :partial => 'comments/comments', :locals => {:comment => new_comment } %>
+
+<%= content_for :info do %>
+    <% if project.has_stage? :calls %>
+        <h2>Convocatoria abierta</h2>
+        <p>Las convocatoria de materiales y edición  de este proyecto están abiertas.</p>
+        <%= edit_button_link_to 'Presentar propuesta', my_proposal_project_project_proposals_path(project) %>
+    <% end %>
+<% end %>

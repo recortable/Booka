@@ -1,15 +1,5 @@
 
-$c-blue: #29256a;
-$c-gray: #a0a1b5;
-$c-green: #0f0;
-$c-blue-lt: lighten($c-blue,50%);
-$c-green-lt: lighten($c-green,30%);
-$c-link: lighten($c-blue, 20%);
-
-$font-title: 'Tinos', arial, serif;
-$font-subtitle: 'Tahoma', arial, sans-serif;
-$font-body: 'PT Sans Narrow', arial, serif;
-$b-dot: 1px dotted $c-blue;
+@import "variables.css.scss";
 
 /** ELEMENTS **/
 html {
@@ -25,6 +15,7 @@ a {color: $c-link; text-decoration:none;border-bottom:none;}
 a:hover {color: $c-blue;}
 li {border:0;list-style: none;}
 p {margin: 10px 0;}
+strong {font-weight:bold;}
 
 /** LAYOUT */
 #page {margin-top: 50px; margin-bottom: 30px;}
@@ -37,7 +28,7 @@ p {margin: 10px 0;}
 #flash_notice {
     padding: 0.5em 1em;
     text-align:center;
-    background-color:yellow;
+    background-color:$c-yellow;
     opacity: 0.6;
     margin: 0 0 1em 0;
     cursor:pointer;
@@ -84,6 +75,7 @@ div#browser, div#info {
 background-color: white; opacity: 0.8;}
 #admin a {color: #c00; padding: 0 0.3em;}
 
+#beta {position:fixed;top:0;left:0;padding:1px 3px;background-color:$c-yellow;color:$c-blue;}
 
 /** CONTACT **/
 #contact {margin-top: 2em; margin-bottom: 2em; padding: 0.5em 0;

@@ -12,6 +12,7 @@ class Project < ActiveRecord::Base
   has_many :assets
   has_many :pages
   has_many :comments, :as => :resource, :order => 'id DESC'
+  has_many :project_proposals
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },

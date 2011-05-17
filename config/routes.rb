@@ -29,6 +29,9 @@ Booka::Application.routes.draw do
     resources :topics, :path => 'edicion'
     resources :pages, :path => 'paginas'
     resources :assets, :path => 'archivos'
+    resources :project_proposals, :path => 'propuestas' do
+      get 'my_proposal', :on => :collection, :path => 'mi_propuesta'
+    end
   end
 
 end

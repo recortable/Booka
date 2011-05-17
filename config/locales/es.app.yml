@@ -23,6 +23,7 @@ es:
       pages: "LECTURA"
     show:
       edit_project: "Modificar booka"
+      show_proposals: "Ver propuestas de materiales/edición"
     edit:
       title: "Editar booka"
   comments:
@@ -34,7 +35,11 @@ es:
   versions:
     version:
       create: "creado"
+      update: "modificado"
       model:
+        Project:
+          create: "creado el booka"
+          update: "modificado el booka"
         Topic:
           create: 'creado el asunto de discusión'
         Comment:
@@ -55,6 +60,9 @@ es:
           create: 'publicado el acuerdo'
         Proposal:
           create: 'creado la propuesta'
+        ProjectProposal:
+          create: 'creado su propuesta de materiales/edición'
+          update: 'modificado su propuesta de materiales/edición'
 
   permissions:
     permission:
@@ -96,10 +104,11 @@ es:
   sessions:
     new:
       title: "Iniciar sesión"
-    flash:
-      create: "Bienvenidx a Plataforma Booka"
     create:
       title: "Entrar"
+    notice:
+      create: "Bienvenidx de nuevo a Plataforma Booka."
+      new_user: "Bienvenidx a Plataforma Booka"
   invitations:
     create:
       title: "Invitaciones"
@@ -116,3 +125,13 @@ es:
       title: "Métodos de identificación"
     notice:
       destroy: "La autorización ha sido eliminada para este usuario."
+  project_proposals:
+    edit:
+      title:
+        new: "Presentar una propuesta de contenidos / edición"
+        edit: "Editar tu propuesta de contenidos / edición"
+    index:
+      title: "Propuestas de materiales / edición"
+    notice:
+      create: "Propuesta enviada. Pronto nos pondremos en contacto contigo. Muchas gracias."
+      update: "Propuesta modificada."

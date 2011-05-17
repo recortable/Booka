@@ -15,6 +15,7 @@ es:
       content_type: 'Tipo de contenido'
       title: 'Título'
       body: 'Texto'
+      description: 'Descripción'
       booka_line:
         title: 'Título de la serie'
         slug: 'Nombre corto (aparecerá en la URL)'
@@ -25,6 +26,14 @@ es:
       user:
         name: 'Nombre'
         notify_by_email: 'Enviadme por correo electrónico informes de los cambios en mis bookas'
+      project_proposal:
+        rol: 'Tipo de propuesta'
+        title: 'Título de la propuesta'
+        authors: 'Autores/as de la propuesta'
+        file1: 'Fichero adjunto'
+        file2: 'Fichero adjunto'
+        file3: 'Fichero adjunto'
+        file4: 'Fichero adjunto'
 
     hints:
       booka_line:
