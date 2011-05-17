@@ -7,30 +7,32 @@ Booka::Application.routes.draw do
   match "/enter/:id" => "sessions#enter", :as => :enter
   match "/invitacion/:id/:code" => "invitations#show"
 
+  scope(:path_names => {:new => "nuevo", :edit => "editar"}) do
+    resources :booka_lines, :path => 'series'
 
-  resources :booka_lines, :path => 'series'
-  resources :comments, :path => 'comentar'
-  resources :invitations, :path => 'invitacion', :only => :create
+    resources :users, :path => 'participantes' do
+      get 'email_notifications', :on => :member
+      resources :authentications, :path => 'autorizaciones'
+      resources :notifications, :path => 'actividad', :only => [:index, :show, :update]
+    end
+    resources :versions, :path => 'ver', :only => [:index, :show]
 
-  resources :users, :path => 'participantes' do
-    get 'email_notifications', :on => :member
-    resources :authentications, :path => 'autorizaciones'
-    resources :notifications, :path => 'actividad', :only => [:index, :show, :update]
-  end
-  resources :versions, :path => 'ver', :only => [:index, :show]
-
-  resource :system
+    resource :system
+    resources :comments, :path => 'comentar'
+    resources :invitations, :path => 'invitacion', :only => :create
+    resources :feedbacks, :path => 'tu_opinion'
 
 
-  resources :projects, :path => '' do
-    resources :contents, :path => 'materiales'
-    resources :posts, :path => 'entrada'
-    resources :permissions, :path => 'comunidad'
-    resources :topics, :path => 'edicion'
-    resources :pages, :path => 'paginas'
-    resources :assets, :path => 'archivos'
-    resources :project_proposals, :path => 'propuestas' do
-      get 'my_proposal', :on => :collection, :path => 'mi_propuesta'
+    resources :projects, :path => '' do
+      resources :contents, :path => 'materiales'
+      resources :posts, :path => 'entrada'
+      resources :permissions, :path => 'comunidad'
+      resources :topics, :path => 'edicion'
+      resources :pages, :path => 'paginas'
+      resources :assets, :path => 'archivos'
+      resources :project_proposals, :path => 'propuestas' do
+        get 'my_proposal', :on => :collection, :path => 'mi_propuesta'
+      end
     end
   end
 

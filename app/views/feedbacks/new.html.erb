@@ -1,0 +1,15 @@
+
+<%= content_for :top do %>
+    <%= title t('.title') %>
+<% end %>
+
+<p>Plataforma Booka está en estos momentos en activo desarrollo, por lo que <strong>tu opinión
+  es clave para mejorar la herramienta.</strong></p>
+<p>Si se ha producido algún error, ayudaría mucho saber qué estabas haciendo y qué navegador (modelo
+  y versión) estabas utilizando.</p>
+<p><strong>Muchas gracias!</strong></p>
+
+<%= form_tag feedbacks_path, :class => 'feedback' do %>
+    <%= text_area_tag :body %>
+    <%= button_submit_tag 'Enviar' %>
+<% end %>
