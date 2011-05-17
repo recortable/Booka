@@ -1,0 +1,5 @@
+<%= div_for project_proposal do %>
+    <%= avatar_img project_proposal.user %>
+    <%= link_to project_proposal.user.name, project_proposal.user %>:
+    <%= link_to project_proposal.title, [project, project_proposal] %>
+<% end %>

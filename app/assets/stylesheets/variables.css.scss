@@ -1,0 +1,13 @@
+
+$c-blue: #29256a;
+$c-gray: #a0a1b5;
+$c-green: #0f0;
+$c-blue-lt: lighten($c-blue,50%);
+$c-green-lt: lighten($c-green,30%);
+$c-link: lighten($c-blue, 20%);
+$c-yellow: #ffff99;
+
+$font-title: 'Tinos', arial, serif;
+$font-subtitle: 'Tahoma', arial, sans-serif;
+$font-body: 'PT Sans Narrow', arial, serif;
+$b-dot: 1px dotted $c-blue;

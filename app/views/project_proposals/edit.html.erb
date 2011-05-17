@@ -1,0 +1,23 @@
+<%= title t(project_proposal.new_record? ? '.title.new' : '.title.edit') %>
+
+<%= simple_form_for [project, project_proposal] do |form| %>
+    <%= form.input :rol, :collection => ProjectProposal::ROLES, :include_blank => false %>
+    <%= form.input :title %>
+    <%= form.input :authors %>
+    <%= form.input :description, :as => :text, :input_html => {:rows => 5} %>
+    <%= form.input :body %>
+    <div class="assets">
+      <h2>Ficheros adjuntos</h2>
+      <% 1.upto(4) do |n| %>
+          <% file = project_proposal.send("file#{n}") %>
+          <%= form.input "file#{n}", :as => :file %>
+          <% if file.url %>
+              <div class="current_file" style="margin-bottom: 1em;">
+                <label>Fichero <%= n %> actual: </label><%= link_to File.basename(file.path), file.url %>
+              </div>
+          <% end %>
+      <% end %>
+    </div>
+    <%= button_submit_tag 'Guardar' %>
+    <%= link_to 'Cancelar', project %>
+<% end %>

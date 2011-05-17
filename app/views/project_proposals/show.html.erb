@@ -1,0 +1,24 @@
+
+<%= content_for :top do %>
+    <%= button_group do %>
+        <%= arrowleft_button_link_to "Volver a '#{project.title}'", project %>
+        <%= fork_button_link_to t('projects.show.show_proposals'), [project, :project_proposals] if can? :manage, project %>
+    <% end %>
+<% end %>
+
+<%= title("Propuesta de #{project_proposal.rol}") %>
+<%= edit_button_link_to 'Editar', [:edit, project, project_proposal] %>
+
+<%= div_for project_proposal do %>
+    <ul>
+      <li><label>Propuesta presentada por:</label><%= render project_proposal.user %></li>
+      <li><label>Tipo de propuesta:</label><%= project_proposal.rol %></li>
+      <li><label>Título:</label><%= project_proposal.title %></li>
+      <li><label>Autores/as:</label><%= project_proposal.authors %></li>
+      <li><label>Descripción:</label><%= project_proposal.description %></li>
+      <li><label>Texto:</label><%= project_proposal.body %></li>
+      <li><label>Presentada:</label>hace <%= time_ago_in_words project_proposal.created_at %></li>
+      <li><label>Fichero 1:</label><%= project_proposal.file1.url %></li>
+      <li><label>Fichero 2:</label><%= project_proposal.file1.url %></li>
+    </ul>
+<% end %>

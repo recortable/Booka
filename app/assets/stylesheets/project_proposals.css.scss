@@ -1,0 +1,22 @@
+/** Project Prosposals **/
+
+@import "variables.css.scss";
+
+form.project_proposal {
+    div.assets {
+        width: 71%;
+        border: 1px solid $c-gray;
+        padding: 1em 5%;
+        margin-bottom:1em;
+    }
+}
+
+div.project_proposal {
+    ul {
+        margin: 1em 0;
+        li {
+            margin: 3px 0;
+            label {display: block; font-weight:bold;}
+        }
+    }
+}
