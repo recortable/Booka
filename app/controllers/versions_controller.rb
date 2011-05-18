@@ -24,6 +24,8 @@ class VersionsController < ApplicationController
               project_post_path(project, Post.find(version.item_id))
             when 'Response'
               project_topic_path(project, Response.find(version.item_id).topic, :anchor => "#{version.sub_type.downcase}_#{version.item_id}")
+            when 'Page'
+              project_page_path(project, Page.find(version.item_id))
           end
 
     url.present? ? redirect_to(url) : render(:text => version.item_type)
