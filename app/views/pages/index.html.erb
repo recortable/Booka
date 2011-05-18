@@ -1,0 +1,10 @@
+<%= content_for :top do %>
+    <%= title 'Índice' %>
+    <%= button_group do %>
+        <%= button_link_to 'Poner en modo lectura', project_read_pages_path(project) %>
+        <%= add_button_link_to 'Añadir página', [:new, project, :page] if can? :manage, project %>
+    <% end %>
+<% end %>
+
+<%= render pages %>
+<%= content_tag(:p, t('.empty_pages')) if pages.size == 0 %>

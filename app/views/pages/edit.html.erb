@@ -1,0 +1,5 @@
+<%= content_for :top do %>
+    <%= title t('.title') %>
+<% end %>
+
+<%= render :partial => 'form', :locals => {:project => project, :page => page} %>

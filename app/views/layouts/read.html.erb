@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html class="read_pages">
+<head>
+  <%= render :partial => 'layouts/head' %>
+</head>
+<body>
+<div id="site">
+  <%= link_to 'Plataforma Booka', root_path %>
+</div>
+<div id="reader">
+  <%= yield %>
+</div>
+<%= render :partial => 'layouts/foot' %>
+</body>
+</html>

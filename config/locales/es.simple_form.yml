@@ -46,3 +46,11 @@ es:
   invitations:
     show:
       title: "Completa el registro"
+  contents:
+    edit:
+      title: "Editar material"
+  pages:
+    notice:
+      destroy: "Página borrada."
+    index:
+      empty_pages: "De momento no tiene ninguna página"

@@ -101,6 +101,13 @@ es:
   pages:
     show:
       browser: "Índice"
+    new:
+      title: "Añadir una página"
+    notice:
+      create: "Página creada."
+      update: "Página guardada."
+    edit:
+      title: "Editar página"
   sessions:
     new:
       title: "Iniciar sesión"

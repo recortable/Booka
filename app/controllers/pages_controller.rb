@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class PagesController < ApplicationController
   respond_to :html
   expose(:project) { Project.get(params[:project_id])}
@@ -5,10 +7,40 @@ class PagesController < ApplicationController
   expose(:page)
 
   def index
-    redirect_to [project, pages.first]
   end
 
   def show
     authorize! :read, page
+  end
+
+  def new
+    authorize! :manage, project
+  end
+
+  def edit
+    authorize! :edit, project
+  end
+
+  def create
+    clean_body(params[:body])
+    params[:page][:user_id] = current_user.id
+    params[:page][:content_type] = 'text/markdown'
+    params[:page][:body] = Content.find(params[:copy_content_from]).body if params[:copy_content_from]
+    authorize! :create, page
+    flash[:notice] = t('pages.notice.create') if page.save
+    respond_with page, :location => [project, page]
+  end
+
+  def update
+    authorize! :update, page
+    clean_body(params[:body])
+    flash[:notice] = t('pages.notice.update') if page.update_attributes(params[:page])
+    respond_with page, :location => [project, page]
+  end
+
+  def destroy
+    authorize! :destroy, page
+    flash[:notice] = t('pages.notice.destroy') if page.destroy
+    respond_with page, :location => [project, :pages]
   end
 end

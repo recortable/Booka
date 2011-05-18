@@ -1,0 +1,2 @@
+module ReadPagesHelper
+end

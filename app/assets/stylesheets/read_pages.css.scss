@@ -1,0 +1,36 @@
+/** READ PAGES **/
+
+$c-bg: #F6F4F1;
+@mixin page-shadow {-moz-box-shadow: 0px 0px 25px #555;-webkit-box-shadow: 0px 0px 25px #555;box-shadow: 1px 1px 4px #888;}
+
+html.read_pages {
+    background-color: $c-bg;
+}
+
+div#site {
+    position:fixed;left:0;top:0; padding: 2px 10px;
+    text-shadow: 0 1px 1px darken($c-bg, 30%);
+}
+
+div#reader-controls {
+    position:fixed;left:0;right:0;bottom:0;height:40;
+    text-align:center;
+
+    div.button-group {border: 5px solid $c-bg; border-radius: 3px;}
+}
+
+div#reader {
+    width: 700px;
+    background-color: white;
+    margin: 40px auto 80px auto; padding: 3em;
+    @include page-shadow;
+
+    h2 a {display: block; font-style:normal; margin: -1em 0 2em 0; font-size: 90%;}
+
+    p {text-align:justify;}
+
+    div.index {
+        margin-top: 2em;
+        a {display: block; margin: 10px 5px;}
+    }
+}

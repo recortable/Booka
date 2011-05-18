@@ -9,6 +9,14 @@ class Page < ActiveRecord::Base
       :title => Proc.new { |p| p.title }
   })
 
+  def next
+    @next ||= project.pages.where('id > ?', id).order('title ASC').limit(1).first
+  end
+
+  def prev
+    @prev ||= project.pages.where('id < ?', id).order('title DESC').limit(1).first
+  end
+
   validates :title, :presence => true
   validates :content_type, :presence => true
   validates :user_id, :presence => true

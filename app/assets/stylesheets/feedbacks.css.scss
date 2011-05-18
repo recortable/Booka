@@ -1,3 +1,8 @@
+@import "variables.css.scss";
+
+#beta {position:fixed;top:0;left:0;right:0;text-align:center;
+padding:1px 3px;background-color:white;opacity:0.9;border-bottom:1px solid #efefef;}
+
 
 form.feedback {
     textarea {

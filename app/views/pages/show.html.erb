@@ -1,11 +1,18 @@
 
 <%= content_for :top do %>
     <%= title page.title %>
+    <%= button_group do %>
+        <%= button_link_to 'Poner en modo lectura', project_read_page_path(project, page) %>
+        <%= log_button_link_to 'Volver al índice', [project, :pages] %>
+        <%= add_button_link_to 'Editar página', [:edit, project, page] if can? :edit, page %>
+        <%= danger_remove_button_link_to 'Borrar página', [project, page], :method => :delete,
+            :confirm => "¿Segurx que quieres borrar la página '#{page.title}'?" if can? :destroy, page %>
+    <% end %>
 <% end %>
 
 <%= content_for :browser do %>
     <h2><%= t('.browser') %></h2>
-    <ul>
+    <ul>                                                                                e
       <% pages.each do |page| %>
       <li><%= link_to page.title, [project, page] %></li>
       <% end %>

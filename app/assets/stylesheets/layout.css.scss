@@ -71,10 +71,8 @@ div#browser, div#info {
 
 /** ADMIN **/
 #admin {position: fixed; top: 0;right:0; padding: 1px 0px 1px 0; text-align:right;
-background-color: white; opacity: 0.8;}
+background-color: white; opacity: 0.8;z-index:5000;}
 #admin a {color: #c00; padding: 0 0.3em;}
-
-#beta {position:fixed;top:0;left:0;padding:1px 3px;background-color:$c-yellow;color:$c-blue;}
 
 /** CONTACT **/
 #contact {margin-top: 2em; margin-bottom: 2em; padding: 0.5em 0;

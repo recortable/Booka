@@ -18,12 +18,17 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+  def clean_body(params)
+    params[:body] = params[:body].gsub(/\?/, '&#63;')
+  end
+
+
   def logo
     '/assets/iconos/libro.png'
   end
 
   def default_layout?
-    self.class != ContentsController
+    @no_grid != true
   end
 
   def project?

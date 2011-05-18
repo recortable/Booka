@@ -7,7 +7,7 @@ Booka::Application.routes.draw do
   match "/enter/:id" => "sessions#enter", :as => :enter
   match "/invitacion/:id/:code" => "invitations#show"
 
-  scope(:path_names => {:new => "nuevo", :edit => "editar"}) do
+  scope(:path_names => {:new => "nueva", :edit => "editar"}) do
     resources :booka_lines, :path => 'series'
 
     resources :users, :path => 'participantes' do
@@ -24,6 +24,7 @@ Booka::Application.routes.draw do
 
 
     resources :projects, :path => '' do
+      resources :read_pages, :path => 'leer'
       resources :contents, :path => 'materiales'
       resources :posts, :path => 'entrada'
       resources :permissions, :path => 'comunidad'

@@ -1,0 +1,15 @@
+<h2><%= link_to page.project.title, project_read_pages_path(project) %></h2>
+<%= title page.title %>
+<%= div_for page do %>
+
+    <%= render_body page %>
+<% end %>
+
+<div id="reader-controls">
+  <%= button_group do %>
+      <%= remove_button_link_to 'Cerrar', [project, page] %>
+      <%= log_button_link_to 'Índice', project_read_pages_path(project) %>
+      <%= arrowleft_button_link_to 'Anterior', project_read_page_path(project, page.prev) if page.prev %>
+      <%= arrowright_button_link_to 'Siguiente', project_read_page_path(project, page.next) if page.next %>
+  <% end %>
+</div>

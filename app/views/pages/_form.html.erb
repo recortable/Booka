@@ -1,0 +1,8 @@
+<%= simple_form_for [project, page] do |form| %>
+    <%= form.input :title %>
+    <% if page.new_record? %>
+        <%= select_tag :copy_content_from, options_for_select(page.project.contents.map {|u| [u.title,u.id]}), :include_blank => true %>
+    <% end %>
+    <%= form.input :body %>
+    <%= button_submit_tag 'Guardar' %>
+<% end %>

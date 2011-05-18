@@ -16,6 +16,7 @@ module Controllers
     def require_user
       unless current_user
         store_location
+        flash[:notice] = 'Es necesario que te identifiques primero.'
         redirect_to login_path
       end
     end

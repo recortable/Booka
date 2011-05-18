@@ -1,0 +1,15 @@
+<%= title project.title %>
+<div class="index">
+  <h2>Índice</h2>
+  <% pages.each do |page| %>
+      <%= div_for page do %>
+          <%= link_to page.title, project_read_page_path(project, page) %>
+      <% end %>
+  <% end %>
+</div>
+
+<div id="reader-controls">
+  <%= button_group do %>
+      <%= remove_button_link_to 'Cerrar', [project, :pages] %>
+  <% end %>
+</div>
