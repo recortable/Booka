@@ -46,6 +46,7 @@ es:
           create: 'comentado'
         Content:
           create: 'añadido el material'
+          update: 'modificado el material'
         Post:
           create: 'publicado la entrada'
           update: 'modificado la entrada'
@@ -56,6 +57,8 @@ es:
           create: 'creado la tarea'
         Page:
           create: 'creado la página'
+          update: 'modificado la página'
+          destroy: 'borrado la página'
         Agreement:
           create: 'publicado el acuerdo'
         Proposal:
