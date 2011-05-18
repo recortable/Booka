@@ -1,7 +1,11 @@
 <%= simple_form_for [project, page] do |form| %>
     <%= form.input :title %>
     <% if page.new_record? %>
-        <%= select_tag :copy_content_from, options_for_select(page.project.contents.map {|u| [u.title,u.id]}), :include_blank => true %>
+        <div class="input">
+          <label>Copiar texto desde materiales</label>
+          <%= select_tag :copy_content_from, options_for_select(page.project.contents.map {|u| [u.title,u.id]}), :include_blank => true %>
+          <span class="hint">Si eliges un material, el texto de abajo se ignorará y se copiará el texto del material.</span>
+        </div>
     <% end %>
     <%= form.input :body %>
     <%= button_submit_tag 'Guardar' %>

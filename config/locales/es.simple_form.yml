@@ -38,6 +38,8 @@ es:
     hints:
       booka_line:
         slug: 'Sólo puede contener letras, números y guiones. '
+      page:
+        title: 'Se ordenarán por título en el índice: recomendamos que pongas un número delante especificando la posición'
 
     helpers:
       submit:

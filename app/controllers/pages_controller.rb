@@ -22,7 +22,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    clean_body(params[:body])
+    clean_body(params[:page])
     params[:page][:user_id] = current_user.id
     params[:page][:content_type] = 'text/markdown'
     params[:page][:body] = Content.find(params[:copy_content_from]).body if params[:copy_content_from]
@@ -33,7 +33,7 @@ class PagesController < ApplicationController
 
   def update
     authorize! :update, page
-    clean_body(params[:body])
+    clean_body(params[:page])
     flash[:notice] = t('pages.notice.update') if page.update_attributes(params[:page])
     respond_with page, :location => [project, page]
   end
