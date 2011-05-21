@@ -5,5 +5,7 @@
       hace <%= time_ago_in_words comment.created_at %>
     </div>
     <%= comment.body %>
-    <%= link_to t('.reply'), '#', :class => 'reply' %>
+    <%= link_to "&larr; #{t('.reply')}".html_safe, new_comment_path(:parent_id => comment.id, :format => :js),
+                :class => 'reply', :rel => 'nofollow' %>
+    <%= content_tag :div, '', :id => "reply-#{comment.id}", :class => 'reply' %>
 <% end %>

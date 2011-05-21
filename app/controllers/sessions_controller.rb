@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   protect_from_forgery :except => :create
 
   def new
+    store_location(params[:from])
   end
 
   def create

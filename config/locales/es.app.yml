@@ -44,6 +44,7 @@ es:
           create: 'creado el asunto de discusión'
         Comment:
           create: 'comentado'
+          destroy: 'borrado un comentario en'
         Content:
           create: 'añadido el material'
           update: 'modificado el material'

@@ -1,0 +1,2 @@
+
+$("div#reply-<%= comment.parent.id %>").html('<%= escape_javascript render(:partial => 'form', :locals => {:comment => comment})%>');

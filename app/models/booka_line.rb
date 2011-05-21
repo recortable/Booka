@@ -1,8 +1,10 @@
 class BookaLine < ActiveRecord::Base
+  extend Models::HasNestedComments
+  has_nested_comments
+
   has_many :projects
   belongs_to :project
   belongs_to :user
-  has_many :comments, :as => :resource
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },

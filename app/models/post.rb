@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
+  extend Models::HasNestedComments
+  has_nested_comments
+
   belongs_to :user
   belongs_to :project
-  has_many :comments, :as => :resource
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },

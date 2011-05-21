@@ -1,7 +1,9 @@
 class Content < ActiveRecord::Base
+  extend Models::HasNestedComments
+  has_nested_comments
+
   belongs_to :user
   belongs_to :project
-  has_many :comments, :as => :resource
   has_many :assets, :as => :resource
 
   acts_as_list :scope => :project_id

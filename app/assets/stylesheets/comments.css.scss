@@ -1,25 +1,27 @@
 
-$c-blue: #29256a;
-$b-dot: 1px dotted $c-blue;
-
+@import "variables.css.scss";
 
 div.discussion {
     margin-top: 2em; padding-top: 1em;
     border-top: $b-dot;
-    form {
-        width: 100%; overflow: hidden;
-        label {display:none;}
-        textarea {float: left; height: 3em; width: 78%; margin-right: 2%;}
-        input[type=submit] {width: 20%;}
-    }
 
     div.comments {
         margin-top: 0.5em;
         div.comment {margin: 0.5em 0;}
+        div.reply {width: 95%; margin: 0.5em 0 0 5%;}
     }
 
     .nested-comments {
-        margin: 0.5em 0 0.5em 1em;
+        margin: 0.5em 0 0.5em 0; padding-left:0.5em;
+        border-left: 1px solid $c-blue-lt;
     }
 
+}
+
+form.comment {
+    width: 100%; overflow: hidden;
+    div.input.text label {display:none;}
+    div.input.text {float: left; width: 78%; margin-right: 2%;}
+    div.input textarea {width: 98%; height: 3em;}
+    input[type=submit] {width: 20%;margin-top: 0em;}
 }

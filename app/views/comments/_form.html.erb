@@ -1,0 +1,7 @@
+<%= simple_form_for comment do |form| %>
+    <%= form.input :resource_type, :as => :hidden %>
+    <%= form.input :resource_id, :as => :hidden %>
+    <%= form.input :parent_id, :as => :hidden %>
+    <%= form.input :body %>
+    <%= button_submit_tag 'Comentar' %>
+<% end %>

@@ -19,7 +19,7 @@
             Hola, <%= link_to current_user.name, current_user %>
             <%= link_to 'Salir', logout_path, :id => 'logout_link' %>
         <% else %>
-            <%= link_to 'Iniciar sesion', login_path, :id => 'login_link' %>
+            <%= link_to 'Iniciar sesion', login_path(:from => request.fullpath), :id => 'login_link' %>
         <% end %>
       </div>
     </div>

@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   include Models::HasStages
+  extend Models::HasNestedComments
+  has_nested_comments
 
   belongs_to :booka_line
   belongs_to :user
@@ -11,7 +13,7 @@ class Project < ActiveRecord::Base
   has_many :users, :through => :permissions
   has_many :assets
   has_many :pages
-  has_many :comments, :as => :resource, :order => 'id DESC'
+
   has_many :project_proposals
 
   has_paper_trail(:meta => {

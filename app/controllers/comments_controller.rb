@@ -1,10 +1,14 @@
 class CommentsController < ApplicationController
-  respond_to :html
+  respond_to :html, :js
   expose(:comment)
   expose(:resource) { comment.resource }
 
   def new
-
+    if params[:parent_id].present?
+      comment.parent = Comment.find(params[:parent_id])
+      comment.resource = comment.parent.resource
+    end
+    respond_with comment
   end
 
   def create
