@@ -11,6 +11,6 @@
 <div id="reader-controls">
   <%= button_group do %>
       <%= remove_button_link_to 'Cerrar', [project, :pages] %>
-      <%= button_link_to 'Descargar PDF del libro', project_read_pages_path(project) %>
+      <%= button_link_to 'Descargar PDF del libro', project_read_pages_path(project, :format => :pdf) %>
   <% end %>
 </div>

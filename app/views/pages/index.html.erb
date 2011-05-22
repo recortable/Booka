@@ -2,7 +2,7 @@
     <%= title 'Índice' %>
     <%= button_group do %>
         <%= button_link_to 'Poner en modo lectura', project_read_pages_path(project) %>
-        <%= button_link_to 'Descargar PDF del libro', project_read_pages_path(project) %>
+        <%= button_link_to 'Descargar PDF del libro', project_read_pages_path(project, :format => :pdf) %>
         <%= add_button_link_to 'Añadir página', [:new, project, :page] if can? :manage, project %>
     <% end %>
 <% end %>

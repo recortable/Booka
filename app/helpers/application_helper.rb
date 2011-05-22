@@ -7,18 +7,21 @@ module ApplicationHelper
     content_tag(:h1, text)
   end
 
-  def render_body(model)
+  def render_body(model, wrap_with_div = true)
     return if model.blank?
-    if model.body.blank?
+
+    body = if model.body.blank?
       title = model.respond_to?(:title) ? model.title :  'esta página'
-      content_tag :div, "<De momento '#{title}' no tiene contenido>", :class => 'body'
+      "<De momento '#{title}' no tiene contenido>"
     elsif model.content_type == 'text/markdown'
-      content_tag :div, RDiscount.new(model.body, :smart).to_html.html_safe, :class => 'body'
+      RDiscount.new(model.body, :smart).to_html.html_safe
     elsif model.content_type == 'text/html'
-      content_tag :div, model.body.html_safe, :class => 'body'
+      model.body.html_safe
     else
-      content_tag :div, model.body, :class => 'body'
+      model.body
     end
+
+    wrap_with_div ? content_tag(:div, body, :class => 'body') : body
   end
 
   def submit(location, cancel_location)

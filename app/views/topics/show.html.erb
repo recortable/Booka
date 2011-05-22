@@ -14,8 +14,33 @@
     </ul>
 <% end %>
 
+<%= content_for :info do %>
+    <%= content_tag :h2, t('.topic_title') %>
+    <ul>
+      <li><%= link_to 'Situación actual', "#" %></li>
+    </ul>
+    <%= content_tag :h2, t('.proposals_title') %>
+    <ul>
+      <% proposals.each do |proposal| %>
+      <li><%= link_to proposal.title, "#proposal_#{proposal.id}" %></li>
+      <% end %>
+    </ul>
+    <%= content_tag :h2, t('.agreements_title') %>
+    <ul>
+      <% agreements.each do |agreement| %>
+      <li><%= link_to agreement.title, "#agreement_#{agreement.id}" %></li>
+      <% end %>
+    </ul>
+    <%= content_tag :h2, t('.tasks_title') %>
+    <ul>
+      <% tasks.each do |task| %>
+      <li><%= link_to task.title, "#task_#{task.id}" %></li>
+      <% end %>
+    </ul>
+<% end %>
+
 <%= div_for topic do %>
-      <%= content_tag :h1, t('.topic_title') %>
+    <%= content_tag :h1, t('.topic_title') %>
     <div class="description">
       <%= render_body topic %>
       <div class="inline_comments">
