@@ -8,8 +8,15 @@ class NotificationsController < ApplicationController
   end
 
   def update
-    puts params[:notification]
     notification.update_attributes(params[:notification])
     respond_with notification
+  end
+
+  def clear
+    authorize! :manage, user
+    user.unreaded_notifications.each do |notification|
+      notification.mark_as_mailed
+    end
+    redirect_to user
   end
 end

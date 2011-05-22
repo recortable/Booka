@@ -8,17 +8,23 @@
 <% end %>
 
 <%= content_for :browser do %>
-    <%= render :partial => 'projects/browser', :locals => {:booka_line => project.booka_line} %>
+    <h2>Noticias</h2>
+    <ul>
+      <% project.posts.each do |post| %>
+      <li><%= link_to post.title, [project, post] %></li>
+      <% end %>
+    </ul>
+    <%= content_tag :p, t('.empty_news') if project.posts.count == 0 %>
 <% end %>
 
 
 <%= render_body project %>
-<%= render :partial => 'comments/comments', :locals => {:comment => new_comment } %>
+<%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
 
 <%= content_for :info do %>
     <% if project.has_stage? :calls %>
         <h2>Convocatoria abierta</h2>
-        <p>Las convocatoria de materiales y edición  de este proyecto están abiertas.</p>
+        <p>Las convocatoria de materiales y edición de este proyecto están abiertas.</p>
         <%= edit_button_link_to 'Presentar propuesta', my_proposal_project_project_proposals_path(project) %>
     <% end %>
 <% end %>

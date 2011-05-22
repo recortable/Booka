@@ -80,7 +80,7 @@ if (User.count == 0)
   new_post(admin, booka, 'Plataforma Booka', 'booka', false) # welcome page
 
   new_page(dani, booka, '1. Qué es booka', 'booka/que')
-  new_page(dani, booka, '2. Mesas de booka', 'booka/propuestas')
+  new_page(dani, booka, '2. Mesas de booka', 'booka/2-mesas')
   new_page(dani, booka, '2.1 Mesa de materiales', 'booka/materiales')
   new_page(dani, booka, '2.2 Mesa de edición', 'booka/edicion')
   new_page(dani, booka, '2.3 Mesa de lectura', 'booka/lectura')

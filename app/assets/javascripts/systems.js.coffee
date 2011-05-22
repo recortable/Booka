@@ -1,3 +1,6 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+checkSystem = ->
+    $.getJSON '/system.json', (data) ->
+        $("#user_notifications").text(data.user_notifications).show();
+
+$ ->
+    setTimeout(checkSystem, 500)

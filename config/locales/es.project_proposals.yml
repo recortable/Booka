@@ -6,6 +6,7 @@ es:
         edit: "Editar tu propuesta de contenidos / edición"
     index:
       title: "Propuestas de materiales / edición"
+      empty_project_proposals: "De momento no hay propuestas para este título."
     notice:
       create: "Propuesta enviada. Pronto nos pondremos en contacto contigo. Muchas gracias."
       update: "Propuesta modificada."

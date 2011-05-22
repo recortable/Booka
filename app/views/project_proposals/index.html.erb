@@ -5,3 +5,4 @@
 <% end %>
 
 <%= render project_proposals %>
+<%= content_tag :p, t('.empty_project_proposals') if project_proposals.size == 0 %>

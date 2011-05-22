@@ -1,4 +1,9 @@
-<% title post.title %>
+<%= content_for :top do %>
+    <%= title post.title %>
+    <%= button_group do %>
+        <%= edit_button_link_to t('.edit_post'), [:edit, project, post] if can? :edit, post %>
+    <% end %>
+<% end %>
 
 <%= render_body post %>
 <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>

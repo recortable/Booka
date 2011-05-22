@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110522085121) do
+ActiveRecord::Schema.define(:version => 20110522171000) do
 
   create_table "assets", :force => true do |t|
     t.string   "title",         :limit => 100
@@ -202,12 +202,13 @@ ActiveRecord::Schema.define(:version => 20110522085121) do
   add_index "topics", ["user_id"], :name => "index_topics_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "name",            :limit => 100
-    t.string   "email",           :limit => 200
-    t.string   "roles",           :limit => 16
-    t.boolean  "notify_by_email",                :default => true
+    t.string   "name",                         :limit => 100
+    t.string   "email",                        :limit => 200
+    t.string   "roles",                        :limit => 16
+    t.boolean  "notify_by_email",                             :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "unreaded_notifications_count",                :default => 0
   end
 
   create_table "versions", :force => true do |t|

@@ -1,9 +1,12 @@
 <%= content_for :top do %>
     <%= title t('.title') %>
+    <%= button_group do %>
+        <%= arrowleft_button_link_to 'Cancelar edición', [project, post] %>
+    <% end %>
 <% end %>
 
 <%= simple_form_for [project, post] do |form| %>
     <%= form.input :title %>
     <%= form.input :body %>
-    <%= submit [project, post], [project] %>
+    <%= button_submit_tag 'Guardar' %>
 <% end %>

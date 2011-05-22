@@ -26,7 +26,9 @@
 <div id="notifications">
   <h1>Actividad de tus bookas</h1>
 
-  <p><span id="new-notification-count"><%= user.notifications.to_be_emailed.count %></span> notificaciones nuevas.</p>
+  <p><span id="new-notification-count"><%= user.unreaded_notifications_count %></span> notificaciones nuevas.
+    <%= link_to 'Marcar todas como leídas', clear_user_notifications_path(user), :rel => 'no-follow' if can? :manage, user %>
+  </p>
 
   <div class="list">
     <%= render :partial => 'notifications/notifications', :locals => {:notifications => notifications, :user => user} %>

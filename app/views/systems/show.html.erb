@@ -4,8 +4,10 @@
 <% end %>
 
 <ul id="booka-info">
-  <li><label>Notificationes: </label><%= notifications_count %></li>
-  <li><label>Notificationes nuevas: </label><%= new_notifications_count %></li>
+  <li><label>Notificationes: </label><%= status.notifications_count %></li>
+  <li><label>Notificationes nuevas: </label><%= status.new_notifications_count %></li>
+  <li><label>Usuarios sin notificar: </label><%= status.unnotified_users %></li>
+  <li><label>Tus notificationes: </label><%= status.user_notifications %></li>
 </ul>
 
 <div id="rails-info">

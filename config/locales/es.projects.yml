@@ -12,6 +12,7 @@ es:
     show:
       edit_project: "Modificar booka"
       show_proposals: "Ver propuestas de materiales/edición"
+      empty_news: "No se ha publicado ninguna noticia"
     edit:
       title: "Editar booka"
   comments:
@@ -19,3 +20,6 @@ es:
       create: "Gracias por tu comentario!"
     comment:
       reply: "Responder"
+  posts:
+    show:
+      edit_post: "Editar entrada"

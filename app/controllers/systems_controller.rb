@@ -1,8 +1,9 @@
 class SystemsController < ApplicationController
-  respond_to :html
-  expose(:new_notifications_count) { Notification.update_notifications }
-  expose(:notifications_count) { Notification.count }
+  respond_to :json, :html
+
+  expose(:status) { SystemStatus.new(current_user) }
 
   def show
+    respond_with status
   end
 end

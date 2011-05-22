@@ -5,6 +5,8 @@ class Notification < ActiveRecord::Base
 
   scope :to_be_emailed, where(:should_be_emailed => true)
 
+  after_save :update_user
+
   def mark_as_mailed
     self.update_attribute(:should_be_emailed, false)
   end
@@ -25,5 +27,10 @@ class Notification < ActiveRecord::Base
       end
     end
     count
+  end
+
+  protected
+  def update_user
+    self.user.update_notifications_count
   end
 end
