@@ -1,0 +1,6 @@
+es:
+  authentications:
+    index:
+      title: "Métodos de identificación"
+    notice:
+      destroy: "La autorización ha sido eliminada para este usuario."

@@ -1,0 +1,8 @@
+es:
+  invitations:
+    create:
+      title: "Invitaciones"
+    notice:
+      bad_code: "La invitación no es válida"
+    show:
+      title: "Completa el registro"

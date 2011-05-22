@@ -1,0 +1,36 @@
+es:
+  versions:
+    version:
+      create: "creado"
+      update: "modificado"
+      model:
+        Project:
+          create: "creado el booka"
+          update: "modificado el booka"
+        Topic:
+          create: 'creado el asunto de discusión'
+        Comment:
+          create: 'comentado'
+          destroy: 'borrado un comentario en'
+        Content:
+          create: 'añadido el material'
+          update: 'modificado el material'
+        Post:
+          create: 'publicado la entrada'
+          update: 'modificado la entrada'
+        BookaLine:
+          create: 'creado la serie'
+          update: 'modificado la serie'
+        Task:
+          create: 'creado la tarea'
+        Page:
+          create: 'creado la página'
+          update: 'modificado la página'
+          destroy: 'borrado la página'
+        Agreement:
+          create: 'publicado el acuerdo'
+        Proposal:
+          create: 'creado la propuesta'
+        ProjectProposal:
+          create: 'creado su propuesta de materiales/edición'
+          update: 'modificado su propuesta de materiales/edición'

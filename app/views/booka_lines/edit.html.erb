@@ -1,5 +1,8 @@
 <%= content_for :top do %>
     <%= title t('.title') %>
+    <%= button_group do %>
+        <%= arrowleft_button_link_to 'Cancelar edición', booka_line %>
+    <% end %>
 <% end %>
 
 <%= render :partial => 'form' %>

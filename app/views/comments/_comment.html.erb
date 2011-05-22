@@ -1,6 +1,7 @@
 <%= div_for comment do %>
     <div class="info">
       <%= avatar_img comment.user %>
+      #<%= comment.position %>
       <%= comment.user.name %>,
       hace <%= time_ago_in_words comment.created_at %>
     </div>

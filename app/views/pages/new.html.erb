@@ -1,5 +1,9 @@
 <%= content_for :top do %>
     <%= title t('.title') %>
+    <%= button_group do %>
+        <%= arrowleft_button_link_to 'Cancelar y volver al índice', [project, :pages] %>
+    <% end %>
+
 <% end %>
 
 <%= render :partial => 'form', :locals => {:project => project, :page => page} %>

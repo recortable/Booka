@@ -1,0 +1,7 @@
+es:
+  users:
+    edit:
+      title: "Editar perfil"
+    notice:
+      update: "Tus perfil ha sido actualizado."
+      email_notifications: "Hemos enviado el email"

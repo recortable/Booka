@@ -1,0 +1,15 @@
+es:
+  pages:
+    show:
+      browser: "Índice"
+    new:
+      title: "Añadir una página"
+    notice:
+      create: "Página creada."
+      update: "Página guardada."
+    edit:
+      title: "Editar página"
+    notice:
+      destroy: "Página borrada."
+    index:
+      empty_pages: "De momento no tiene ninguna página"

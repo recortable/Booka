@@ -16,10 +16,6 @@ es:
       title: 'Título'
       body: 'Texto'
       description: 'Descripción'
-      booka_line:
-        title: 'Título de la serie'
-        slug: 'Nombre corto (aparecerá en la URL)'
-        icon_path: 'URL del icono de la serie'
       topic:
         title: 'Título del asunto a tratar'
         body: 'Informe de la situación'
@@ -36,8 +32,6 @@ es:
         file4: 'Fichero adjunto'
 
     hints:
-      booka_line:
-        slug: 'Sólo puede contener letras, números y guiones. '
       page:
         title: 'Se ordenarán por título en el índice: recomendamos que pongas un número delante especificando la posición'
 
@@ -45,14 +39,3 @@ es:
       submit:
         update: 'Actualizar'
         create: 'Añadir'
-  invitations:
-    show:
-      title: "Completa el registro"
-  contents:
-    edit:
-      title: "Editar material"
-  pages:
-    notice:
-      destroy: "Página borrada."
-    index:
-      empty_pages: "De momento no tiene ninguna página"

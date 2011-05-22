@@ -1,0 +1,22 @@
+es:
+  booka_lines:
+    index:
+      edit_welcome: "Editar página de bienvenida"
+    show:
+      edit: "Modificar esta serie"
+    notice:
+      create: "Se ha creado una nueva serie."
+      update: "Serie actualizada."
+    edit:
+      title: "Editar serie"
+
+  simple_form:
+    labels:
+      booka_line:
+        title: 'Título de la serie'
+        slug: 'Nombre corto (aparecerá en la URL)'
+        icon_path: 'URL del icono de la serie'
+
+    hints:
+      booka_line:
+        slug: 'Sólo puede contener letras, números y guiones. '

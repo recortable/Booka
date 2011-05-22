@@ -1,0 +1,7 @@
+es:
+  contents:
+    show:
+      edit_content: "Editar contenido"
+      add_content_asset: "Subir imágen"
+    edit:
+      title: "Editar material"

@@ -1,0 +1,9 @@
+es:
+  sessions:
+    new:
+      title: "Iniciar sesión"
+    create:
+      title: "Entrar"
+    notice:
+      create: "Bienvenidx de nuevo a Plataforma Booka."
+      new_user: "Bienvenidx a Plataforma Booka"

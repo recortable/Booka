@@ -1,0 +1,21 @@
+es:
+  projects:
+    browser:
+      empty: "No hay ningún título publicado todavia en esta serie"
+      title: "Títulos"
+    navigation:
+      intro: "INTRO"
+      topics: "EDICION"
+      users: "COMUNIDAD"
+      contents: "MATERIALES"
+      pages: "LECTURA"
+    show:
+      edit_project: "Modificar booka"
+      show_proposals: "Ver propuestas de materiales/edición"
+    edit:
+      title: "Editar booka"
+  comments:
+    notice:
+      create: "Gracias por tu comentario!"
+    comment:
+      reply: "Responder"

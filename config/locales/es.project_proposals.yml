@@ -1,0 +1,11 @@
+es:
+  project_proposals:
+    edit:
+      title:
+        new: "Presentar una propuesta de contenidos / edición"
+        edit: "Editar tu propuesta de contenidos / edición"
+    index:
+      title: "Propuestas de materiales / edición"
+    notice:
+      create: "Propuesta enviada. Pronto nos pondremos en contacto contigo. Muchas gracias."
+      update: "Propuesta modificada."

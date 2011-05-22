@@ -1,0 +1,17 @@
+es:
+  topics:
+    index:
+      title: "Mesa de edición"
+      empty: "No hay ningún tema abierto, de momento."
+      new_topic: "Añadir un tema de discusón"
+      topics: "Temas de discusión activos"
+      empty_tasks: "No hay ninguna tarea pendiente en este booka."
+      empty_agreements: "No se ha alcanzado ningún acuerdo, todavía."
+    show:
+      new_proposal: "Añadir una altarnativa"
+      new_agreement: "Añadir un acuerdo"
+      new_task: "Añadir una tarea"
+      edit_topic: "Editar tema de discusión"
+    notice:
+      create: "Se ha creado un nuevo tema de discusión"
+      update: "Tema de discusión modificado."

@@ -1,0 +1,7 @@
+es:
+  permissions:
+    permission:
+      level:
+        admin: 'administrador del booka'
+    index:
+      empty_posts: "No hay ninguna noticia publicada en este booka"

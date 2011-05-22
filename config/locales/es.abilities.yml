@@ -1,4 +1,4 @@
-en:
+es:
   unauthorized:
     manage:
       all: "No tienes permisos para %{action} %{subject}."
