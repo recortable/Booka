@@ -1,0 +1,11 @@
+es:
+  agreements:
+    new:
+      title: "Añadir acuerdo"
+    notice:
+      create: "Acuerdo creado."
+      update: "Acuerdo modificado."
+      destroy: "Acuerdo eliminado."
+    agreement:
+      edit: "Editar acuerdo"
+      destroy: "Borrar acuerdo"

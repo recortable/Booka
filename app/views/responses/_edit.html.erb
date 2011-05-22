@@ -1,0 +1,8 @@
+<%= content_for :top do %>
+    <%= title name %>
+    <%= button_group do %>
+        <%= arrowleft_button_link_to 'Cancelar edición', [project, topic] %>
+    <% end %>
+<% end %>
+
+<%= render :partial => 'responses/form', :locals => {:resp => proposal } %>

@@ -1,0 +1,13 @@
+es:
+  proposals:
+    new:
+      title: "Añadir propuesta"
+    edit:
+      title: "Editar propuesta"
+    notice:
+      update: "Propuesta modificada."
+      create: "Propuesta creada."
+      destroy: "Propuesta borrada"
+    proposal:
+      edit: "Editar propuesta"
+      destroy: "Borrar propuesta"

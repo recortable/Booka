@@ -1,5 +1,15 @@
-/* 
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-  You can use Sass (SCSS) here: http://sass-lang.com/
-*/
+/** RESPONSES **/
+
+@import "variables.css.scss";
+
+div.response {
+    border-left: 2px solid $c-blue;
+    padding-left:1em;
+}
+
+div.topic {
+    div.response {
+        div.button-group {margin: 3px 0;}
+        div.discussion {margin-top: 0;}
+    }
+}

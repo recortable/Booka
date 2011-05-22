@@ -1,4 +1,3 @@
-
 <%= content_for :top do %>
     <%= title topic.title %>
     <%= button_group do %>
@@ -10,40 +9,41 @@
     <h2>Temas de discusón</h2>
     <ul>
       <% topics.each do |topic| %>
-      <li><%= link_to topic.title, [project, topic] %></li>
+          <li><%= link_to topic.title, [project, topic] %></li>
       <% end %>
     </ul>
 <% end %>
 
 <%= div_for topic do %>
-    <h1>1.- Informe de la situacion</h1>
-    <%= render_body topic %>
-    <div class="inline_comments">
-      <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
+      <%= content_tag :h1, t('.topic_title') %>
+    <div class="description">
+      <%= render_body topic %>
+      <div class="inline_comments">
+        <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
+      </div>
     </div>
 
-    <h1>2.- Diferentes alternativas o propuestas</h1>
+    <%= content_tag :h1, t('.proposals_title') %>
     <%= button_group do %>
-        <%= add_button_link_to t('.new_proposal') if can? :manage, topic %>
+        <%= add_button_link_to t('.new_proposal'), [:new, project, topic, :proposal] if can? :manage, topic %>
     <% end %>
     <div class="proposal list">
-      <%= render proposals %>
+      <%= render_responses proposals %>
     </div>
 
-    <h1>3.- Acuerdos alcanzados</h1>
+    <%= content_tag :h1, t('.agreements_title') %>
     <%= button_group do %>
-        <%= add_button_link_to t('.new_agreement') if can? :manage, topic %>
+        <%= add_button_link_to t('.new_agreement'), [:new, project, topic, :agreement] if can? :manage, topic %>
     <% end %>
     <div class="agreement list">
-      <%= render agreements %>
+      <%= render_responses agreements %>
     </div>
 
-    <h1>4.- Tareas relacionadas con este asunto</h1>
+    <%= content_tag :h1, t('.tasks_title') %>
     <%= button_group do %>
-        <%= add_button_link_to t('.new_task') if can? :manage, topic %>
+        <%= add_button_link_to t('.new_task'), [:new, project, topic, :task] if can? :manage, topic %>
     <% end %>
     <div class="task list">
-      <%= render tasks %>
+      <%= render_responses tasks %>
     </div>
-
 <% end %>

@@ -1,0 +1,17 @@
+<%= div_for resp, :class => 'response' do %>
+    <div class="user-info">
+      <%= user_action resp.user, resp.created_at %>
+    </div>
+    <h2><%= resp.title %></h2>
+    <%= render_body resp %>
+    <% if can? :manage, resp %>
+        <%= button_group do %>
+            <%= edit_button_link_to t("#{resp.class.name.downcase}s.#{resp.class.name.downcase}.edit"), [:edit, resp.project, resp.topic, resp] %>
+            <%= danger_remove_button_link_to t("#{resp.class.name.downcase}s.#{resp.class.name.downcase}.destroy"), [resp.project, resp.topic, resp], :method => :delete,
+                                             :confirm => "¿Segurx que quieres borrar '#{resp.title}'?" if can? :destroy, resp %>
+        <% end %>
+    <% end %>
+    <div class="nested-comments">
+      <%= render :partial => 'comments/comments', :locals => {:comment => Comment.new(:resource => resp)} %>
+    </div>
+<% end %>

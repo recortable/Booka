@@ -18,4 +18,6 @@ class Response < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :project_id, :presence => true
   validates :topic_id, :presence => true
+  validates :title, :presence => true
+  validates :body, :presence => true
 end

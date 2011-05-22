@@ -22,6 +22,12 @@ class ApplicationController < ActionController::Base
     params[:body] = params[:body].gsub(/\?/, '&#63;')
   end
 
+  def build_params(params, user, format = 'text/markdown')
+    params[:body] = params[:body].gsub(/\?/, '&#63;')
+    params[:user_id] = user.id
+    params[:content_type] = format if params[:content_type].blank?
+  end
+
 
   def logo
     '/assets/iconos/libro.png'

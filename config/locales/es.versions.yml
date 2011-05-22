@@ -18,19 +18,26 @@ es:
         Post:
           create: 'publicado la entrada'
           update: 'modificado la entrada'
+          destroy: 'borrado la entrada'
         BookaLine:
           create: 'creado la serie'
           update: 'modificado la serie'
         Task:
           create: 'creado la tarea'
+          update: 'modificado la tarea'
+          destroy: 'borrado la tarea'
         Page:
           create: 'creado la página'
           update: 'modificado la página'
           destroy: 'borrado la página'
         Agreement:
           create: 'publicado el acuerdo'
+          update: 'modificado el acuerdo'
+          destroy: 'borrado el acuerdo'
         Proposal:
           create: 'creado la propuesta'
+          update: 'modificado la propuesta'
+          destroy: 'borrado la propuesta'
         ProjectProposal:
           create: 'creado su propuesta de materiales/edición'
           update: 'modificado su propuesta de materiales/edición'

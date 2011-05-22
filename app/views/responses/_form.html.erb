@@ -1,0 +1,7 @@
+<%= simple_form_for [resp.project, resp.topic, resp] do |form| %>
+    <%= form.input :type, :as => :hidden %>
+    <%= form.input :content_type, :as => :hidden %>
+    <%= form.input :title %>
+    <%= form.input :body, :as => :text %>
+    <%= button_submit_tag resp.new_record? ? 'Crear' : 'Guardar' %>
+<% end %>

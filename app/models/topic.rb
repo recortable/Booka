@@ -5,6 +5,9 @@ class Topic < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
   has_many :responses
+  has_many :proposals, :class_name => 'Proposal'
+  has_many :agreements, :class_name => 'Agreement'
+  has_many :tasks, :class_name => 'Task'
 
   has_paper_trail(:meta => {
       :user_id => Proc.new { |p| p.user_id },

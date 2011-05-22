@@ -1,0 +1,10 @@
+es:
+  tasks:
+    notice:
+      create: "Tarea creada."
+      update: "Tarea modificada."
+      destroy: "Tarea borrada."
+    new:
+      title: "Añadir una tarea."
+    edit:
+      title: "Editar tarea."
