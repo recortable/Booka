@@ -1,5 +1,5 @@
 <%= div_for user do %>
     <%= avatar_img user %>
-    <%= link_to user.name, user_path(user) %>
+    <%= link_to user.name, user_path(user.id) %>
     (<%= user.unreaded_notifications_count %>)
 <% end %>
