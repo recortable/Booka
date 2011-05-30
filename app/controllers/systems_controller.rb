@@ -4,6 +4,7 @@ class SystemsController < ApplicationController
   expose(:status) { SystemStatus.new(current_user) }
 
   def show
+    status.send_emails
     respond_with status
   end
 end

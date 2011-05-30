@@ -13,4 +13,13 @@ class SystemStatus
     end
   end
 
+  def send_emails
+    if @new_notifications_count == 0
+      Rails.logger.debug("SYSTEM STATUS - SEND EMAIL")
+      user = User.where('unreaded_notifications_count > 0').order('updated_at ASC').first
+      Rails.logger.debug("SYSTEM STATUS - EMAIL TO #{user.to_json}") if user
+      UserMailer.notification_email(user).deliver if user
+    end
+  end
+
 end
