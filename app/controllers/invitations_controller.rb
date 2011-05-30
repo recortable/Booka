@@ -21,6 +21,7 @@ class InvitationsController < ApplicationController
 
   def show
     session[:invited_user_id] = invited_user.id
+    clear_stored_location
   end
 
   def create

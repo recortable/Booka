@@ -33,6 +33,10 @@ module Controllers
       session[:return_to] = location
     end
 
+    def clear_stored_location
+      session[:return_to] = nil
+    end
+
     def stored_or(default_path)
       path = session[:return_to] || default_path
       session[:return_to] = nil
