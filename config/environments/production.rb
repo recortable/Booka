@@ -50,10 +50,6 @@ Booka::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.middleware.use ExceptionNotifier,
-                        :email_prefix => "[Booka] ",
-                        :sender_address => %{"Booka errors" <errors@plataformabooka.net>},
-                        :exception_recipients => %w{danigb@gmail.com}
 
   # 1and1
   config.action_mailer.delivery_method = :smtp
