@@ -27,7 +27,9 @@ Booka::Application.routes.draw do
 
     resources :projects, :path => '' do
       resources :read_pages, :path => 'leer'
-      resources :contents, :path => 'materiales'
+      resources :contents, :path => 'materiales' do
+        resources :assets, :path => 'archivos', :only => [:index]
+      end
       resources :posts, :path => 'entrada'
       resources :permissions, :path => 'comunidad'
       resources :topics, :path => 'edicion' do

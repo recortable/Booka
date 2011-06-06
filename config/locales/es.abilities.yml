@@ -5,3 +5,6 @@ es:
       user: "Not allowed to manage other user accounts."
     update:
       project: "Not allowed to update this project."
+  contents:
+    show:
+      manage_assets: "Gestionar imágenes"

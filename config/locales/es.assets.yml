@@ -2,3 +2,14 @@ es:
   assets:
     new:
       title: "Subir una imágen"
+    index:
+      title: "Ficheros de '%{title}'"
+      back: "Volver al material '%{title}'"
+      download: "Descargar"
+      new_asset: "Subir fichero"
+    edit:
+      title: "Editar fichero"
+    notice:
+      create: "Fichero subido."
+      update: "Datos del fichero modificados."
+      destroy: "Fichero borrado."

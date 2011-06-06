@@ -3,3 +3,9 @@
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+
+table.assets {
+    td div.image.thumb {width: 60px;}
+    td img {max-width: 100%;}
+}

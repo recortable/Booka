@@ -1,0 +1,27 @@
+<%= content_for :top do %>
+    <%= title t('.title', :title => resource.title) %>
+    <%= button_group do %>
+        <% if resource.class == Content %>
+            <%= arrowleft_button_link_to t('.back', :title => resource.title), [project, resource] %>
+            <%= add_button_link_to t('.new_asset'), new_project_asset_path(project, :c => resource.id) %>
+        <% end %>
+    <% end %>
+<% end %>
+
+<table class="assets">
+  <% assets.each do |asset| %>
+      <tr>
+        <td>
+          <div class="image thumb"><%= link_to image_asset(asset), asset_url(asset) %></div>
+        </td>
+        <td><%= link_to asset.title, asset_url(asset) %></td>
+        <td><%= asset.description %></td>
+        <td><%= button_group do %>
+              <%= edit_button_link_to 'Editar', [:edit, project, asset] %>
+              <%= danger_remove_button_link_to 'Borrar', [project, asset], :method => :delete,
+              :confirm => "¿Segurx que quieres borrar el fichero '#{asset.title}'?"%>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+</table>
