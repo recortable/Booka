@@ -8,5 +8,7 @@
     <%= comment.body %>
     <%= link_to "&larr; #{t('.reply')}".html_safe, new_comment_path(:parent_id => comment.id, :format => :js),
                 :class => 'reply', :rel => 'nofollow' %>
+    <%= link_to 'Borrar', comment, :method => :delete, :confirm => '¿Quieres borrar ese comentario?' if can :destroy, comment %>
+
     <%= content_tag :div, '', :id => "reply-#{comment.id}", :class => 'reply' %>
 <% end %>

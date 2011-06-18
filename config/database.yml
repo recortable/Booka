@@ -6,22 +6,19 @@ defaults: &defaults
   host: localhost
 
 development:
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  pool: 5
+  host: localhost
   database: Booka
-  password:
+  password: db4root
   reconnect: false
-  <<: *defaults
-
-staging:
-  database: Booka
-  password:
-  reconnect: false
-  <<: *defaults
-
 
 production:
   database: Booka
+  username: root
   password: db4root
-  <<: *defaults
 
 
 test:
