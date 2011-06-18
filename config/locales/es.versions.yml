@@ -12,6 +12,7 @@ es:
         Comment:
           create: 'comentado'
           destroy: 'borrado un comentario en'
+          update: 'modificado un comentario'
         Content:
           create: 'añadido el material'
           update: 'modificado el material'

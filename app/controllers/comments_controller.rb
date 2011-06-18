@@ -14,9 +14,14 @@ class CommentsController < ApplicationController
   def create
     comment.user = current_user ? current_user : User.find(2)
     comment.project = comment.resource_type == 'Project' ? resource : resource.project
-    authorize! :create, comment
-    flash[:notice] = t('comments.notice.create') if comment.save
-    respond_with comment, :location => comment.locate_resource
+
+    if params[:email].blank? # prevent spam
+      authorize! :create, comment
+      flash[:notice] = t('comments.notice.create') if comment.save
+      respond_with comment, :location => comment.locate_resource
+    else
+      redirect_to comment.locate_resource
+    end
   end
 
   def destroy

@@ -3,13 +3,23 @@
     <%= title 'System' %>
 <% end %>
 
+<h2>Estadísticas</h2>
 <ul id="booka-info">
   <li><label>Notificationes: </label><%= status.notifications_count %></li>
   <li><label>Notificationes nuevas: </label><%= status.new_notifications_count %></li>
-  <li><label>Usuarios sin notificar: </label><%= status.unnotified_users %></li>
+  <li><label>Usuarios sin notificar: </label><%= status.unnotified_users_count %></li>
   <li><label>Tus notificationes: </label><%= status.user_notifications %></li>
 </ul>
+<br/>
+<h2>Se le enviará emails a los siguientes usuarios:</h2>
+<ul>
+  <% status.unnotified_users.each do |user| %>
+  <li><%= user.name %></li>
+  <% end %>
+</ul>
 
+<br/>
+<h2>Información del servidor</h2>
 <div id="rails-info">
   <%= Rails::Info.to_html.html_safe %>
 </div>
