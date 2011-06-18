@@ -3,6 +3,7 @@
 .project
 .bundle
 config/amazon_s3.yml
+config/database.yml
 db/*.sqlite3
 log/*.log
 tmp/**/*

@@ -18,4 +18,10 @@ class CommentsController < ApplicationController
     flash[:notice] = t('comments.notice.create') if comment.save
     respond_with comment, :location => comment.locate_resource
   end
+
+  def destroy
+    authorize! :destroy, comment
+    flash[:notice] = 'Comentario borrado.' if comment.destroy
+    respond_with comment, :location => comment.locate_resource
+  end
 end

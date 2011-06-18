@@ -1,4 +1,5 @@
 <%= simple_form_for comment do |form| %>
+    <%= text_field_tag :email %>
     <%= form.input :resource_type, :as => :hidden %>
     <%= form.input :resource_id, :as => :hidden %>
     <%= form.input :parent_id, :as => :hidden %>
