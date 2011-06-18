@@ -1,7 +1,16 @@
 class CommentsController < ApplicationController
   respond_to :html, :js
+  expose(:comments) { Comment.all }
   expose(:comment)
   expose(:resource) { comment.resource }
+
+  def index
+    authorize! :show, Comment
+  end
+
+  def show
+    redirect_to comment.locate_resource
+  end
 
   def new
     if params[:parent_id].present?
