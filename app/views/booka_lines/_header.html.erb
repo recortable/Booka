@@ -1,5 +1,7 @@
-<h2><%= booka_line ? booka_line.title : link_to('Plataforma Booka', root_path) %></h2>
+<h1><%= booka_line ? booka_line.title : link_to('Plataforma Booka', root_path) %></h1>
 <ul class="navigator">
+  <li><%= link_to 'booka', root_path %></li>
+  <span>|</span>
   <% BookaLine.all.each do |booka_line| %>
       <li><%= link_to_unless_current booka_line.title, booka_line %></li>
       <span>|</span>

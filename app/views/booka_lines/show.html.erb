@@ -1,11 +1,7 @@
+<% title booka_line.title %>
+
 <%= content_for :top do %>
-    <%= title booka_line.title %>
-    <ul class="navigator">
-      <% BookaLine.all.each do |booka_line| %>
-          <li><%= link_to_unless_current booka_line.title, booka_line %></li>
-          <span>|</span>
-      <% end %>
-    </ul>
+    <%= render(:partial => 'booka_lines/header', :locals => {:booka_line => booka_line}) %>
     <%= button_group do %>
         <%= edit_button_link_to t('.edit'), [:edit, booka_line] if can? :edit, booka_line %>
     <% end %>

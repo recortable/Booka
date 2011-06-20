@@ -1,4 +1,6 @@
 es:
   posts:
+    notice:
+      update: 'Entrada guardada.'
     edit:
-      title: "Editar entrada"
+       title: "Editar entrada"

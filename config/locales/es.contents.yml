@@ -1,7 +1,16 @@
 es:
   contents:
+    notice:
+      update: 'Contenido actualizado.'
+
+      create: "Contenido añadido."
     show:
       edit_content: "Editar contenido"
       add_content_asset: "Subir imágen"
+      add_content: "Añadir contenido"
+      destroy_content: "Borrar"
     edit:
       title: "Editar material"
+
+    new:
+      title: "Añadir material"

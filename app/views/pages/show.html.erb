@@ -12,7 +12,7 @@
 
 <%= content_for :browser do %>
     <h2><%= t('.browser') %></h2>
-    <ul>                                                                                e
+    <ul>
       <% pages.each do |page| %>
       <li><%= link_to page.title, [project, page] %></li>
       <% end %>

@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def build_params(params, user, format = 'text/markdown')
-    params[:body] = params[:body].gsub(/\?/, '&#63;')
+    clean_body(params)
     params[:user_id] = user.id
     params[:content_type] = format if params[:content_type].blank?
   end

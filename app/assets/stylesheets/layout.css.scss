@@ -7,18 +7,18 @@ html {
   font-family: $font-body;
 }
 
-h1, h2, h3 {font-family: $font-title; line-height:1em; font-style: italic;margin: 0;}
+h1, h2, h3 {font-family: $font-title; line-height:1em; margin: 0;}
 h1 {font-size: 30px;}
 h2 {font-size: 20px;}
 h4 {font-family: $font-subtitle;letter-spacing: 0.05em;}
 a {color: $c-link; text-decoration:none;border-bottom:none;}
-a:hover {color: $c-blue; background-color:$c-yellow;}
+a:hover {color: $c-green; }
 li {border:0;list-style: none;}
 p {margin: 10px 0;}
 strong {font-weight:bold;}
 
 /** LAYOUT */
-#page {margin-top: 50px; margin-bottom: 30px;}
+#page {margin-top: 10px; margin-bottom: 30px;}
 
 /** HEADER **/
 #booka {
@@ -38,31 +38,44 @@ strong {font-weight:bold;}
     ul.navigator li {float: left; color: $c-green;}
     ul.navigator span {display:block;float:left; padding:0 0.5em;}
     h1, h2, h3 {border-bottom: $b-dot;}
-    h1 {font-size:80px;}
-    h2 {font-size:28px;padding-bottom:5px;font-style:normal;}
-    margin-bottom: 60px;
+    h1 {font-size:70px;font-style: italic; margin-bottom: 5px;}
+    h2 {font-size:36px;padding-bottom:5px;font-style:normal;margin-bottom: 5px; margin-top: 60px;}
+    h4 {font-size: 90%; margin-top: 3px;}
     div.button-group {margin-top:10px;}
 }
 
 
 /** LISTS IN COLUMNS **/
 div#browser, div#info {
-    h2 {margin-top: 0em; border-bottom: $b-dot; font-variant: small-caps; font-size: 18px; padding-bottom: 0.2em;}
-    ul {margin-bottom: 1em;}
+    ul {margin-bottom: 0em;}
     ul > a {color: $c-green;}
-    ul li {border-bottom: $b-dot; padding: 0.7em 0;}
-    ul li h3 {font-size: 20px; border:0;}
+    ul li {border-bottom: $b-dot; padding: 0.7em 0 0.3em 0;}
+    ul li h3 {font-size: 16px; border:0;font-style: italic;}
+}
+@mixin deprecated {
+    margin-top: 0em; border-bottom: $b-dot;
+    font-size: 18px; padding-bottom: 0.3em;font-style:normal;
+    margin-bottom: 0.5em;
 }
 
+div#browser h2, div#info   h2 {
+    margin-top: 0em; border-bottom: $b-dot;
+    font-family: $font-body;
+    font-size: 14px; padding-bottom: 0.3em;font-style:normal;text-transform:uppercase;
+    margin-bottom: 0.5em;
+}
 
 
 /** BODY **/
 .body {
     width: 95%;
-    font-family: $font-body; font-size:16px;
-    p {margin: 7px 0;}
-    h1, h2 {font-size: 18px; border-bottom:none;}
-    h2 {margin-top: 1em;}
+    font-family: $font-body; font-size:15px;
+    p {margin: 1em 0; line-height:1.2em;}
+
+    h1:first-child, h2:first-child {margin-top: 0;}
+
+    h1, h2 {font-size: 22px; border-bottom:none;font-style:normal;margin: 1em 0 1.5em 0;}
+    h2 { }
     em {font-style:italic;}
     strong {font-weight:bold;}
 }

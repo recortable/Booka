@@ -1,14 +1,6 @@
 <% title content.title %>
 
 <%= content_for :top do %>
-    <h1><%= content.title %></h1>
-    <%= content_tag :h2, content.author, :class => 'author' if content.author.present? %>
-    <%= button_group do %>
-        <%= edit_button_link_to t('.edit_content'), [:edit, project, content] if can? :edit, content %>
-        <%= add_button_link_to t('.add_content_asset'), new_project_asset_path(project, :c => content.id) if can? :manage, content %>
-        <%= calendar_button_link_to t('.manage_assets'), project_content_assets_path(project, content) if can? :manage, content %>
-
-    <% end %>
 <% end %>
 
 <div class="row24">
@@ -19,11 +11,25 @@
     <% content.assets.each do |asset| %>
         <%= image_asset asset %>
     <% end %>
-    <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
+    &nbsp;
   </div>
   <div class="col-center-right content">
+    <div class="info">
+      <h1><%= content.title %></h1>
+      <%= content_tag :h2, content.author, :class => 'author' if content.author.present? %>
+    </div>
+    <%= button_group do %>
+        <%= add_button_link_to t('.add_content'), new_project_content_path(project) if can? :new, content %>
+        <%= edit_button_link_to t('.edit_content'), [:edit, project, content] if can? :edit, content %>
+        <%= add_button_link_to t('.add_content_asset'), new_project_asset_path(project, :c => content.id) if can? :manage, content %>
+        <%= calendar_button_link_to t('.manage_assets'), project_content_assets_path(project, content) if can? :manage, content %>
+        <%= danger_remove_button_link_to t('.destroy_content'), [project, content], :method => :delete,
+            :confirm => '¿Segura que quieres borrar este contenido?' %>
+    <% end %>
+
     <%= render_body content %>
     &nbsp;
+    <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
   </div>
 </div>
 <div class="row24">

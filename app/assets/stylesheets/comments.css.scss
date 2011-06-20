@@ -5,6 +5,8 @@ div.discussion {
     margin-top: 2em; padding-top: 1em;
     border-top: $b-dot;
 
+    h2 {font-size: 16px; margin-bottom: 1em;}
+
     div.comments {
         margin-top: 0.5em;
         div.comment {margin: 0.5em 0;}
@@ -21,8 +23,8 @@ div.discussion {
 form.comment {
     width: 100%; overflow: hidden;
     div.input.text label {display:none;}
-    div.input.text {float: left; width: 78%; margin-right: 2%;}
+    div.input.text {float: left; width: 82%; margin-right: 2%;}
     div.input textarea {width: 98%; height: 3em;}
-    input[type=submit] {width: 20%;margin-top: 0em;}
+    input[type=submit] {width: 16%;margin-top: 0em;}
     #email {display:none;}
 }

@@ -15,13 +15,31 @@ class ContentsController < ApplicationController
     authorize! :read, content
   end
 
+  def new
+    authorize! :new, content
+  end
+
   def edit
     authorize! :edit, content
   end
 
+  def create
+    build_params(params[:content], current_user)
+    authorize! :create, content
+    flash[:notice] = t('contents.notice.create') if content.save
+    respond_with content, :location => [project, content]
+  end
+
   def update
+    authorize! :update, content
     clean_body(params[:content])
     flash[:notice] = t('contents.notice.update') if content.update_attributes(params[:content])
     respond_with content, :location => [project, content]
+  end
+
+  def destroy
+    authorize! :destroy, content
+    flash[:notice] = 'Contenido borrado' if content.destroy
+    respond_with content, :location => project
   end
 end

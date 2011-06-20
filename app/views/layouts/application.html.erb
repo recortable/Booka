@@ -9,11 +9,9 @@
     <div class="col-left">&nbsp;</div>
     <div class="col-main">
       <%= content_tag :div, flash[:notice], :id => "flash_notice" if flash[:notice] %>
-      <div id="booka">
-        <%= link_to 'Plataformabooka.net', root_path %>
-        <%= link_to 'Ayuda', project_read_pages_path(Project.first) %>
-        <%= link_to 'Tu opinión', new_feedback_path %>
-      </div>
+      <!--div id="booka">
+        <%#= link_to 'Plataformabooka.net', root_path %>
+      </div-->
       <div id="session">
         <% if current_user %>
             Hola, <%= link_to current_user.name, current_user %>&nbsp;<span id="user_notifications" style="display:none;"></span>&nbsp;
@@ -21,17 +19,21 @@
         <% else %>
             <%= link_to 'Iniciar sesion', login_path(:from => request.fullpath), :id => 'login_link' %>
         <% end %>
+        | <%= link_to 'Tu opinión', new_feedback_path %> |
+        <%= link_to 'Ayuda', project_read_pages_path(Project.first) %>
+
       </div>
     </div>
   </div>
   <div class="row24">
     <div class="col-left">
-      <%= image_tag logo %>
+      &nbsp;
+      <%#= image_tag logo %>
     </div>
     <div id="header" class="col-main">
       <% if project? %>
           <%= render(:partial => 'booka_lines/header', :locals => {:booka_line => project.booka_line}) %>
-          <%= content_tag (controller.class == ProjectsController ? :h1 : :h2), project.title %>
+          <%= content_tag :h2, project.title %>
           <%= render :partial => 'projects/navigation', :locals => {:project => project} %>
       <% end %>
       <%= yield :top %>
@@ -42,7 +44,10 @@
       <div class="row24">
         <div id="browser" class="col-left">
           <%= yield :browser %>&nbsp;
-          <%= image_tag 'logos/LOGO-VIBOK.png', :alt => 'vibok', :id => 'logo-vibok' %>
+          <div class="logos">
+            <%= link_to image_tag('logos/LOGO-MCU.png', :alt => 'mcu', :id => 'logo-mcu'), 'http://www.mcu.es/' %>
+          <%= link_to image_tag('logos/LOGO-VIBOK.png', :alt => 'vibok', :id => 'logo-vibok'), 'http://www.edicionesvibok.net/' %>
+            </div>
         </div>
         <div class="col-center">
           <%= yield %>
@@ -74,7 +79,7 @@
 <% end %>
 
 <div id="beta">
-  Versión Beta: Plataforma Booka está en activo desarrollo.
+  Booka está en activo desarrollo.
   Por favor, <%= link_to 'ayúdanos a probar y mejorar la herramienta.', new_feedback_path %>
 </div>
 <%= render :partial => 'layouts/foot' %>

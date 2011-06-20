@@ -1,6 +1,26 @@
 
+@import "variables.css.scss";
+
 div.content {
     div.discussion {
         margin-top:10px;
     }
+
+    div.info {
+        h1 {font-size: 24px;}
+        .author   {font-style:italic; font-size: 16px;}
+        padding-bottom:1em;
+        border-bottom: $b-dot;
+    }
+
+    .button-group {
+            margin-top: 10px;
+    }
+
 }
+
+li.content {
+    a {color: $c-blue;}
+    .author {font-size: 80%;}
+}
+

@@ -6,3 +6,14 @@
       <% end %>
   <% end %>
 </ul>
+<br/>
+<br/>
+<br/>
+<h2>Bookas activos</h2>
+<ul class="projects">
+  <% projects.each do |project| %>
+      <li><h3><%= link_to project.title, project %></h3></li>
+  <% end %>
+</ul>
+
+

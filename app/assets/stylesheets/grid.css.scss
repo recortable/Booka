@@ -44,8 +44,8 @@ img, object, embed {max-width: 100%;}
 .col-center {@extend .col14; }
 .col-right {@extend .col6;}
 .col-center-big {@extend .col20;}
-.col-center-left {@extend .col10;}
-.col-center-right {@extend .col10;}
+.col-center-left {@extend .col8;}
+.col-center-right {@extend .col12;}
 
 /* Layout for mobile version */
 @media handheld, only screen and (max-width: 767px) {
