@@ -24,7 +24,7 @@
         <%= add_button_link_to t('.add_content_asset'), new_project_asset_path(project, :c => content.id) if can? :manage, content %>
         <%= calendar_button_link_to t('.manage_assets'), project_content_assets_path(project, content) if can? :manage, content %>
         <%= danger_remove_button_link_to t('.destroy_content'), [project, content], :method => :delete,
-            :confirm => '¿Segura que quieres borrar este contenido?' %>
+            :confirm => '¿Segura que quieres borrar este contenido?' if can? :destroy, content %>
     <% end %>
 
     <%= render_body content %>
