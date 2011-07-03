@@ -9,3 +9,9 @@ table.assets {
     td div.image.thumb {width: 60px;}
     td img {max-width: 100%;}
 }
+
+div.assets {
+    div.asset {
+        .description {margin: -3px 0 10px 0;}
+    }
+}

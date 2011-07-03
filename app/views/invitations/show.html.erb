@@ -1,13 +1,13 @@
 <%= content_for :top do %>
     <h2>Invitaciones</h2>
-    <h1>Plataforma Booka</h1>
+    <h1>Booka</h1>
 <% end %>
 
 <% if invited_user %>
     <%= title t('.title') %>
     <br/>
     <h2>Hola, <%= invited_user.name %></h2>
-    <p>Ha sido invitadx a participar en PlataformaBooka. Tu email es <%= invited_user.email %> pero
+    <p>Ha sido invitadx a participar en Booka. Tu email es <%= invited_user.email %> pero
     necesitamos que completes el registro con algún sistema de autenticación. Para que no tengas que
     recordar ni mantener diferentes contraseñas, utilizamos servicios sociales que nos seguran que
     tú eres quien dices ser.</p>

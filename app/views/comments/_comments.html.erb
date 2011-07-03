@@ -1,4 +1,5 @@
 <div class="discussion">
+  <%= render 'social' if social %>
   <h2>Discusión / Comentarios</h2>
   <%= render :partial => 'comments/form', :locals => {:comment => comment} %>
   <div class="comments">

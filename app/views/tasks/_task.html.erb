@@ -3,6 +3,6 @@
     <h2><%= task.title %></h2>
     <%= render_body task %>
     <div class="nested-comments">
-      <%= render :partial => 'comments/comments', :locals => {:comment => Comment.new(:resource => task)} %>
+      <%= render_comments Comment.new(:resource => task), :social => false %>
     </div>
 <% end %>

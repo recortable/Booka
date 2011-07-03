@@ -13,3 +13,8 @@ es:
       create: "Fichero subido."
       update: "Datos del fichero modificados."
       destroy: "Fichero borrado."
+
+  simple_form:
+    labels:
+      asset:
+        description: 'Pie de foto'

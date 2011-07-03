@@ -8,9 +8,14 @@
     <%= render :partial => 'contents/browser', :locals => {:project => project} %>
   </div>
   <div class="col-center-left content">
-    <% content.assets.each do |asset| %>
-        <%= image_asset asset %>
-    <% end %>
+    <div class="assets">
+      <% content.assets.each do |asset| %>
+          <%= div_for asset do %>
+              <%= image_asset asset %>
+              <%= content_tag :div, asset.description, :class => 'description' if asset.description? %>
+          <% end %>
+      <% end %>
+    </div>
     &nbsp;
   </div>
   <div class="col-center-right content">
@@ -24,12 +29,14 @@
         <%= add_button_link_to t('.add_content_asset'), new_project_asset_path(project, :c => content.id) if can? :manage, content %>
         <%= calendar_button_link_to t('.manage_assets'), project_content_assets_path(project, content) if can? :manage, content %>
         <%= danger_remove_button_link_to t('.destroy_content'), [project, content], :method => :delete,
-            :confirm => '¿Segura que quieres borrar este contenido?' if can? :destroy, content %>
+                                         :confirm => '¿Segura que quieres borrar este contenido?' if can? :destroy, content %>
     <% end %>
 
     <%= render_body content %>
     &nbsp;
-    <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
+    <div class="discussion">
+      <%= render_comments new_comment %>
+    </div>
   </div>
 </div>
 <div class="row24">

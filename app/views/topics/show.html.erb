@@ -44,7 +44,7 @@
     <div class="description">
       <%= render_body topic %>
       <div class="inline_comments">
-        <%= render :partial => 'comments/comments', :locals => {:comment => new_comment} %>
+        <%= render_comments new_comment, :social => false %>
       </div>
     </div>
 

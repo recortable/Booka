@@ -13,7 +13,7 @@
 <% end %>
 
 <%= render_body booka_page %>
-<%= render :partial => 'comments/comments', :locals => {:comment => new_page_comment} %>
+<%= render_comments new_page_comment %>
 <%= content_for :info do %>
 <% end %>
 

@@ -20,4 +20,4 @@
 <% end %>
 
 <%= render_body page %>
-<%= render :partial => 'comments/comments', :locals => {:comment => Comment.new(:resource => page)} %>
+<%= render_comments Comment.new(:resource => page) %>

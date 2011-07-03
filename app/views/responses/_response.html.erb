@@ -12,6 +12,6 @@
         <% end %>
     <% end %>
     <div class="nested-comments">
-      <%= render :partial => 'comments/comments', :locals => {:comment => Comment.new(:resource => resp)} %>
+      <%= render_comments Comment.new(:resource => resp) %>
     </div>
 <% end %>

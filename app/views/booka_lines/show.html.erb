@@ -12,7 +12,7 @@
 <% end %>
 
 <%= render_body booka_line %>
-<%= render :partial => 'comments/comments', :locals => {:comment => new_line_comment } %>
+<%= render_comments new_line_comment  %>
 
 <%= content_for :info do %>
 <% end %>

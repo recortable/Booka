@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     clean_body(params[:page])
     params[:page][:user_id] = current_user.id
     params[:page][:content_type] = 'text/markdown'
-    params[:page][:body] = Content.find(params[:copy_content_from]).body if params[:copy_content_from]
+    params[:page][:body] = Content.find(params[:copy_content_from]).body if params[:copy_content_from].present?
     authorize! :create, page
     flash[:notice] = t('pages.notice.create') if page.save
     respond_with page, :location => [project, page]
