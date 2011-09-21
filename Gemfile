@@ -1,27 +1,27 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc4'
-#gem 'rails', :git => 'git://github.com/rails/rails.git', :branch => '3-1-stable'
-#gem 'sprockets', :git => 'git://github.com/sstephenson/sprockets.git' 
+gem "rails", "3.1.0"
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
+
 gem 'sqlite3'
 gem 'mysql2'
-
-# Asset template engines
-gem 'sass-rails', "~> 3.1.0.rc"
-gem 'coffee-script'
-gem 'uglifier'
-gem 'jquery-rails'
 
 gem 'decent_exposure'
 gem 'simple_form'
 gem 'css3buttons'
-
 gem 'cancan'
-
 gem 'omniauth'
 gem 'fog'
 gem 'carrierwave'
-
 gem 'ancestry'
 gem 'paper_trail'
 gem 'acts_as_list'
@@ -33,8 +33,10 @@ gem 'prawn'
 gem 'prawnto'
 gem 'nokogiri', '~> 1.4.2'
 
+gem 'activeadmin'
+
 gem 'exception_notification', :require => 'exception_notifier'
-#gem 'newrelic_rpm'
+gem 'newrelic_rpm'
 
 group :test, :development do
   # Pretty printed test output
