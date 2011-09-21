@@ -12,9 +12,13 @@
       <% content.assets.each do |asset| %>
           <%= div_for asset do %>
               <%= image_asset asset %>
-              <%= content_tag :div, asset.description, :class => 'description' if asset.description? %>
           <% end %>
       <% end %>
+      <div class="descriptions">
+        <% content.assets.each_with_index do |asset, index| %>
+            <%= content_tag :div, "#{index + 1} | #{asset.description}", :class => 'description' if asset.description? %>
+        <% end %>
+      </div>
     </div>
     &nbsp;
   </div>
