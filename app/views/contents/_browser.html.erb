@@ -2,7 +2,7 @@
   <h2>Materiales</h2>
   <% project.contents.each do |content| %>
       <%= content_tag_for :li, content do %>
-          <h3><%= link_to content.title, [project, content] %></h3>
+          <h3><%= link_to_unless_current content.title, [project, content] %></h3>
           <div class="author"><%= content.author %></div>
       <% end %>
   <% end %>

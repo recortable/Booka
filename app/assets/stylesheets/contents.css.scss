@@ -32,6 +32,9 @@ div.assets {
 }
 
 li.content {
+    h3 {
+        color: $c-green;
+    }
     a {color: $c-blue;}
     .author {font-size: 80%;}
 }
