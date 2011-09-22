@@ -29,7 +29,7 @@ gem 'redcarpet'
 #gem 'rdiscount'
 gem 'kaminari'
 
-# Active admin stuff
+# Backend stuff
 gem 'inherited_resources'
 gem 'has_scope'
 
@@ -37,8 +37,6 @@ gem 'has_scope'
 gem 'prawn'
 gem 'prawnto'
 gem 'nokogiri', '~> 1.4.2'
-
-gem 'activeadmin'
 
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'newrelic_rpm'
