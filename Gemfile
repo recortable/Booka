@@ -30,8 +30,8 @@ gem 'redcarpet'
 gem 'kaminari'
 
 # Active admin stuff
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'inherited_resources'
+gem 'has_scope'
 
 
 gem 'prawn'

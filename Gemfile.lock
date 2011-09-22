@@ -301,9 +301,10 @@ DEPENDENCIES
   decent_exposure
   exception_notification
   fog
+  has_scope
+  inherited_resources
   jquery-rails
   kaminari
-  meta_search (>= 1.1.0.pre)
   mongrel (= 1.2.0.pre2)
   mysql2
   newrelic_rpm

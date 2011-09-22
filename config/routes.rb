@@ -24,6 +24,13 @@ Booka::Application.routes.draw do
     resources :invitations, :path => 'invitacion', :only => :create
     resources :feedbacks, :path => 'tu_opinion'
 
+    namespace :backend do
+      root to: "projects#index"
+      resources :users
+      resources :projects
+      resources :pages
+    end
+
 
     resources :projects, :path => '' do
       resources :read_pages, :path => 'leer'
@@ -34,8 +41,8 @@ Booka::Application.routes.draw do
       resources :permissions, :path => 'comunidad'
       resources :topics, :path => 'edicion' do
         resources :proposals, :path => 'propuestas'
-        resources :agreements, :path => 'acuerdos'#, :only => [:new, :edit]
-        resources :tasks, :path => 'tareas'#, :only => [:new, :edit]
+        resources :agreements, :path => 'acuerdos' #, :only => [:new, :edit]
+        resources :tasks, :path => 'tareas' #, :only => [:new, :edit]
       end
       resources :pages, :path => 'paginas'
       resources :assets, :path => 'archivos'
@@ -44,5 +51,6 @@ Booka::Application.routes.draw do
       end
     end
   end
+
 
 end

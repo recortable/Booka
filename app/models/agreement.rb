@@ -1,5 +1,4 @@
-class Agreement < Response
-end\n# == Schema Information
+# == Schema Information
 #
 # Table name: responses
 #
@@ -14,4 +13,5 @@ end\n# == Schema Information
 #  created_at   :datetime
 #  updated_at   :datetime
 #
-
+class Agreement < Response
+end

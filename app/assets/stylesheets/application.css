@@ -1,6 +1,6 @@
 /*
  *= require_self
- *= require_tree . 
+ *= require_directory ./application
 */
 /*
 Copyright (c) 2010, Yahoo! Inc. All rights reserved.

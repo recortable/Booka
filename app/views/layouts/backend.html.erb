@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Despachodepan backend</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag "backend" %>
+</head>
+<body class="backend">
+<div class="topbar">
+  <div class="fill">
+    <div class="container">
+      <h3><%= link_to 'Plataforma Booka', backend_root_path %></h3>
+      <ul>
+        <li><%= link_to 'Users', backend_users_path %></li>
+        <li><%= link_to 'Projects', backend_projects_path %></li>
+        <li><%= link_to 'Pages', backend_pages_path %></li>
+        <li><%#= link_to 'Tags', backend_tags_path %></li>
+        <li><%#= link_to 'Images', backend_images_path %></li>
+        <li><%#= link_to 'Colors', backend_colors_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="page"><%= yield %></div>
+</div>
+</body>
+</html>
+

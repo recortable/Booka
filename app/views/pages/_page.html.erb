@@ -1,3 +1,6 @@
 <%= div_for page do %>
     <%= link_to page.title, [page.project, page] %>
+    <% if can? :manage, page %>
+        <%= link_to 'Editar', [:edit, page.project, page] %>
+    <% end %>
 <% end %>

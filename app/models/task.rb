@@ -1,5 +1,4 @@
-class Task < Response
-end\n# == Schema Information
+# == Schema Information
 #
 # Table name: responses
 #
@@ -14,4 +13,5 @@ end\n# == Schema Information
 #  created_at   :datetime
 #  updated_at   :datetime
 #
-
+class Task < Response
+end
