@@ -16,8 +16,6 @@ class Page < ActiveRecord::Base
   has_nested_comments
   acts_as_list scope: :project_id
 
-  default_scope order: 'position ASC'
-
   belongs_to :user
   belongs_to :project
 

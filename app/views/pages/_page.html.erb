@@ -11,4 +11,5 @@
           <%= link_to raw('&dArr; Abajo'), project_page_positions_path(page.project, page, go: :bottom), method: :put %>
       <% end %>
     </td>
+    <td><%= page.position %>(<%= page.id %>)</td>
 <% end %>

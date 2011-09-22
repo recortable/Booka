@@ -3,7 +3,7 @@
 class PagesController < ApplicationController
   respond_to :html
   expose(:project) { Project.get(params[:project_id])}
-  expose(:pages) { project.pages }
+  expose(:pages) { project.pages.order('position ASC') }
   expose(:page)
 
   def index
@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def show
     authorize! :read, page
+    redirect_to [project, :pages] if page.status?(:section)
   end
 
   def new
