@@ -3,7 +3,7 @@
   <h2>Índice</h2>
   <% pages.each do |page| %>
       <%= div_for page do %>
-          <%= link_to page.title, project_read_page_path(project, page) %>
+          <%= link_to_unless page.status?(:section), page.title, project_read_page_path(project, page) %>
       <% end %>
   <% end %>
 </div>

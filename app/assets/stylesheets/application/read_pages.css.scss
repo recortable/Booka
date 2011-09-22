@@ -31,6 +31,9 @@ div#reader {
 
     div.index {
         margin-top: 2em;
-        a {display: block; margin: 10px 5px;}
+        div.page {
+            display: block; margin: 10px 5px;
+            a {margin-left: 10px;}
+        }
     }
 }

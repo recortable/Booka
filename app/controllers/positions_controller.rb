@@ -8,6 +8,10 @@ class PositionsController < ApplicationController
       @resource.move_higher
     elsif action == 'down'
       @resource.move_lower
+    elsif action == 'top'
+      @resource.move_to_top
+    elsif action == 'bottom'
+      @resource.move_to_bottom
     end
     respond_with [@project, @resource], :location => @location
   end

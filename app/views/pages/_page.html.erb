@@ -2,14 +2,13 @@
     <td>
       <%= link_to_unless page.status?(:section), page.title, [page.project, page] %>
     </td>
-    <td><%= page.position %></td>
     <td>
       <% if can? :manage, page %>
-          <%= button_group do %>
-              <%= edit_button_link_to 'Editar', [:edit, page.project, page] %>
-              <%= arrowup_button_link_to 'Subir', project_page_positions_path(page.project, page, go: :up), method: :put %>
-              <%= arrowdown_button_link_to 'Bajar', project_page_positions_path(page.project, page, go: :down), method: :put %>
-          <% end %>
+          <%= link_to raw('&#9998; Editar'), [:edit, page.project, page] %> |
+          <%= link_to raw('&uArr; Arriba'), project_page_positions_path(page.project, page, go: :top), method: :put %> |
+          <%= link_to raw('&uarr; Subir'), project_page_positions_path(page.project, page, go: :up), method: :put %> |
+          <%= link_to raw('&darr; Bajar'), project_page_positions_path(page.project, page, go: :down), method: :put %> |
+          <%= link_to raw('&dArr; Abajo'), project_page_positions_path(page.project, page, go: :bottom), method: :put %>
       <% end %>
     </td>
 <% end %>
