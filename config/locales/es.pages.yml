@@ -1,3 +1,4 @@
+
 es:
   pages:
     show:
@@ -13,3 +14,12 @@ es:
       destroy: "Página borrada."
     index:
       empty_pages: "De momento no tiene ninguna página"
+
+  simple_form:
+    labels:
+      page:
+        status: 'Tipo de página'
+    hints:
+      page:
+        status: 'Una sección no tiene texto, mientras que una página si'
+

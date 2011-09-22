@@ -31,10 +31,6 @@ es:
         file3: 'Fichero adjunto'
         file4: 'Fichero adjunto'
 
-    hints:
-      page:
-        title: 'Se ordenarán por título en el índice: recomendamos que pongas un número delante especificando la posición'
-
     helpers:
       submit:
         update: 'Actualizar'

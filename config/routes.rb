@@ -44,7 +44,9 @@ Booka::Application.routes.draw do
         resources :agreements, :path => 'acuerdos' #, :only => [:new, :edit]
         resources :tasks, :path => 'tareas' #, :only => [:new, :edit]
       end
-      resources :pages, :path => 'paginas'
+      resources :pages, :path => 'paginas' do
+        resource :positions, :only => :update
+      end
       resources :assets, :path => 'archivos'
       resources :project_proposals, :path => 'propuestas' do
         get 'my_proposal', :on => :collection, :path => 'mi_propuesta'

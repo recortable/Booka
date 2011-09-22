@@ -7,5 +7,7 @@
     <% end %>
 <% end %>
 
-<%= render pages %>
+<table>
+  <%= render pages %>
+</table>
 <%= content_tag(:p, t('.empty_pages')) if pages.size == 0 %>

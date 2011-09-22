@@ -7,7 +7,7 @@
           <span class="hint">Si eliges un material, el texto de abajo se ignorará y se copiará el texto del material.</span>
         </div>
     <% end %>
-    <%= form.input :status, collection: [['Publicado', 'published'], ['Sección', 'section'], ['No publicado', 'hidden']], include_blank: false  %>
+    <%= form.input :status, collection: [['Página visible', 'published'], ['Sección', 'section']], include_blank: false  %>
     <%= form.input :body %>
     <%= button_submit_tag 'Guardar' %>
 <% end %>

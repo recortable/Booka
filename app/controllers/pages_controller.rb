@@ -3,7 +3,7 @@
 class PagesController < ApplicationController
   respond_to :html
   expose(:project) { Project.get(params[:project_id])}
-  expose(:pages) { project.pages.order('title ASC') }
+  expose(:pages) { project.pages }
   expose(:page)
 
   def index

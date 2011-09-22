@@ -1,6 +1,15 @@
-<%= div_for page do %>
-    <%= link_to page.title, [page.project, page] %>
-    <% if can? :manage, page %>
-        <%= link_to 'Editar', [:edit, page.project, page] %>
-    <% end %>
+<%= content_tag_for :tr, page do %>
+    <td>
+      <%= link_to_unless page.status?(:section), page.title, [page.project, page] %>
+    </td>
+    <td><%= page.position %></td>
+    <td>
+      <% if can? :manage, page %>
+          <%= button_group do %>
+              <%= edit_button_link_to 'Editar', [:edit, page.project, page] %>
+              <%= arrowup_button_link_to 'Subir', project_page_positions_path(page.project, page, go: :up), method: :put %>
+              <%= arrowdown_button_link_to 'Bajar', project_page_positions_path(page.project, page, go: :down), method: :put %>
+          <% end %>
+      <% end %>
+    </td>
 <% end %>
