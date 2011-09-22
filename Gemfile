@@ -29,6 +29,11 @@ gem 'redcarpet'
 #gem 'rdiscount'
 gem 'kaminari'
 
+# Active admin stuff
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+
+
 gem 'prawn'
 gem 'prawnto'
 gem 'nokogiri', '~> 1.4.2'

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110703195404) do
+ActiveRecord::Schema.define(:version => 20110922081150) do
 
   create_table "assets", :force => true do |t|
     t.string   "title",         :limit => 100
@@ -105,6 +106,8 @@ ActiveRecord::Schema.define(:version => 20110703195404) do
     t.string   "content_type", :limit => 32
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
+    t.string   "status",       :limit => 10
   end
 
   add_index "pages", ["project_id"], :name => "index_pages_on_project_id"
