@@ -1,4 +1,7 @@
 <h2><%= link_to page.project.title, project_read_pages_path(project) %></h2>
+<% if page.section.present? %>
+    <h3><%= page.section.title %></h3>
+<% end %>
 <%= title page.title %>
 <%= div_for page do %>
 
