@@ -38,6 +38,10 @@ gem 'activeadmin'
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'newrelic_rpm'
 
+group :development do
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+end
+
 group :test, :development do
   # Pretty printed test output
   gem 'oink'
