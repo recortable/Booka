@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: permissions
+#
+#  id               :integer(4)      not null, primary key
+#  user_id          :integer(4) REQUIRED
+#  project_id       :integer(4) REQUIRED
+#  last_modifier_id :integer(4)
+#  level            :string(16) REQUIRED
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+# TODO: what the heck is last_modifier_id!
 class Permission < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
@@ -10,23 +23,12 @@ class Permission < ActiveRecord::Base
   })
 
 
+  LEVELS = [:admin, :editor]
+
   LEVEL_ADMIN = 'admin'
   LEVEL_EDITOR = 'editor'
 
   validates :user_id, :presence => true
   validates :project_id, :presence => true
-  validates :last_modifier_id, :presence => true
+  #validates :last_modifier_id, :presence => true
 end
-# == Schema Information
-#
-# Table name: permissions
-#
-#  id               :integer(4)      not null, primary key
-#  user_id          :integer(4)
-#  project_id       :integer(4)
-#  last_modifier_id :integer(4)
-#  level            :string(16)
-#  created_at       :datetime
-#  updated_at       :datetime
-#
-

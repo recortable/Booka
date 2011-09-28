@@ -5,13 +5,13 @@
 # Table name: projects
 #
 #  id            :integer(4)      not null, primary key
+#  booka_line_id :integer(4) REQUIRED
 #  user_id       :integer(4)  REQUIRED
 #  title         :string(300) REQUIRED
 #  slug          :string(100) REQUIRED
 #  body          :text
 #  content_type  :string(32)
 #  stages        :string(32)
-#  booka_line_id :integer(4)
 #  created_at    :datetime
 #  updated_at    :datetime
 #
@@ -24,6 +24,7 @@ class Project < ActiveRecord::Base
   validates :title, :presence => true
   validates :slug, :presence => true
   validates :user_id, :presence => true
+  validates :booka_line_id, presence: true
 
   belongs_to :booka_line
   belongs_to :user

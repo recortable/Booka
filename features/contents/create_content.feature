@@ -4,10 +4,24 @@ Feature: Create content
   I want to create project's content
 
   Background: 
-    Given I'm authenticated as "Paula"
-    Given a project titled "Booka"
+    Given a project titled "Mis cosillas"
+    And I'm authenticated as "Paula"
+
+  Scenario: I'm able to add content if I admin the project
+    Given I have "admin" permission on "Mis cosillas"
+    When I go to "Mis cosillas" contents page
+    And debug page
+    Then I should see "Añadir material"
 
   @current
-  Scenario: Add content
-    When I go to "Booka" contents page
-    Then I should see "Añadir material"
+  Scenario: I can create new content
+    Given I have "admin" permission on "Mis cosillas"
+    When I go to "Mis cosillas" new content page
+    And I fill in "content[title]" with "Mi título"
+    And I fill in "content[summary]" with "Mi resúmen"
+    And I fill in "content[body]" with "Mi contenido"
+    And I press "Guardar"
+    Then I should be on "Mi título" content page
+    Then I should see "Mi título"
+    Then I should see "Mi contenido"
+    Then I should see "Mi resúmen"

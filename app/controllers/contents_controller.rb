@@ -7,7 +7,7 @@ class ContentsController < ApplicationController
 
   def index
     @no_grid = true
-    redirect_to [project,contents.first]
+    redirect_to [project,contents.first] if project.contents.count > 0
   end
 
   def show

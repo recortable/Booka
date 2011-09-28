@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   def self.anonymous
-    User.find(2)
+    @anonymous ||= User.find(2)
   end
 
   def to_param

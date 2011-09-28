@@ -27,6 +27,7 @@ Booka::Application.routes.draw do
     namespace :backend do
       root to: "projects#index"
       resources :users
+      resources :booka_lines
       resources :projects
       resources :pages
     end

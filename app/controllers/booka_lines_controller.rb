@@ -26,7 +26,7 @@ class BookaLinesController < ApplicationController
 
   def create
     booka_line.user = current_user
-    booka_line.project_id = 1
+    # TODO:remove - booka_line.project_id = 1
     authorize! :create, booka_line
     flash[:notice] = t('booka_lines.notice.create') if booka_line.save
     respond_with booka_line
