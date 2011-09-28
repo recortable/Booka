@@ -32,6 +32,7 @@ class Content < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :project_id, :presence => true
 
+  CONTENT_TYPES = ['text/markdown', 'text/html']
   CATEGORIES = [:essay, :project]
   RENDER_MODES = [:mixed, :text_only, :images_only]
 

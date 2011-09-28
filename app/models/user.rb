@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id                           :integer(4)      not null, primary key
-#  name                         :string(100)
+#  name                         :string(100) REQUIRED
 #  email                        :string(200)
 #  roles                        :string(16)
 #  notify_by_email              :boolean(1)      default(TRUE)
@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   has_many :authentications
 
   scope :unnotified_users, :conditions => 'unreaded_notifications_count > 0'
+
+  validates :name, presence: true
 
   def self.anonymous
     User.find(2)
