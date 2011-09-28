@@ -1,14 +1,18 @@
 es:
   contents:
+
     notice:
       update: 'Contenido actualizado.'
-
       create: "Contenido añadido."
+
+    browser:
+      add_content: "Añadir material"
+
     show:
-      edit_content: "Editar contenido"
+      edit_content: "Editar material"
       add_content_asset: "Subir imágen"
-      add_content: "Añadir contenido"
       destroy_content: "Borrar"
+
     edit:
       title: "Editar material"
 

@@ -41,18 +41,23 @@ gem 'nokogiri', '~> 1.4.2'
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'newrelic_rpm'
 
-group :development do
-  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
-end
-
 group :test, :development do
   # Pretty printed test output
   gem 'oink'
-  gem 'mongrel', '1.2.0.pre2'
+#  gem 'mongrel', '1.2.0.pre2'
+#  gem 'unicorn'
+  gem 'thin'
   gem 'ruby-debug19'
-  gem 'test-unit'
+#  gem 'test-unit'
   gem 'database_cleaner'
   gem 'capistrano'
   gem 'turn', :require => false
 #  gem 'rails_best_practices'
+  gem "rspec-rails", ">= 2.6.1"
+  gem "factory_girl_rails", ">= 1.1.0", :group => :test
+  gem "cucumber-rails", ">= 1.0.2", :group => :test
+  gem "capybara", ">= 1.0.1", :group => :test
+  gem "spork", "> 0.9.0.rc"
+  gem "guard-spork"
+  gem "guard-cucumber"
 end
