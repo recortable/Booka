@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110922081150) do
+ActiveRecord::Schema.define(:version => 20110928071537) do
 
   create_table "assets", :force => true do |t|
     t.string   "title",         :limit => 100
@@ -82,6 +82,10 @@ ActiveRecord::Schema.define(:version => 20110922081150) do
     t.string   "content_type", :limit => 32
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "summary",      :limit => 1024
+    t.string   "category",     :limit => 32
+    t.text     "notes"
+    t.string   "render_mode",  :limit => 16
   end
 
   add_index "contents", ["project_id"], :name => "index_contents_on_project_id"

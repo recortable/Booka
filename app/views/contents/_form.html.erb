@@ -1,7 +1,11 @@
 <%= simple_form_for([content.project, content]) do |form| %>
     <%= form.input :title %>
     <%= form.input :author %>
+    <%= form.input :summary, as: :text %>
+    <%= form.input :category, :collection => tc('contents.categories', Content::CATEGORIES) %>
     <%= form.input :body %>
+    <%= form.input :notes %>
+    <%= form.input :render_mode, :collection => tc('contents.render_mode', Content::RENDER_MODES) %>
     <%= button_submit_tag 'Guardar' %>
     <%= link_to 'Cancelar', (content.new_record? ? [content.project, :contents] : [content.project, content]) %>
 <% end %>

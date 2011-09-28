@@ -14,8 +14,14 @@ es:
     labels:
       content_type: 'Tipo de contenido'
       title: 'Título'
+      author: 'Autorxs'
       body: 'Texto'
       description: 'Descripción'
+      content:
+        category: 'Categoría'
+        summary: 'Resúmen'
+        notes: 'Notas'
+        render_mode: 'Visualización'
       topic:
         title: 'Título del asunto a tratar'
         body: 'Informe de la situación'
@@ -30,6 +36,10 @@ es:
         file2: 'Fichero adjunto'
         file3: 'Fichero adjunto'
         file4: 'Fichero adjunto'
+
+    hints:
+      content:
+        summary: 'Tienes 1000 caracteres para hacer un resúmen de este material'
 
     helpers:
       submit:

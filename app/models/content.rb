@@ -1,18 +1,21 @@
-# == Schema Information
+# Content
 #
-# Table name: contents
-#
-#  id           :integer(4)      not null, primary key
-#  title        :string(300)
-#  author       :string(100)
-#  position     :integer(4)
-#  user_id      :integer(4)
-#  project_id   :integer(4)
-#  body         :text
-#  content_type :string(32)
-#  created_at   :datetime
-#  updated_at   :datetime
-#
+# SCHEMA
+#create_table "contents", :force => true do |t|
+#  t.integer  "project_id"                  REQUIRED
+#  t.integer  "user_id"                     REQUIRED
+#  t.string   "title",        :limit => 300 REQUIRED
+#  t.string   "content_type", :limit => 32  REQUIRED
+#  t.text     "body"                        REQUIRED
+#  t.string   "author",       :limit => 100
+#  t.integer  "position"
+#  t.datetime "created_at"
+#  t.datetime "updated_at"
+#  t.string   "summary",      :limit => 1024
+#  t.string   "category",     :limit => 32
+#  t.text     "notes"
+#  t.string   "render_mode",  :limit => 16
+#end
 class Content < ActiveRecord::Base
   extend Models::HasNestedComments
   has_nested_comments
@@ -23,17 +26,21 @@ class Content < ActiveRecord::Base
 
   acts_as_list :scope => :project_id
 
-  has_paper_trail(:meta => {
-      :user_id => Proc.new { |p| p.user_id },
-      :project_id => Proc.new { |p| p.project_id },
-      :title => Proc.new {|p| p.title }
-  })
-
   validates :title, :presence => true
   validates :body, :presence => true
   validates :content_type, :presence => true
   validates :user_id, :presence => true
   validates :project_id, :presence => true
+
+  CATEGORIES = [:essay, :project]
+  RENDER_MODES = [:mixed, :text_only, :images_only]
+
+
+  has_paper_trail(:meta => {
+      :user_id => Proc.new { |p| p.user_id },
+      :project_id => Proc.new { |p| p.project_id },
+      :title => Proc.new {|p| p.title }
+  })
 
   def to_param
     "#{id}-#{title.parameterize}"

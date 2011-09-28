@@ -1,5 +1,12 @@
 es:
   contents:
+    categories:
+      essay: 'Ensayo'
+      project: 'Projecto'
+    render_mode:
+      mixed: 'Con texto e imágenes'
+      images_only: 'Sólo imágenes'
+      text_only: 'Sólo texto'
 
     notice:
       update: 'Contenido actualizado.'

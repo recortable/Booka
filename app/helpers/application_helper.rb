@@ -32,4 +32,12 @@ module ApplicationHelper
     button_submit_tag(label) + link_to('Cancelar', url, :class => 'cancel')
   end
 
+  # Translate categories
+  # Translate an array to render a select box
+  def tc(prefix, list)
+    list.map do |item|
+      [I18n.t("#{prefix}.#{item}"), item]
+    end
+  end
+
 end
