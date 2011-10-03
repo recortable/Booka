@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
   respond_to :html
   expose(:project) { Project.get(params[:project_id])}
-  expose(:contents) { project.contents }
+  expose(:contents) { can?(:manage, project) ? project.contents : project.contents.public }
   expose(:content)
   expose(:new_comment) { Comment.new(:resource => content) }
 

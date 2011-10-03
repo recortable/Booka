@@ -31,10 +31,14 @@ class Content < ActiveRecord::Base
   validates :content_type, :presence => true
   validates :user_id, :presence => true
   validates :project_id, :presence => true
+  validates :visibility, :presence => true
 
   CONTENT_TYPES = ['text/markdown', 'text/html']
   CATEGORIES = [:essay, :project]
   RENDER_MODES = [:mixed, :text_only, :images_only]
+  VISIBILITIES = [:draft, :public, :private]
+
+  scope :public, where(visibility: 'public')
 
 
   has_paper_trail(:meta => {

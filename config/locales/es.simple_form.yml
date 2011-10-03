@@ -17,6 +17,7 @@ es:
       author: 'Autorxs'
       body: 'Texto'
       description: 'Descripción'
+      visibility: 'Estado'
       content:
         category: 'Categoría'
         summary: 'Resúmen'

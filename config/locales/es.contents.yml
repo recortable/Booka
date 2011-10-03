@@ -1,8 +1,12 @@
 es:
   contents:
-    categories:
+    visibility:
+      public: 'Visible'
+      private: 'Privado'
+      draft: 'Borrador'
+    category:
       essay: 'Ensayo'
-      project: 'Projecto'
+      project: 'Proyecto'
     render_mode:
       mixed: 'Con texto e imágenes'
       images_only: 'Sólo imágenes'

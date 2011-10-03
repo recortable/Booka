@@ -3,7 +3,7 @@
   <%= button_group do %>
       <%= add_button_link_to t('.add_content'), new_project_content_path(project) if can? :new, content %>
   <% end %>
-  <% project.contents.each do |content| %>
+  <% contents.each do |content| %>
       <%= content_tag_for :li, content do %>
           <h3><%= link_to_unless_current content.title, [project, content] %></h3>
 
