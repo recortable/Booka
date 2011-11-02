@@ -17,6 +17,7 @@ Booka::Application.routes.draw do
         get 'clear', :on => :collection
       end
     end
+
     resources :versions, :path => 'ver', :only => [:index, :show]
 
     resource :system
