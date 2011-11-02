@@ -14,7 +14,7 @@
       </div-->
       <div id="session">
         <% if current_user %>
-            Hola, <%= current_user.name #, current_user %>&nbsp;<span id="user_notifications" style="display:none;"></span>&nbsp;
+            Hola, <%= current_user.name %>&nbsp;<span id="user_notifications" style="display:none;"></span>&nbsp;
             <%= link_to 'Salir', logout_path, :id => 'logout_link' %>
         <% else %>
             <%= link_to 'Iniciar sesion', login_path(:from => request.fullpath), :id => 'login_link' %>
@@ -46,8 +46,8 @@
           <%= yield :browser %>&nbsp;
           <div class="logos">
             <%= link_to image_tag('logos/LOGO-MCU.png', :alt => 'mcu', :id => 'logo-mcu'), 'http://www.mcu.es/' %>
-          <%= link_to image_tag('logos/LOGO-VIBOK.png', :alt => 'vibok', :id => 'logo-vibok'), 'http://www.edicionesvibok.net/' %>
-            </div>
+            <%= link_to image_tag('logos/LOGO-VIBOK.png', :alt => 'vibok', :id => 'logo-vibok'), 'http://www.edicionesvibok.net/' %>
+          </div>
         </div>
         <div class="col-center">
           <%= yield %>
