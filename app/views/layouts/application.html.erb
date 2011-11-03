@@ -14,7 +14,7 @@
       </div-->
       <div id="session">
         <% if current_user %>
-            Hola, <%= link_to current_user.name, current_user %>&nbsp;<span id="user_notifications" style="display:none;"></span>&nbsp;
+            Hola, <%= current_user.name %>&nbsp;<span id="user_notifications" style="display:none;"></span>&nbsp;
             <%= link_to 'Salir', logout_path, :id => 'logout_link' %>
         <% else %>
             <%= link_to 'Iniciar sesion', login_path(:from => request.fullpath), :id => 'login_link' %>
