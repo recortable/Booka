@@ -1,15 +1,14 @@
-# == Schema Information
+# User
 #
-# Table name: users
-#
-#  id                           :integer(4)      not null, primary key
-#  name                         :string(100) REQUIRED
-#  email                        :string(200)
-#  roles                        :string(16)
-#  notify_by_email              :boolean(1)      default(TRUE)
-#  created_at                   :datetime
-#  updated_at                   :datetime
-#  unreaded_notifications_count :integer(4)      default(0)
+#  t.string "name", :limit => 100
+#  t.string "email", :limit => 200
+#  t.string "roles", :limit => 16
+#  t.boolean "notify_by_email", :default => true
+#  t.datetime "created_at"
+#  t.datetime "updated_at"
+#  t.integer "unreaded_notifications_count", :default => 0
+#  t.datetime "last_login_at"
+#  t.integer "login_count", :default => 0
 #
 class User < ActiveRecord::Base
   include Models::RolesMethods
