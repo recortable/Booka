@@ -2,9 +2,9 @@
 
 
 module ApplicationHelper
-  def title(text)
+  def title(text, tag = :h1)
     content_for(:title) { text }
-    content_tag(:h1, text)
+    content_tag(tag, text)
   end
 
   def render_body(model, wrap_with_div = true)

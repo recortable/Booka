@@ -1,0 +1,39 @@
+<%= content_for :top do %>
+    <h1><%= booka_line.title %></h1>
+    <%= title "Editar el contenido de '#{carte_book.title}'", :h2 %>
+
+    <%= button_group do %>
+        <%= link_to raw('&larr; Cancelar'), [:alacarte, carte_book] %>
+    <% end %>
+<% end %>
+
+<%= content_for :browser do %>
+
+<% end %>
+
+<div class="step">
+  <label>1. Puedes añadir sección</label>
+  <%= text_field_tag :section %>
+  <%= button_tag 'Añadir' %>
+</div>
+
+<div class="step">
+  <label>2. O añadir un material utilizando el buscador de la izquierda</label>
+</div>
+
+<h3>Índice</h3>
+<ul id="content">
+
+</ul>
+
+<%= simple_form_for [:alacarte, carte_book] do |form| %>
+    <%= form.submit 'Guardar' %>
+<% end %>
+
+
+<%= content_for :info do %>
+<% end %>
+
+
+
+

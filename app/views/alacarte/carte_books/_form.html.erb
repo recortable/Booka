@@ -1,0 +1,8 @@
+<%= simple_form_for [:alacarte, carte_book] do |form| %>
+    <%= form.input :title %>
+    <%= form.input :subtitle %>
+    <%= form.input :editor %>
+    <%= form.input :place %>
+    <%= form.input :pub_date %>
+    <%= form.submit (carte_book.new_record? ? 'Continuar >>' : 'Guardar') %>
+<% end %>

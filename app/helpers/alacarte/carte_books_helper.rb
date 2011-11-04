@@ -1,0 +1,2 @@
+module Alacarte::CarteBooksHelper
+end

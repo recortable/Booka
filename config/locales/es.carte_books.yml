@@ -1,0 +1,10 @@
+es:
+  simple_form:
+    labels:
+      carte_book:
+        subtitle: 'Subtítulo'
+        editor: 'Editor / editorial'
+        place: 'Lugar de edición'
+        pub_date: 'Fecha de edición'
+
+

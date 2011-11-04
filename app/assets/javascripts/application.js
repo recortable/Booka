@@ -2,5 +2,6 @@
 // FIXME: Tell people how Sprockets and CoffeeScript works
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
-//= require_tree .
+//= require_directory ./application

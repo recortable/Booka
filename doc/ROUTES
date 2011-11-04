@@ -1,0 +1,179 @@
+                                 root        /                                                              {:controller=>"booka_lines", :action=>"index"}
+                                             /auth/:provider/callback(.:format)                             {:controller=>"sessions", :action=>"create"}
+                               logout        /cerrar(.:format)                                              {:controller=>"sessions", :action=>"destroy"}
+                                login        /identificarse(.:format)                                       {:controller=>"sessions", :action=>"new"}
+                                enter        /enter/:id(.:format)                                           {:controller=>"sessions", :action=>"enter"}
+                                             /invitacion/:id/:code(.:format)                                {:controller=>"invitations", :action=>"show"}
+                          booka_lines GET    /series(.:format)                                              {:action=>"index", :controller=>"booka_lines"}
+                                      POST   /series(.:format)                                              {:action=>"create", :controller=>"booka_lines"}
+                       new_booka_line GET    /series/nueva(.:format)                                        {:action=>"new", :controller=>"booka_lines"}
+                      edit_booka_line GET    /series/:id/editar(.:format)                                   {:action=>"edit", :controller=>"booka_lines"}
+                           booka_line GET    /series/:id(.:format)                                          {:action=>"show", :controller=>"booka_lines"}
+                                      PUT    /series/:id(.:format)                                          {:action=>"update", :controller=>"booka_lines"}
+                                      DELETE /series/:id(.:format)                                          {:action=>"destroy", :controller=>"booka_lines"}
+             email_notifications_user GET    /participantes/:id/email_notifications(.:format)               {:action=>"email_notifications", :controller=>"users"}
+                 user_authentications GET    /participantes/:user_id/autorizaciones(.:format)               {:action=>"index", :controller=>"authentications"}
+                                      POST   /participantes/:user_id/autorizaciones(.:format)               {:action=>"create", :controller=>"authentications"}
+              new_user_authentication GET    /participantes/:user_id/autorizaciones/nueva(.:format)         {:action=>"new", :controller=>"authentications"}
+             edit_user_authentication GET    /participantes/:user_id/autorizaciones/:id/editar(.:format)    {:action=>"edit", :controller=>"authentications"}
+                  user_authentication GET    /participantes/:user_id/autorizaciones/:id(.:format)           {:action=>"show", :controller=>"authentications"}
+                                      PUT    /participantes/:user_id/autorizaciones/:id(.:format)           {:action=>"update", :controller=>"authentications"}
+                                      DELETE /participantes/:user_id/autorizaciones/:id(.:format)           {:action=>"destroy", :controller=>"authentications"}
+             clear_user_notifications GET    /participantes/:user_id/actividad/clear(.:format)              {:action=>"clear", :controller=>"notifications"}
+                   user_notifications GET    /participantes/:user_id/actividad(.:format)                    {:action=>"index", :controller=>"notifications"}
+                    user_notification GET    /participantes/:user_id/actividad/:id(.:format)                {:action=>"show", :controller=>"notifications"}
+                                      PUT    /participantes/:user_id/actividad/:id(.:format)                {:action=>"update", :controller=>"notifications"}
+                                users GET    /participantes(.:format)                                       {:action=>"index", :controller=>"users"}
+                                      POST   /participantes(.:format)                                       {:action=>"create", :controller=>"users"}
+                             new_user GET    /participantes/nueva(.:format)                                 {:action=>"new", :controller=>"users"}
+                            edit_user GET    /participantes/:id/editar(.:format)                            {:action=>"edit", :controller=>"users"}
+                                 user GET    /participantes/:id(.:format)                                   {:action=>"show", :controller=>"users"}
+                                      PUT    /participantes/:id(.:format)                                   {:action=>"update", :controller=>"users"}
+                                      DELETE /participantes/:id(.:format)                                   {:action=>"destroy", :controller=>"users"}
+                             versions GET    /ver(.:format)                                                 {:action=>"index", :controller=>"versions"}
+                              version GET    /ver/:id(.:format)                                             {:action=>"show", :controller=>"versions"}
+                               system POST   /system(.:format)                                              {:action=>"create", :controller=>"systems"}
+                           new_system GET    /system/nueva(.:format)                                        {:action=>"new", :controller=>"systems"}
+                          edit_system GET    /system/editar(.:format)                                       {:action=>"edit", :controller=>"systems"}
+                                      GET    /system(.:format)                                              {:action=>"show", :controller=>"systems"}
+                                      PUT    /system(.:format)                                              {:action=>"update", :controller=>"systems"}
+                                      DELETE /system(.:format)                                              {:action=>"destroy", :controller=>"systems"}
+                             comments GET    /comentar(.:format)                                            {:action=>"index", :controller=>"comments"}
+                                      POST   /comentar(.:format)                                            {:action=>"create", :controller=>"comments"}
+                          new_comment GET    /comentar/nueva(.:format)                                      {:action=>"new", :controller=>"comments"}
+                         edit_comment GET    /comentar/:id/editar(.:format)                                 {:action=>"edit", :controller=>"comments"}
+                              comment GET    /comentar/:id(.:format)                                        {:action=>"show", :controller=>"comments"}
+                                      PUT    /comentar/:id(.:format)                                        {:action=>"update", :controller=>"comments"}
+                                      DELETE /comentar/:id(.:format)                                        {:action=>"destroy", :controller=>"comments"}
+                          invitations POST   /invitacion(.:format)                                          {:action=>"create", :controller=>"invitations"}
+                            feedbacks GET    /tu_opinion(.:format)                                          {:action=>"index", :controller=>"feedbacks"}
+                                      POST   /tu_opinion(.:format)                                          {:action=>"create", :controller=>"feedbacks"}
+                         new_feedback GET    /tu_opinion/nueva(.:format)                                    {:action=>"new", :controller=>"feedbacks"}
+                        edit_feedback GET    /tu_opinion/:id/editar(.:format)                               {:action=>"edit", :controller=>"feedbacks"}
+                             feedback GET    /tu_opinion/:id(.:format)                                      {:action=>"show", :controller=>"feedbacks"}
+                                      PUT    /tu_opinion/:id(.:format)                                      {:action=>"update", :controller=>"feedbacks"}
+                                      DELETE /tu_opinion/:id(.:format)                                      {:action=>"destroy", :controller=>"feedbacks"}
+                         backend_root        /backend(.:format)                                             {:controller=>"backend/projects", :action=>"index"}
+                        backend_users GET    /backend/users(.:format)                                       {:action=>"index", :controller=>"backend/users"}
+                                      POST   /backend/users(.:format)                                       {:action=>"create", :controller=>"backend/users"}
+                     new_backend_user GET    /backend/users/nueva(.:format)                                 {:action=>"new", :controller=>"backend/users"}
+                    edit_backend_user GET    /backend/users/:id/editar(.:format)                            {:action=>"edit", :controller=>"backend/users"}
+                         backend_user GET    /backend/users/:id(.:format)                                   {:action=>"show", :controller=>"backend/users"}
+                                      PUT    /backend/users/:id(.:format)                                   {:action=>"update", :controller=>"backend/users"}
+                                      DELETE /backend/users/:id(.:format)                                   {:action=>"destroy", :controller=>"backend/users"}
+                  backend_booka_lines GET    /backend/booka_lines(.:format)                                 {:action=>"index", :controller=>"backend/booka_lines"}
+                                      POST   /backend/booka_lines(.:format)                                 {:action=>"create", :controller=>"backend/booka_lines"}
+               new_backend_booka_line GET    /backend/booka_lines/nueva(.:format)                           {:action=>"new", :controller=>"backend/booka_lines"}
+              edit_backend_booka_line GET    /backend/booka_lines/:id/editar(.:format)                      {:action=>"edit", :controller=>"backend/booka_lines"}
+                   backend_booka_line GET    /backend/booka_lines/:id(.:format)                             {:action=>"show", :controller=>"backend/booka_lines"}
+                                      PUT    /backend/booka_lines/:id(.:format)                             {:action=>"update", :controller=>"backend/booka_lines"}
+                                      DELETE /backend/booka_lines/:id(.:format)                             {:action=>"destroy", :controller=>"backend/booka_lines"}
+                     backend_projects GET    /backend/projects(.:format)                                    {:action=>"index", :controller=>"backend/projects"}
+                                      POST   /backend/projects(.:format)                                    {:action=>"create", :controller=>"backend/projects"}
+                  new_backend_project GET    /backend/projects/nueva(.:format)                              {:action=>"new", :controller=>"backend/projects"}
+                 edit_backend_project GET    /backend/projects/:id/editar(.:format)                         {:action=>"edit", :controller=>"backend/projects"}
+                      backend_project GET    /backend/projects/:id(.:format)                                {:action=>"show", :controller=>"backend/projects"}
+                                      PUT    /backend/projects/:id(.:format)                                {:action=>"update", :controller=>"backend/projects"}
+                                      DELETE /backend/projects/:id(.:format)                                {:action=>"destroy", :controller=>"backend/projects"}
+                        backend_pages GET    /backend/pages(.:format)                                       {:action=>"index", :controller=>"backend/pages"}
+                                      POST   /backend/pages(.:format)                                       {:action=>"create", :controller=>"backend/pages"}
+                     new_backend_page GET    /backend/pages/nueva(.:format)                                 {:action=>"new", :controller=>"backend/pages"}
+                    edit_backend_page GET    /backend/pages/:id/editar(.:format)                            {:action=>"edit", :controller=>"backend/pages"}
+                         backend_page GET    /backend/pages/:id(.:format)                                   {:action=>"show", :controller=>"backend/pages"}
+                                      PUT    /backend/pages/:id(.:format)                                   {:action=>"update", :controller=>"backend/pages"}
+                                      DELETE /backend/pages/:id(.:format)                                   {:action=>"destroy", :controller=>"backend/pages"}
+                        alacarte_root        /alacarte(.:format)                                            {:controller=>"alacarte/carte_books", :action=>"index"}
+                 alacarte_carte_books GET    /alacarte/libros(.:format)                                     {:action=>"index", :controller=>"alacarte/carte_books"}
+                                      POST   /alacarte/libros(.:format)                                     {:action=>"create", :controller=>"alacarte/carte_books"}
+              new_alacarte_carte_book GET    /alacarte/libros/nueva(.:format)                               {:action=>"new", :controller=>"alacarte/carte_books"}
+             edit_alacarte_carte_book GET    /alacarte/libros/:id/editar(.:format)                          {:action=>"edit", :controller=>"alacarte/carte_books"}
+                  alacarte_carte_book GET    /alacarte/libros/:id(.:format)                                 {:action=>"show", :controller=>"alacarte/carte_books"}
+                                      PUT    /alacarte/libros/:id(.:format)                                 {:action=>"update", :controller=>"alacarte/carte_books"}
+                                      DELETE /alacarte/libros/:id(.:format)                                 {:action=>"destroy", :controller=>"alacarte/carte_books"}
+                   project_read_pages GET    /:project_id/leer(.:format)                                    {:action=>"index", :controller=>"read_pages"}
+                                      POST   /:project_id/leer(.:format)                                    {:action=>"create", :controller=>"read_pages"}
+                new_project_read_page GET    /:project_id/leer/nueva(.:format)                              {:action=>"new", :controller=>"read_pages"}
+               edit_project_read_page GET    /:project_id/leer/:id/editar(.:format)                         {:action=>"edit", :controller=>"read_pages"}
+                    project_read_page GET    /:project_id/leer/:id(.:format)                                {:action=>"show", :controller=>"read_pages"}
+                                      PUT    /:project_id/leer/:id(.:format)                                {:action=>"update", :controller=>"read_pages"}
+                                      DELETE /:project_id/leer/:id(.:format)                                {:action=>"destroy", :controller=>"read_pages"}
+               project_content_assets GET    /:project_id/materiales/:content_id/archivos(.:format)         {:action=>"index", :controller=>"assets"}
+                     project_contents GET    /:project_id/materiales(.:format)                              {:action=>"index", :controller=>"contents"}
+                                      POST   /:project_id/materiales(.:format)                              {:action=>"create", :controller=>"contents"}
+                  new_project_content GET    /:project_id/materiales/nueva(.:format)                        {:action=>"new", :controller=>"contents"}
+                 edit_project_content GET    /:project_id/materiales/:id/editar(.:format)                   {:action=>"edit", :controller=>"contents"}
+                      project_content GET    /:project_id/materiales/:id(.:format)                          {:action=>"show", :controller=>"contents"}
+                                      PUT    /:project_id/materiales/:id(.:format)                          {:action=>"update", :controller=>"contents"}
+                                      DELETE /:project_id/materiales/:id(.:format)                          {:action=>"destroy", :controller=>"contents"}
+                        project_posts GET    /:project_id/entrada(.:format)                                 {:action=>"index", :controller=>"posts"}
+                                      POST   /:project_id/entrada(.:format)                                 {:action=>"create", :controller=>"posts"}
+                     new_project_post GET    /:project_id/entrada/nueva(.:format)                           {:action=>"new", :controller=>"posts"}
+                    edit_project_post GET    /:project_id/entrada/:id/editar(.:format)                      {:action=>"edit", :controller=>"posts"}
+                         project_post GET    /:project_id/entrada/:id(.:format)                             {:action=>"show", :controller=>"posts"}
+                                      PUT    /:project_id/entrada/:id(.:format)                             {:action=>"update", :controller=>"posts"}
+                                      DELETE /:project_id/entrada/:id(.:format)                             {:action=>"destroy", :controller=>"posts"}
+                  project_permissions GET    /:project_id/comunidad(.:format)                               {:action=>"index", :controller=>"permissions"}
+                                      POST   /:project_id/comunidad(.:format)                               {:action=>"create", :controller=>"permissions"}
+               new_project_permission GET    /:project_id/comunidad/nueva(.:format)                         {:action=>"new", :controller=>"permissions"}
+              edit_project_permission GET    /:project_id/comunidad/:id/editar(.:format)                    {:action=>"edit", :controller=>"permissions"}
+                   project_permission GET    /:project_id/comunidad/:id(.:format)                           {:action=>"show", :controller=>"permissions"}
+                                      PUT    /:project_id/comunidad/:id(.:format)                           {:action=>"update", :controller=>"permissions"}
+                                      DELETE /:project_id/comunidad/:id(.:format)                           {:action=>"destroy", :controller=>"permissions"}
+              project_topic_proposals GET    /:project_id/edicion/:topic_id/propuestas(.:format)            {:action=>"index", :controller=>"proposals"}
+                                      POST   /:project_id/edicion/:topic_id/propuestas(.:format)            {:action=>"create", :controller=>"proposals"}
+           new_project_topic_proposal GET    /:project_id/edicion/:topic_id/propuestas/nueva(.:format)      {:action=>"new", :controller=>"proposals"}
+          edit_project_topic_proposal GET    /:project_id/edicion/:topic_id/propuestas/:id/editar(.:format) {:action=>"edit", :controller=>"proposals"}
+               project_topic_proposal GET    /:project_id/edicion/:topic_id/propuestas/:id(.:format)        {:action=>"show", :controller=>"proposals"}
+                                      PUT    /:project_id/edicion/:topic_id/propuestas/:id(.:format)        {:action=>"update", :controller=>"proposals"}
+                                      DELETE /:project_id/edicion/:topic_id/propuestas/:id(.:format)        {:action=>"destroy", :controller=>"proposals"}
+             project_topic_agreements GET    /:project_id/edicion/:topic_id/acuerdos(.:format)              {:action=>"index", :controller=>"agreements"}
+                                      POST   /:project_id/edicion/:topic_id/acuerdos(.:format)              {:action=>"create", :controller=>"agreements"}
+          new_project_topic_agreement GET    /:project_id/edicion/:topic_id/acuerdos/nueva(.:format)        {:action=>"new", :controller=>"agreements"}
+         edit_project_topic_agreement GET    /:project_id/edicion/:topic_id/acuerdos/:id/editar(.:format)   {:action=>"edit", :controller=>"agreements"}
+              project_topic_agreement GET    /:project_id/edicion/:topic_id/acuerdos/:id(.:format)          {:action=>"show", :controller=>"agreements"}
+                                      PUT    /:project_id/edicion/:topic_id/acuerdos/:id(.:format)          {:action=>"update", :controller=>"agreements"}
+                                      DELETE /:project_id/edicion/:topic_id/acuerdos/:id(.:format)          {:action=>"destroy", :controller=>"agreements"}
+                  project_topic_tasks GET    /:project_id/edicion/:topic_id/tareas(.:format)                {:action=>"index", :controller=>"tasks"}
+                                      POST   /:project_id/edicion/:topic_id/tareas(.:format)                {:action=>"create", :controller=>"tasks"}
+               new_project_topic_task GET    /:project_id/edicion/:topic_id/tareas/nueva(.:format)          {:action=>"new", :controller=>"tasks"}
+              edit_project_topic_task GET    /:project_id/edicion/:topic_id/tareas/:id/editar(.:format)     {:action=>"edit", :controller=>"tasks"}
+                   project_topic_task GET    /:project_id/edicion/:topic_id/tareas/:id(.:format)            {:action=>"show", :controller=>"tasks"}
+                                      PUT    /:project_id/edicion/:topic_id/tareas/:id(.:format)            {:action=>"update", :controller=>"tasks"}
+                                      DELETE /:project_id/edicion/:topic_id/tareas/:id(.:format)            {:action=>"destroy", :controller=>"tasks"}
+                       project_topics GET    /:project_id/edicion(.:format)                                 {:action=>"index", :controller=>"topics"}
+                                      POST   /:project_id/edicion(.:format)                                 {:action=>"create", :controller=>"topics"}
+                    new_project_topic GET    /:project_id/edicion/nueva(.:format)                           {:action=>"new", :controller=>"topics"}
+                   edit_project_topic GET    /:project_id/edicion/:id/editar(.:format)                      {:action=>"edit", :controller=>"topics"}
+                        project_topic GET    /:project_id/edicion/:id(.:format)                             {:action=>"show", :controller=>"topics"}
+                                      PUT    /:project_id/edicion/:id(.:format)                             {:action=>"update", :controller=>"topics"}
+                                      DELETE /:project_id/edicion/:id(.:format)                             {:action=>"destroy", :controller=>"topics"}
+               project_page_positions PUT    /:project_id/paginas/:page_id/positions(.:format)              {:action=>"update", :controller=>"positions"}
+                        project_pages GET    /:project_id/paginas(.:format)                                 {:action=>"index", :controller=>"pages"}
+                                      POST   /:project_id/paginas(.:format)                                 {:action=>"create", :controller=>"pages"}
+                     new_project_page GET    /:project_id/paginas/nueva(.:format)                           {:action=>"new", :controller=>"pages"}
+                    edit_project_page GET    /:project_id/paginas/:id/editar(.:format)                      {:action=>"edit", :controller=>"pages"}
+                         project_page GET    /:project_id/paginas/:id(.:format)                             {:action=>"show", :controller=>"pages"}
+                                      PUT    /:project_id/paginas/:id(.:format)                             {:action=>"update", :controller=>"pages"}
+                                      DELETE /:project_id/paginas/:id(.:format)                             {:action=>"destroy", :controller=>"pages"}
+                       project_assets GET    /:project_id/archivos(.:format)                                {:action=>"index", :controller=>"assets"}
+                                      POST   /:project_id/archivos(.:format)                                {:action=>"create", :controller=>"assets"}
+                    new_project_asset GET    /:project_id/archivos/nueva(.:format)                          {:action=>"new", :controller=>"assets"}
+                   edit_project_asset GET    /:project_id/archivos/:id/editar(.:format)                     {:action=>"edit", :controller=>"assets"}
+                        project_asset GET    /:project_id/archivos/:id(.:format)                            {:action=>"show", :controller=>"assets"}
+                                      PUT    /:project_id/archivos/:id(.:format)                            {:action=>"update", :controller=>"assets"}
+                                      DELETE /:project_id/archivos/:id(.:format)                            {:action=>"destroy", :controller=>"assets"}
+my_proposal_project_project_proposals GET    /:project_id/propuestas/mi_propuesta(.:format)                 {:action=>"my_proposal", :controller=>"project_proposals"}
+            project_project_proposals GET    /:project_id/propuestas(.:format)                              {:action=>"index", :controller=>"project_proposals"}
+                                      POST   /:project_id/propuestas(.:format)                              {:action=>"create", :controller=>"project_proposals"}
+         new_project_project_proposal GET    /:project_id/propuestas/nueva(.:format)                        {:action=>"new", :controller=>"project_proposals"}
+        edit_project_project_proposal GET    /:project_id/propuestas/:id/editar(.:format)                   {:action=>"edit", :controller=>"project_proposals"}
+             project_project_proposal GET    /:project_id/propuestas/:id(.:format)                          {:action=>"show", :controller=>"project_proposals"}
+                                      PUT    /:project_id/propuestas/:id(.:format)                          {:action=>"update", :controller=>"project_proposals"}
+                                      DELETE /:project_id/propuestas/:id(.:format)                          {:action=>"destroy", :controller=>"project_proposals"}
+                             projects GET    /                                                              {:action=>"index", :controller=>"projects"}
+                                      POST   /                                                              {:action=>"create", :controller=>"projects"}
+                          new_project GET    /nueva(.:format)                                               {:action=>"new", :controller=>"projects"}
+                         edit_project GET    /:id/editar(.:format)                                          {:action=>"edit", :controller=>"projects"}
+                              project GET    /:id(.:format)                                                 {:action=>"show", :controller=>"projects"}
+                                      PUT    /:id(.:format)                                                 {:action=>"update", :controller=>"projects"}
+                                      DELETE /:id(.:format)                                                 {:action=>"destroy", :controller=>"projects"}

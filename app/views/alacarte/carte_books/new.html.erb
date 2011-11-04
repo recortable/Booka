@@ -1,0 +1,21 @@
+
+<%= content_for :top do %>
+    <h1><%= booka_line.title %></h1>
+    <%= title 'Crea tu libro a la carta', :h2 %>
+    <%= button_group do  %>
+        <%= link_to raw('&larr; Cancelar'), [:alacarte, :carte_books] %>
+    <% end %>
+<% end %>
+
+<%= content_for :browser do %>
+
+<% end %>
+
+<%= render  'form' %>
+
+<%= content_for :info do %>
+<% end %>
+
+
+
+

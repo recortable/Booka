@@ -1,0 +1,2 @@
+module Alacarte::ApplicationHelper
+end

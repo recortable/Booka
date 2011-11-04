@@ -1,0 +1,9 @@
+<ul class="browser">
+  <h2>TÍTULOS</h2>
+  <%= link_to 'Crea tu título', new_alacarte_carte_book_path %>
+  <ul id="carte_books">
+    <% carte_books.each do |carte_book| %>
+        <li><%= link_to carte_book.title, [:alacarte, carte_book] %></li>
+    <% end %>
+  </ul>
+</ul>

@@ -1,0 +1,16 @@
+<% title booka_line.title %>
+
+<%= content_for :top do %>
+    <%= render(:partial => 'booka_lines/header', :locals => {:booka_line => booka_line}) %>
+<% end %>
+
+<%= content_for :browser do %>
+    <%= render partial: 'browser' %>
+<% end %>
+
+<%= render_body booka_line %>
+<%= render_comments new_line_comment %>
+
+<%= content_for :info do %>
+<% end %>
+

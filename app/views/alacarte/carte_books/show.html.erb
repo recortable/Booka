@@ -1,0 +1,17 @@
+<%= content_for :top do %>
+    <%= render(:partial => 'booka_lines/header', :locals => {:booka_line => booka_line}) %>
+    <%= title carte_book.title, :h2 %>
+
+    <%= button_group do %>
+        <%= edit_button_link_to "Editar datos", [:edit, :alacarte, carte_book] if can? :edit, carte_book%>
+        <%= edit_button_link_to "Editar contenido", [:content, :alacarte, carte_book] if can? :edit, carte_book%>
+        <%= danger_remove_button_link_to "Borrar libro", [:alacarte, carte_book],
+                                         :confirm => '¿Segura que quieres borrar este libro?',
+                                         :method => :delete if can? :destroy, carte_book %>
+    <% end %>
+<% end %>
+
+
+<%= content_for :browser do %>
+    <%= render partial: 'browser' %>
+<% end %>

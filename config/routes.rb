@@ -33,6 +33,13 @@ Booka::Application.routes.draw do
       resources :pages
     end
 
+    namespace :alacarte do
+      root to: "carte_books#index"
+      resources :carte_books, :path => 'libros' do
+        get :content, on: :member, path: 'contenido'
+      end
+    end
+
 
     resources :projects, :path => '' do
       resources :read_pages, :path => 'leer'
