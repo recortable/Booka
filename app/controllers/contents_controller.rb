@@ -23,6 +23,12 @@ class ContentsController < ApplicationController
     authorize! :edit, content
   end
 
+  def search
+    @results = Content.by_title(params[:term]).public if params[:term].present?
+    @results ||= []
+    render :search, layout: false
+  end
+
   def create
     build_params(params[:content], current_user)
     authorize! :create, content

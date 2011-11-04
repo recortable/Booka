@@ -8,6 +8,14 @@
 <% end %>
 
 <%= content_for :browser do %>
+    <h2>Materiales</h2>
+    <div id="contents_search" data-search-url="<%= search_contents_path %>">
+      <%= text_field_tag :term %>
+      <%= button_tag 'Buscar' %>
+    </div>
+
+    <ul id="contents" class="browser">
+    </ul>
 
 <% end %>
 

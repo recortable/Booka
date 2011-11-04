@@ -18,6 +18,10 @@ Booka::Application.routes.draw do
       end
     end
 
+    resources :contents, :only => [:search] do
+      get 'search', on: :collection
+    end
+
     resources :versions, :path => 'ver', :only => [:index, :show]
 
     resource :system
@@ -31,6 +35,7 @@ Booka::Application.routes.draw do
       resources :booka_lines
       resources :projects
       resources :pages
+      resources :versions
     end
 
     namespace :alacarte do

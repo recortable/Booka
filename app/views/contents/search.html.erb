@@ -1,0 +1,6 @@
+<% @results.each do |content| %>
+    <%= content_tag_for :li, content do %>
+        <h3><%= content.title %></h3>
+        <div class="author"><%= content.author %></div>
+    <% end %>
+<% end %>

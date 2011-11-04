@@ -39,6 +39,8 @@ class Content < ActiveRecord::Base
   VISIBILITIES = [:draft, :public, :private]
 
   scope :public, where(visibility: 'public')
+  scope :by_title, lambda {|t| where("title LIKE ?", "%#{t}%")}
+
 
 
   has_paper_trail(:meta => {
