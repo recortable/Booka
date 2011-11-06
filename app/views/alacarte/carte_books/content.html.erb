@@ -12,31 +12,40 @@
     <div id="contents_search" data-search-url="<%= search_contents_path %>">
       <%= text_field_tag :term %>
       <%= button_tag 'Buscar' %>
+      <div class="info">&nbsp;</div>
+      <ul class="results">
+      </ul>
     </div>
 
-    <ul id="contents" class="browser">
+<% end %>
+
+<div id="carte_books_content_editor">
+  <div id="add-section" class="step">
+    <label>&rarr; Puedes añadir sección</label>
+    <%= text_field_tag :section %>
+    <%= button_tag 'Añadir' %>
+  </div>
+
+  <div class="step">
+    <label>&rarr; O añadir un material utilizando el buscador de la izquierda.</label>
+  </div>
+
+  <div class="carte_book step">
+    <pre class="raw"><%= carte_book.contents %></pre>
+    <h2>Índice</h2>
+    <ul class="index">
+
     </ul>
+    <%= simple_form_for [:alacarte, carte_book] do |form| %>
+        <%= form.submit 'Guardar' %>
+        <%= form.input :contents, as: :text %>
+    <% end %>
+  </div>
 
-<% end %>
-
-<div class="step">
-  <label>1. Puedes añadir sección</label>
-  <%= text_field_tag :section %>
-  <%= button_tag 'Añadir' %>
+  <div class="step">
+    <label>&rarr; Puedes reordenar el índice arrastrando los elementos.</label>
+  </div>
 </div>
-
-<div class="step">
-  <label>2. O añadir un material utilizando el buscador de la izquierda</label>
-</div>
-
-<h3>Índice</h3>
-<ul id="content">
-
-</ul>
-
-<%= simple_form_for [:alacarte, carte_book] do |form| %>
-    <%= form.submit 'Guardar' %>
-<% end %>
 
 
 <%= content_for :info do %>

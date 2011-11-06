@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  respond_to :html
+  respond_to :html, :json
   expose(:project) { Project.get(params[:project_id])}
   expose(:contents) { can?(:manage, project) ? project.contents : project.contents.public }
   expose(:content)
@@ -26,7 +26,7 @@ class ContentsController < ApplicationController
   def search
     @results = Content.by_title(params[:term]).public if params[:term].present?
     @results ||= []
-    render :search, layout: false
+    respond_with @results
   end
 
   def create

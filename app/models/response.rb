@@ -21,6 +21,7 @@ class Response < ActiveRecord::Base
   validates :title, :presence => true
   validates :body, :presence => true
 end
+
 # == Schema Information
 #
 # Table name: responses
