@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title><%= yield :title %> :: PlataformaBooka Backend</title>
+  <title>Backend :: PlataformaBooka</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -10,6 +10,9 @@
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
   <%= stylesheet_link_tag "backend" %>
+  <%= javascript_include_tag "backend" %>
+  <%= csrf_meta_tags %>
+
 </head>
 <body class="backend">
 <div class="topbar">

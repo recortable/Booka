@@ -32,7 +32,9 @@ tmplSearchResult = (item) ->
 
 tmplContent = (item) ->
   "<li class='content'
-  data-id='#{item.id}'>#{item.title}</li>"
+  data-id='#{item.id}'>#{item.title}
+  <a class='action delete' href='#'>borrar</a>
+  </li>"
 
 searchContents = ->
   url = $('#contents_search').data('search-url')
@@ -57,7 +59,9 @@ addContent = ->
 addSectionField = '#add-section input[type=text]'
 
 tmplSection = (name) ->
-  "<li class='section' data-id=''>#{name}</li>"
+  "<li class='section' data-id=''>#{name}
+  <a class='action delete' href='#'>borrar</a>
+  </li>"
 
 addSection = ->
   term = $(addSectionField).val()
@@ -68,13 +72,21 @@ addSection = ->
 
 # RENDER
 parseRegexp = /(\w+)\[(\w*)\]:(.*)/
+
+renderIndexItem = (item) ->
+  "<li class='#{item.type}'
+  data-id='#{item.id}' data-title='#{item.title}'>
+  #{item.title}
+  <a class='action delete' href='#'>borrar</a>
+  </li>"
+
 renderIndex = ->
   raw = $(this).text()
   console.log "RAW", raw
   out = ''
   $.each raw.split('\n'), ->
     match = parseRegexp.exec(this)
-    out += "<li class='#{match[1]}'>#{match[3]}</li>"
+    out += renderIndexItem {type: match[1], id: match[2], title: match[3]}
   list = $(this).parent().find('ul.index')
   list.html(out)
 

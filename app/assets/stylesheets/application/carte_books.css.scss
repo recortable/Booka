@@ -15,6 +15,9 @@
         input[type=text] {border: 1px solid $c-blue; padding: 2px; width: 10em;}
     }
 
+    ul.index {
+        a.action {display: block; font-size: 12px; float: right;}
+    }
 
 
 }
@@ -23,9 +26,11 @@
     ul.index {
       margin: 10px 5px;
 
-      li {padding: 2px 5px; border-bottom: 1px solid $c-blue-lt;}
+      li {padding: 2px 5px; border-bottom: 0px solid $c-blue-lt;}
       li.section {font-size: 120%;}
       li.content {padding-left: 20px;}
+
+      a.action {display: none;}
 
     }
 

@@ -38,7 +38,7 @@
     </ul>
     <%= simple_form_for [:alacarte, carte_book] do |form| %>
         <%= form.submit 'Guardar' %>
-        <%= form.input :contents, as: :text %>
+        <%= form.input :contents, as: :hidden %>
     <% end %>
   </div>
 
