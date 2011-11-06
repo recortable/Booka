@@ -3,6 +3,13 @@
 
 #contents_search {
     input[type=text] {width: 100%; border: 1px solid $c-blue; margin-bottom: 5px;}
+
+    li {
+        h3 {color: $c-blue;}
+        .autor {color: $c-blue-lt;}
+        a {color: $c-green;}
+    }
+
 }
 
 #carte_books_content_editor {
@@ -17,6 +24,8 @@
 
     ul.index {
         a.action {display: block; font-size: 12px; float: right;}
+
+        li {cursor: move;}
     }
 
 

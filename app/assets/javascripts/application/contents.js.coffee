@@ -9,10 +9,18 @@ updateBody = ->
   body = []
   $(indexListItems).each ->
     console.log 'joe'
-    body.push "#{$(this).attr('class')}[#{$(this).data('id')}]:#{$(this).text()}"
+    body.push "#{$(this).attr('class')}[#{$(this).data('id')}]:#{$(this).data('title')}"
   output = body.join('\n')
   console.log(output)
   $(indexOutput).val(output)
+
+# INDEX ITEMS
+deleteAction = '#carte_books_content_editor a.action.delete'
+
+deleteItem = ->
+  $(this).parent().remove()
+  updateBody()
+  false
 
 # CONTENTS
 
@@ -21,7 +29,7 @@ searchField = "#{searchDiv} input[type=text]"
 searchInfo = "#{searchDiv} div.info"
 searchResults = "#{searchDiv} ul.results"
 
-
+# SEARCH RESULT
 tmplSearchResult = (item) ->
   "<li id='content-#{item.id}' class='content'
   data-id='#{item.id}' data-title='#{item.title}'>
@@ -30,9 +38,11 @@ tmplSearchResult = (item) ->
   <a href='#' class='add-to-book'>añadir</a>
   </li>"
 
+# CONTENT AT INDEX
 tmplContent = (item) ->
   "<li class='content'
-  data-id='#{item.id}'>#{item.title}
+  data-id='#{item.id}' data-title='#{item.title}'>
+  #{item.title}
   <a class='action delete' href='#'>borrar</a>
   </li>"
 
@@ -46,7 +56,6 @@ searchContents = ->
       rendered = (tmplSearchResult(item) for item in data).join('')
       $(searchResults).html(rendered)
 
-
 addContent = ->
   id = $(this).parent().data('id')
   title = $(this).parent().data('title')
@@ -59,7 +68,8 @@ addContent = ->
 addSectionField = '#add-section input[type=text]'
 
 tmplSection = (name) ->
-  "<li class='section' data-id=''>#{name}
+  "<li class='section' data-id=''
+  data-title='#{name}'>#{name}
   <a class='action delete' href='#'>borrar</a>
   </li>"
 
@@ -70,7 +80,7 @@ addSection = ->
   updateBody()
 
 
-# RENDER
+# RENDER INDEX FROM DATA
 parseRegexp = /(\w+)\[(\w*)\]:(.*)/
 
 renderIndexItem = (item) ->
@@ -96,4 +106,5 @@ jQuery ->
   $('a.add-to-book').live('click', addContent)
   $(indexList).sortable {axis: 'y', update: updateBody}
   $('.carte_book .raw').each(renderIndex)
+  $(deleteAction).live('click', deleteItem)
 
