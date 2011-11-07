@@ -4,4 +4,12 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+//= require_self
 //= require_directory ./application
+
+if (typeof console == "undefined" || typeof console.log == "undefined") {
+    console = {
+        log : function() {
+        }
+    };
+}

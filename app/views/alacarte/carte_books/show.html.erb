@@ -4,8 +4,8 @@
     <%= content_tag :h5, carte_book.subtitle if carte_book.subtitle.present? %>
 
     <%= button_group do %>
-        <%= edit_button_link_to "Editar datos", [:edit, :alacarte, carte_book] if can? :edit, carte_book%>
-        <%= edit_button_link_to "Editar contenido", [:content, :alacarte, carte_book] if can? :edit, carte_book%>
+        <%= edit_button_link_to "Editar datos", [:edit, :alacarte, carte_book] if can? :edit, carte_book %>
+        <%= edit_button_link_to "Editar contenido", [:content, :alacarte, carte_book] if can? :edit, carte_book %>
         <%= danger_remove_button_link_to "Borrar libro", [:alacarte, carte_book],
                                          :confirm => '¿Segura que quieres borrar este libro?',
                                          :method => :delete if can? :destroy, carte_book %>
@@ -19,12 +19,17 @@ Editador por <%= carte_book.editor %>.
   <pre class="raw"><%= carte_book.contents %></pre>
   <h2>Índice</h2>
   <ul class="index">
-
   </ul>
 </div>
 <br/>
 <%= carte_book.place %>
 <%= carte_book.pub_date.strftime('%d/%m/%Y') if carte_book.pub_date.present? %>
+
+<%= content_for :info do %>
+    <div class="booka-box">
+      <%= link_to 'Descarga este título en PDF', alacarte_carte_book_path(carte_book, format: :pdf) %>
+    </div>
+<% end %>
 
 
 <%= content_for :browser do %>

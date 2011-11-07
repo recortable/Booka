@@ -11,6 +11,14 @@ class Alacarte::CarteBooksController < Alacarte::ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = CarteBookPdf.new(carte_book, view_context)
+        send_data pdf.render, filename: "#{carte_book.title}.pdf",
+                  type: "application/pdf", disposition: "inline"
+      end
+    end
 
   end
 
@@ -32,7 +40,7 @@ class Alacarte::CarteBooksController < Alacarte::ApplicationController
     flash[:notice] = 'Libro a la carta creado.' if carte_book.save
     respond_with carte_book, location: [:content, :alacarte, carte_book]
   end
-  
+
   def update
     flash[:notice] = 'Libro actualizado.' if carte_book.update_attributes(params[:carte_book])
     respond_with carte_book, location: [:alacarte, carte_book]

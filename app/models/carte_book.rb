@@ -16,4 +16,21 @@ class CarteBook < ActiveRecord::Base
   validates :user_id, presence: true
   validates :title, presence: true
   validates :editor, presence: true
+
+  PARSE_RX = /(\w+)\[(\w*)\]:(.*)/
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
+
+  def index
+    return @index if @index
+    @index = []
+    contents.each_line do |line|
+      line.scan(PARSE_RX) do |type, id, title|
+        index << {type: type, id: id, title: title}
+      end
+    end
+    @index
+  end
 end
