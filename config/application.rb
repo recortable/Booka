@@ -64,7 +64,7 @@ module Booka
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.3'
 
-    config.assets.precompile += ['admin.js', 'admin.css']
+    config.assets.precompile += ['backend.js', 'backend.css']
     config.assets.initialize_on_precompile = false
 
   end

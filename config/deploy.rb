@@ -2,7 +2,7 @@
 # setup deploy: http://www.capify.org/getting-started/from-the-beginning/
 
 # Standard deploy assets tasks
-load 'deploy/assets'
+#load 'deploy/assets'
 
 
 # default_run_options[:pty] = true
@@ -28,7 +28,7 @@ $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 # Load RVM's capistrano plugin.
 require "rvm/capistrano"
 
-set :rvm_ruby_string, '1.9.2@rails31'
+set :rvm_ruby_string, '1.9.2@booka'
 set :rvm_type, :user  # Don't use system-wide RVM
 
 
@@ -69,7 +69,8 @@ namespace :myassets do
   end
 end
 
-#after :deploy, "assets:precompile"
+#after 'deploy:update_code', 'myassets:precompile'
+after :deploy, "myassets:precompile"
 
 
 namespace :mysql do
