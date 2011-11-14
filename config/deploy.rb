@@ -1,6 +1,10 @@
 # SOURCES setup users: http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/
 # setup deploy: http://www.capify.org/getting-started/from-the-beginning/
 
+# Standard deploy assets tasks
+load 'deploy/assets'
+
+
 # default_run_options[:pty] = true
 set :application, "PlataformaBooka"
 set :deploy_to, "/home/deploy/#{application}"
@@ -55,7 +59,7 @@ namespace :deploy do
 end
 
 # Assets management
-namespace :assets do
+namespace :myassets do
   task :precompile, :roles => :web do
     run "cd #{current_path} && RAILS_ENV=production bundle exec rake assets:precompile"
   end
