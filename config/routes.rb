@@ -1,12 +1,6 @@
 Booka::Application.routes.draw do
   root :to => 'booka_lines#index'
 
-  match "/auth/:provider/callback" => "sessions#create"
-  match "/cerrar" => "sessions#destroy", :as => :logout
-  match "/identificarse" => "sessions#new", :as => :login
-  match "/enter/:id" => "sessions#enter", :as => :enter
-  match "/invitacion/:id/:code" => "invitations#show"
-
   scope(:path_names => {:new => "nueva", :edit => "editar"}) do
     resources :booka_lines, :path => 'series'
 
@@ -46,6 +40,17 @@ Booka::Application.routes.draw do
     end
 
 
+    match "/auth/:provider/callback" => "sessions#create"
+    match "/cerrar" => "sessions#destroy", :as => :logout
+    match "/identificarse" => "sessions#new", :as => :login
+    match "/enter/:id" => "sessions#enter", :as => :enter
+    match "/invitacion/:id/:code" => "invitations#show"
+
+    constraints CanAccessResque do
+      mount Resque::Server, at: 'resque'
+    end
+
+
     resources :projects, :path => '' do
       resources :read_pages, :path => 'leer'
       resources :contents, :path => 'materiales' do
@@ -67,6 +72,4 @@ Booka::Application.routes.draw do
       end
     end
   end
-
-
 end

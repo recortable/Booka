@@ -3,5 +3,5 @@ checkSystem = ->
         $("#user_notifications").text(data.user_notifications).show();
         setTimeout(checkSystem, 1000 * 60)
 
-$ ->
-    setTimeout(checkSystem, 500)
+#$ ->
+    #setTimeout(checkSystem, 500)

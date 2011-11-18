@@ -15,6 +15,9 @@ gem 'jquery-rails'
 gem 'sqlite3'
 gem 'mysql2'
 
+gem 'resque', :require => 'resque/server'  
+
+
 gem 'decent_exposure'
 gem 'simple_form'
 gem 'css3buttons'
