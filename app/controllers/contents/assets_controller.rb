@@ -1,4 +1,4 @@
-class AssetsController < ApplicationController
+class Contents::AssetsController < ApplicationController
   respond_to :html
   expose(:project) { Project.get(params[:project_id])}
   expose(:content) { params[:content_id].present? ? Content.find(params[:content_id]) : nil }

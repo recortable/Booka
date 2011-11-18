@@ -53,19 +53,31 @@ Booka::Application.routes.draw do
 
     resources :projects, :path => '' do
       resources :read_pages, :path => 'leer'
-      resources :contents, :path => 'materiales' do
-        resources :assets, :path => 'archivos', :only => [:index]
+
+      scope module: :contents do
+        resources :contents, :path => 'materiales' do
+          resources :assets, :path => 'archivos', :only => [:index]
+        end
       end
+
       resources :posts, :path => 'entrada'
-      resources :permissions, :path => 'comunidad'
-      resources :topics, :path => 'edicion' do
-        resources :proposals, :path => 'propuestas'
-        resources :agreements, :path => 'acuerdos' #, :only => [:new, :edit]
-        resources :tasks, :path => 'tareas' #, :only => [:new, :edit]
+
+      scope module: :community do
+        resources :permissions, :path => 'comunidad'
       end
+
+      scope module: :forum do
+        resources :topics, :path => 'edicion' do
+          resources :proposals, :path => 'propuestas'
+          resources :agreements, :path => 'acuerdos' #, :only => [:new, :edit]
+          resources :tasks, :path => 'tareas' #, :only => [:new, :edit]
+        end
+      end
+
       resources :pages, :path => 'paginas' do
         resource :positions, :only => :update
       end
+
       resources :assets, :path => 'archivos'
       resources :project_proposals, :path => 'propuestas' do
         get 'my_proposal', :on => :collection, :path => 'mi_propuesta'

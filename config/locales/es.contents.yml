@@ -16,16 +16,17 @@ es:
       update: 'Contenido actualizado.'
       create: "Contenido añadido."
 
-    browser:
-      add_content: "Añadir material"
+    contents:
+        browser:
+          add_content: "Añadir material"
 
-    show:
-      edit_content: "Editar material"
-      add_content_asset: "Subir imágen"
-      destroy_content: "Borrar"
+        show:
+          edit_content: "Editar material"
+          add_content_asset: "Subir imágen"
+          destroy_content: "Borrar"
 
-    edit:
-      title: "Editar material"
+        edit:
+          title: "Editar material"
 
-    new:
-      title: "Añadir material"
+        new:
+          title: "Añadir material"

@@ -36,6 +36,7 @@ class Project < ActiveRecord::Base
   has_many :users, :through => :permissions
   has_many :assets
   has_many :pages
+  has_many :versions
 
   has_many :project_proposals
 

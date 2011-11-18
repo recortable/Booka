@@ -2,7 +2,7 @@
   <li><%= link_to_unless_current t('projects.navigation.intro'), [project] %></li>
   <span>|</span>
   <% if project.has_stage? :contents %>
-      <li><%= link_to_unless controller.class  == ContentsController, t('.contents'), [project, :contents] %></li>
+      <li><%= link_to_unless controller.class  == Contents::ContentsController, t('.contents'), [project, :contents] %></li>
       <span>|</span>
   <% end %>
   <% if project.has_stage? :topics %>

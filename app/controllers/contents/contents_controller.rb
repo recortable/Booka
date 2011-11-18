@@ -1,4 +1,4 @@
-class ContentsController < ApplicationController
+class Contents::ContentsController < ApplicationController
   respond_to :html, :json
   expose(:project) { Project.get(params[:project_id])}
   expose(:contents) { can?(:manage, project) ? project.contents : project.contents.public }

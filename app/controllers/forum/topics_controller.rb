@@ -1,4 +1,4 @@
-class TopicsController < ApplicationController
+class Forum::TopicsController < ApplicationController
   respond_to :html
   expose(:project) { Project.get(params[:project_id])}
   expose(:topics) { project.topics }

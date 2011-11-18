@@ -1,4 +1,4 @@
-class AgreementsController < ApplicationController
+class Forum::AgreementsController < ApplicationController
   respond_to :html
   expose(:project) { Project.get params[:project_id] }
   expose(:topic) { project.topics.find params[:topic_id] }

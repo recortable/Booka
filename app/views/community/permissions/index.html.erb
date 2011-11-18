@@ -4,7 +4,7 @@
 
 <h1>Actividad reciente</h1>
 <div class="versions">
-  <%= render versions %>
+  <%= render partial: 'versions/version', collection: versions %>
 </div>
 
 <%= content_for :browser do %>
