@@ -44,11 +44,12 @@ gem 'nokogiri', '~> 1.4.2'
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'newrelic_rpm'
 
+gem 'unicorn'
+  
 group :test, :development do
   # Pretty printed test output
   gem 'oink'
 #  gem 'mongrel', '1.2.0.pre2'
-#  gem 'unicorn'
   gem 'thin'
   gem 'ruby-debug19'
 #  gem 'test-unit'
