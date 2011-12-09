@@ -18,7 +18,7 @@ require 'bundler/setup'
 worker_processes 1
 working_directory APP_ROOT
 
-preload_app true
+preload_app false #true
 
 timeout 30
 
