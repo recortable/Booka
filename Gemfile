@@ -40,7 +40,10 @@ gem 'exception_notification', :require => 'exception_notifier'
 gem 'newrelic_rpm'
 
 #gem 'unicorn'
-gem 'pg'
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
 
 group :development do
   gem 'capistrano'
