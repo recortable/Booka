@@ -12,8 +12,6 @@ end
 
 gem 'jquery-rails'
 
-gem 'sqlite3'
-gem 'mysql2'
 
 gem 'decent_exposure'
 gem 'simple_form'
@@ -41,15 +39,18 @@ gem 'nokogiri', '~> 1.4.2'
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'newrelic_rpm'
 
-gem 'unicorn'
-  
+#gem 'unicorn'
+gem 'pg'
+
 group :development do
   gem 'capistrano'
   gem 'rvm-capistrano'
   gem 'thin'
+  gem 'mysql2'
 end
 
 group :test do
+  gem 'sqlite3'
   gem 'oink'
   gem 'database_cleaner'
   gem 'turn', :require => false
