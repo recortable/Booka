@@ -46,11 +46,6 @@ Booka::Application.routes.draw do
     match "/enter/:id" => "sessions#enter", :as => :enter
     match "/invitacion/:id/:code" => "invitations#show"
 
-    constraints CanAccessResque do
-      mount Resque::Server, at: 'resque'
-    end
-
-
     resources :projects, :path => '' do
       resources :read_pages, :path => 'leer'
 

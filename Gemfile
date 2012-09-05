@@ -15,9 +15,6 @@ gem 'jquery-rails'
 gem 'sqlite3'
 gem 'mysql2'
 
-gem 'resque', :require => 'resque/server'  
-
-
 gem 'decent_exposure'
 gem 'simple_form'
 gem 'css3buttons'
@@ -46,21 +43,20 @@ gem 'newrelic_rpm'
 
 gem 'unicorn'
   
-group :test, :development do
-  # Pretty printed test output
-  gem 'oink'
-#  gem 'mongrel', '1.2.0.pre2'
-  gem 'thin'
-  gem 'ruby-debug19'
-#  gem 'test-unit'
-  gem 'database_cleaner'
+group :development do
   gem 'capistrano'
+  gem 'rvm-capistrano'
+  gem 'thin'
+end
+
+group :test do
+  gem 'oink'
+  gem 'database_cleaner'
   gem 'turn', :require => false
-#  gem 'rails_best_practices'
   gem "rspec-rails", ">= 2.6.1"
-  gem "factory_girl_rails", ">= 1.1.0", :group => :test
-  gem "cucumber-rails", ">= 1.0.2", :group => :test
-  gem "capybara", ">= 1.0.1", :group => :test
+  gem "factory_girl_rails", ">= 1.1.0"
+  gem "cucumber-rails", ">= 1.0.2"
+  gem "capybara", ">= 1.0.1"
   gem "spork", "> 0.9.0.rc"
   gem "guard-spork"
   gem "guard-cucumber"
